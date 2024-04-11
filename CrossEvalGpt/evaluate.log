@@ -1,1171 +1,0 @@
-2024-01-12 10:25:20,043	INFO worker.py:1724 -- Started a local Ray instance.
-[36m(batched_request pid=18290)[0m   0%|          | 0/348 [00:00<?, ?it/s]
-[36m(batched_request pid=18287)[0m   0%|          | 1/348 [00:13<1:17:12, 13.35s/it]
-[36m(batched_request pid=18283)[0m   0%|          | 0/348 [00:00<?, ?it/s][32m [repeated 7x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)[0m
-[36m(batched_request pid=18283)[0m   0%|          | 1/348 [00:18<1:46:32, 18.42s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m   0%|          | 1/348 [00:27<2:37:09, 27.17s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m   1%|          | 2/348 [00:33<1:39:05, 17.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m   1%|          | 2/348 [00:40<1:56:12, 20.15s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   1%|          | 3/348 [00:49<1:31:10, 15.86s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m   1%|          | 2/348 [00:54<2:38:03, 27.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m   1%|          | 3/348 [01:01<1:56:44, 20.30s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m   1%|          | 4/348 [01:10<1:42:31, 17.88s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m   1%|          | 4/348 [01:15<1:46:47, 18.63s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m   1%|          | 4/348 [01:21<1:55:51, 20.21s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m   1%|▏         | 5/348 [01:32<1:51:26, 19.50s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m   1%|▏         | 5/348 [01:39<1:49:45, 19.20s/it]
-[36m(batched_request pid=18288)[0m   2%|▏         | 7/348 [01:39<1:16:23, 13.44s/it]
-[36m(batched_request pid=18286)[0m   1%|          | 4/348 [01:46<2:28:05, 25.83s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m   2%|▏         | 6/348 [01:52<1:37:31, 17.11s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m   3%|▎         | 9/348 [01:58<1:05:10, 11.54s/it]
-[36m(batched_request pid=18285)[0m   2%|▏         | 6/348 [01:59<1:55:03, 20.19s/it]
-[36m(batched_request pid=18284)[0m   2%|▏         | 7/348 [02:06<1:31:31, 16.11s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m   2%|▏         | 7/348 [02:12<1:41:14, 17.81s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m   3%|▎         | 10/348 [02:20<1:23:10, 14.77s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m   3%|▎         | 9/348 [02:28<1:27:08, 15.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m   3%|▎         | 11/348 [02:34<1:22:01, 14.60s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18284)[0m   3%|▎         | 9/348 [02:42<1:37:41, 17.29s/it]
-[36m(batched_request pid=18283)[0m   3%|▎         | 10/348 [02:44<1:28:40, 15.74s/it]
-[36m(batched_request pid=18286)[0m   2%|▏         | 7/348 [02:53<2:14:26, 23.66s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18284)[0m   3%|▎         | 10/348 [02:58<1:35:58, 17.04s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   4%|▎         | 13/348 [03:09<1:31:10, 16.33s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m   2%|▏         | 8/348 [03:14<2:10:24, 23.01s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m   3%|▎         | 11/348 [03:20<1:43:33, 18.44s/it]
-[36m(batched_request pid=18290)[0m   3%|▎         | 10/348 [03:20<1:47:29, 19.08s/it]
-[36m(batched_request pid=18288)[0m   4%|▍         | 14/348 [03:26<1:32:26, 16.61s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m   3%|▎         | 12/348 [03:34<1:37:04, 17.33s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m   3%|▎         | 9/348 [03:41<2:17:09, 24.28s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m   3%|▎         | 9/348 [03:46<2:20:42, 24.90s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   5%|▍         | 16/348 [03:56<1:25:04, 15.37s/it]
-[36m(batched_request pid=18287)[0m   4%|▎         | 13/348 [03:56<1:46:07, 19.01s/it]
-[36m(batched_request pid=18288)[0m   5%|▍         | 17/348 [04:06<1:16:03, 13.79s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18283)[0m   4%|▍         | 15/348 [04:12<1:38:00, 17.66s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m   4%|▎         | 13/348 [04:18<1:47:19, 19.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   5%|▌         | 18/348 [04:25<1:24:31, 15.37s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m   4%|▍         | 15/348 [04:31<1:41:13, 18.24s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m   3%|▎         | 11/348 [04:37<2:22:37, 25.39s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m   5%|▌         | 19/348 [04:42<1:27:34, 15.97s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m   4%|▍         | 15/348 [04:47<1:57:41, 21.21s/it]
-[36m(batched_request pid=18289)[0m   3%|▎         | 12/348 [04:47<2:03:33, 22.06s/it]
-[36m(batched_request pid=18284)[0m   5%|▍         | 17/348 [04:53<1:19:23, 14.39s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m   4%|▍         | 15/348 [05:00<1:53:58, 20.54s/it]
-[36m(batched_request pid=18286)[0m   3%|▎         | 12/348 [05:01<2:19:09, 24.85s/it]
-[36m(batched_request pid=18287)[0m   5%|▍         | 17/348 [05:07<1:41:04, 18.32s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m   5%|▍         | 16/348 [05:13<1:41:37, 18.37s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m   4%|▎         | 13/348 [05:18<2:06:13, 22.61s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m   5%|▌         | 18/348 [05:25<1:39:59, 18.18s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m   5%|▌         | 18/348 [05:35<1:33:11, 16.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m   4%|▍         | 14/348 [05:40<2:04:31, 22.37s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m   6%|▋         | 22/348 [05:45<1:45:28, 19.41s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18284)[0m   6%|▌         | 20/348 [05:57<1:41:05, 18.49s/it]
-[36m(batched_request pid=18287)[0m   6%|▌         | 20/348 [05:57<1:33:16, 17.06s/it]
-[36m(batched_request pid=18288)[0m   7%|▋         | 23/348 [06:02<1:40:34, 18.57s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m   6%|▌         | 21/348 [06:13<1:37:02, 17.81s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m   7%|▋         | 24/348 [06:19<1:38:22, 18.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m   6%|▋         | 22/348 [06:27<1:29:36, 16.49s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m   7%|▋         | 23/348 [06:34<1:36:34, 17.83s/it]
-[36m(batched_request pid=18284)[0m   6%|▋         | 22/348 [06:36<1:44:51, 19.30s/it]
-[36m(batched_request pid=18289)[0m   5%|▌         | 18/348 [06:41<1:46:46, 19.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m   7%|▋         | 23/348 [06:48<1:37:22, 17.98s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m   5%|▌         | 19/348 [06:55<1:36:53, 17.67s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m   7%|▋         | 24/348 [07:00<1:48:54, 20.17s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   8%|▊         | 27/348 [07:05<1:22:05, 15.34s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m   5%|▌         | 19/348 [07:11<1:36:06, 17.53s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m   7%|▋         | 23/348 [07:18<1:42:50, 18.99s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m   6%|▌         | 20/348 [07:23<1:27:37, 16.03s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m   8%|▊         | 29/348 [07:31<1:16:32, 14.40s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m   7%|▋         | 26/348 [07:39<1:45:46, 19.71s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m   7%|▋         | 26/348 [07:44<1:23:38, 15.58s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m   7%|▋         | 25/348 [07:52<1:37:51, 18.18s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m   6%|▋         | 22/348 [07:59<1:32:56, 17.11s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m   7%|▋         | 26/348 [08:06<1:30:10, 16.80s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m   7%|▋         | 23/348 [08:15<1:30:25, 16.70s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m   8%|▊         | 29/348 [08:26<1:37:09, 18.27s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m   7%|▋         | 24/348 [08:32<1:30:06, 16.69s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18288)[0m 'choices'
-[36m(batched_request pid=18283)[0m   9%|▊         | 30/348 [08:37<1:25:11, 16.07s/it]
-[36m(batched_request pid=18290)[0m   8%|▊         | 28/348 [08:40<1:32:25, 17.33s/it]
-[36m(batched_request pid=18289)[0m   7%|▋         | 26/348 [08:47<1:30:10, 16.80s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m   9%|▉         | 33/348 [08:52<1:43:46, 19.77s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m   8%|▊         | 29/348 [08:59<1:35:45, 18.01s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m   8%|▊         | 27/348 [09:05<1:32:24, 17.27s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  10%|▉         | 34/348 [09:19<1:54:56, 21.96s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m   9%|▉         | 31/348 [09:26<1:42:24, 19.38s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m   8%|▊         | 28/348 [09:33<1:49:35, 20.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m   8%|▊         | 28/348 [09:42<1:31:56, 17.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m   9%|▉         | 31/348 [09:48<2:08:38, 24.35s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m   8%|▊         | 29/348 [09:55<1:50:23, 20.76s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m   9%|▉         | 33/348 [10:02<1:40:54, 19.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m   9%|▉         | 32/348 [10:10<1:49:16, 20.75s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m   9%|▊         | 30/348 [10:15<1:49:37, 20.68s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  11%|█         | 38/348 [10:20<1:26:14, 16.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m   9%|▉         | 33/348 [10:27<1:43:58, 19.81s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  10%|█         | 35/348 [10:36<1:54:07, 21.88s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  10%|▉         | 34/348 [10:45<1:57:28, 22.45s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  10%|█         | 35/348 [10:51<1:54:03, 21.86s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  10%|█         | 36/348 [10:59<1:54:32, 22.03s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m   9%|▉         | 33/348 [11:07<1:23:52, 15.98s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  10%|█         | 35/348 [11:17<1:57:24, 22.51s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18283)[0m  11%|█         | 38/348 [11:22<1:26:27, 16.73s/it]
-[36m(batched_request pid=18285)[0m  10%|█         | 36/348 [11:25<2:11:58, 25.38s/it]
-[36m(batched_request pid=18289)[0m  10%|▉         | 34/348 [11:33<1:44:56, 20.05s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  10%|█         | 35/348 [11:40<1:24:35, 16.22s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  11%|█         | 37/348 [11:49<1:50:59, 21.41s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  10%|█         | 35/348 [11:54<1:47:31, 20.61s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  11%|█         | 37/348 [12:03<2:02:52, 23.71s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  13%|█▎        | 44/348 [12:11<1:25:43, 16.92s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  10%|█         | 36/348 [12:16<1:49:22, 21.03s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  13%|█▎        | 45/348 [12:23<1:18:32, 15.55s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  11%|█         | 39/348 [12:29<1:43:03, 20.01s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  11%|█         | 37/348 [12:34<1:43:37, 19.99s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  11%|█▏        | 40/348 [12:46<1:08:26, 13.33s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  11%|█▏        | 40/348 [12:52<1:47:45, 20.99s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  11%|█▏        | 40/348 [12:57<1:43:56, 20.25s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  12%|█▏        | 41/348 [13:02<1:37:32, 19.06s/it]
-[36m(batched_request pid=18286)[0m  12%|█▏        | 41/348 [13:09<1:22:31, 16.13s/it]
-[36m(batched_request pid=18287)[0m  12%|█▏        | 41/348 [13:14<1:49:26, 21.39s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  12%|█▏        | 42/348 [13:26<1:22:49, 16.24s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  12%|█▏        | 42/348 [13:36<1:42:15, 20.05s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  12%|█▏        | 41/348 [13:44<1:30:16, 17.64s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  12%|█▏        | 43/348 [13:57<1:43:20, 20.33s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  14%|█▍        | 49/348 [14:04<1:52:36, 22.60s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  13%|█▎        | 44/348 [14:13<1:36:25, 19.03s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18287)[0m  13%|█▎        | 45/348 [14:19<1:27:26, 17.32s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  14%|█▍        | 50/348 [14:24<1:48:27, 21.84s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  14%|█▍        | 48/348 [14:30<1:40:40, 20.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  13%|█▎        | 44/348 [14:40<1:34:52, 18.73s/it]
-[36m(batched_request pid=18284)[0m  13%|█▎        | 44/348 [14:43<1:47:43, 21.26s/it]
-[36m(batched_request pid=18286)[0m  13%|█▎        | 46/348 [14:52<1:47:06, 21.28s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18289)[0m  13%|█▎        | 45/348 [14:58<1:33:47, 18.57s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  14%|█▍        | 50/348 [15:04<1:32:20, 18.59s/it]
-[36m(batched_request pid=18287)[0m  14%|█▎        | 47/348 [15:07<1:43:23, 20.61s/it]
-[36m(batched_request pid=18283)[0m  15%|█▍        | 51/348 [15:20<1:29:26, 18.07s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  15%|█▌        | 53/348 [15:29<1:45:38, 21.48s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  16%|█▌        | 54/348 [15:38<1:27:54, 17.94s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  14%|█▎        | 47/348 [15:43<1:42:55, 20.52s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  14%|█▍        | 48/348 [15:51<1:23:09, 16.63s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  14%|█▍        | 50/348 [15:56<1:23:09, 16.74s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  14%|█▍        | 49/348 [16:06<1:58:04, 23.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  15%|█▍        | 51/348 [16:11<1:19:57, 16.15s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  16%|█▌        | 56/348 [16:20<1:37:21, 20.01s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  16%|█▌        | 54/348 [16:28<1:43:02, 21.03s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  14%|█▍        | 49/348 [16:35<1:52:13, 22.52s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  15%|█▌        | 53/348 [16:41<1:14:51, 15.23s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  15%|█▍        | 52/348 [16:54<1:20:40, 16.35s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  16%|█▌        | 56/348 [17:00<1:31:34, 18.82s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  15%|█▍        | 52/348 [17:06<1:48:31, 22.00s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  17%|█▋        | 59/348 [17:15<1:31:01, 18.90s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  15%|█▌        | 53/348 [17:29<1:50:12, 22.41s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  17%|█▋        | 58/348 [17:34<1:26:36, 17.92s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18286)[0m  16%|█▋        | 57/348 [17:48<1:23:23, 17.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  15%|█▌        | 53/348 [17:55<2:12:24, 26.93s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  18%|█▊        | 61/348 [18:03<1:46:21, 22.23s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  17%|█▋        | 58/348 [18:10<1:30:40, 18.76s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  16%|█▌        | 54/348 [18:19<2:06:55, 25.90s/it]
-[36m(batched_request pid=18290)[0m  16%|█▌        | 55/348 [18:19<1:52:13, 22.98s/it]
-[36m(batched_request pid=18288)[0m  18%|█▊        | 62/348 [18:26<1:47:20, 22.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  17%|█▋        | 59/348 [18:31<1:33:29, 19.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  16%|█▌        | 55/348 [18:42<2:02:20, 25.05s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  16%|█▌        | 56/348 [18:47<1:56:31, 23.94s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  17%|█▋        | 60/348 [18:53<1:37:09, 20.24s/it]
-[36m(batched_request pid=18288)[0m  18%|█▊        | 63/348 [18:55<1:55:47, 24.38s/it]
-[36m(batched_request pid=18287)[0m  16%|█▌        | 56/348 [19:05<1:59:29, 24.55s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  16%|█▋        | 57/348 [19:11<1:56:20, 23.99s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  18%|█▊        | 61/348 [19:16<1:40:45, 21.06s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  18%|█▊        | 64/348 [19:25<1:20:41, 17.05s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  17%|█▋        | 59/348 [19:33<1:53:27, 23.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  18%|█▊        | 62/348 [19:41<1:45:08, 22.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  19%|█▊        | 65/348 [19:48<1:29:37, 19.00s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  17%|█▋        | 59/348 [19:55<1:58:38, 24.63s/it]
-[36m(batched_request pid=18285)[0m  17%|█▋        | 59/348 [19:59<1:54:36, 23.79s/it]
-[36m(batched_request pid=18283)[0m  19%|█▉        | 66/348 [20:04<1:25:20, 18.16s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  17%|█▋        | 60/348 [20:18<1:47:17, 22.35s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  17%|█▋        | 59/348 [20:24<1:59:28, 24.80s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  17%|█▋        | 58/348 [20:30<2:15:58, 28.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  17%|█▋        | 60/348 [20:36<1:40:05, 20.85s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  18%|█▊        | 61/348 [20:43<1:53:16, 23.68s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  17%|█▋        | 59/348 [20:48<2:00:57, 25.11s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  18%|█▊        | 61/348 [20:54<1:36:37, 20.20s/it]
-[36m(batched_request pid=18288)[0m  20%|█▉        | 68/348 [20:55<1:55:43, 24.80s/it]
-[36m(batched_request pid=18290)[0m  18%|█▊        | 62/348 [21:01<1:45:50, 22.20s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  18%|█▊        | 62/348 [21:09<1:54:25, 24.00s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  18%|█▊        | 62/348 [21:16<1:37:42, 20.50s/it]
-[36m(batched_request pid=18286)[0m  19%|█▉        | 66/348 [21:16<1:42:29, 21.81s/it]
-[36m(batched_request pid=18284)[0m  18%|█▊        | 61/348 [21:23<1:41:29, 21.22s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  18%|█▊        | 63/348 [21:28<1:52:06, 23.60s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  20%|██        | 70/348 [21:33<1:44:29, 22.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  18%|█▊        | 63/348 [21:39<1:41:47, 21.43s/it]
-[36m(batched_request pid=18284)[0m  18%|█▊        | 62/348 [21:40<1:35:26, 20.02s/it]
-[36m(batched_request pid=18288)[0m  20%|██        | 70/348 [21:46<1:56:42, 25.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  18%|█▊        | 64/348 [21:53<1:53:34, 24.00s/it]
-[36m(batched_request pid=18283)[0m  20%|██        | 71/348 [21:54<1:41:00, 21.88s/it]
-[36m(batched_request pid=18287)[0m  18%|█▊        | 64/348 [22:01<1:41:40, 21.48s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  19%|█▊        | 65/348 [22:10<1:58:30, 25.13s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  19%|█▊        | 65/348 [22:15<1:50:16, 23.38s/it]
-[36m(batched_request pid=18284)[0m  18%|█▊        | 64/348 [22:15<1:27:29, 18.48s/it]
-[36m(batched_request pid=18283)[0m  21%|██        | 72/348 [22:20<1:47:21, 23.34s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  21%|██        | 73/348 [22:31<1:29:45, 19.58s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  19%|█▉        | 66/348 [22:37<1:47:30, 22.87s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  20%|██        | 70/348 [22:42<1:44:51, 22.63s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  21%|██        | 73/348 [22:53<1:41:40, 22.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  21%|██▏       | 74/348 [23:01<1:42:57, 22.55s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  20%|█▉        | 68/348 [23:20<1:49:34, 23.48s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18288)[0m  21%|██▏       | 74/348 [23:26<1:55:50, 25.37s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  20%|█▉        | 69/348 [23:34<1:22:14, 17.69s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  20%|█▉        | 68/348 [23:41<2:09:46, 27.81s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  20%|██        | 70/348 [23:49<1:18:51, 17.02s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  20%|█▉        | 69/348 [23:57<1:55:11, 24.77s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  22%|██▏       | 76/348 [24:04<2:01:52, 26.88s/it]
-[36m(batched_request pid=18290)[0m  20%|█▉        | 69/348 [24:05<2:04:12, 26.71s/it]
-[36m(batched_request pid=18288)[0m  22%|██▏       | 76/348 [24:12<1:47:38, 23.74s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  20%|██        | 70/348 [24:19<2:01:38, 26.25s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  20%|██        | 70/348 [24:25<1:36:31, 20.83s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  22%|██▏       | 77/348 [24:31<1:41:48, 22.54s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  22%|██▏       | 75/348 [24:38<1:42:48, 22.59s/it]
-[36m(batched_request pid=18287)[0m  21%|██        | 72/348 [24:43<1:41:31, 22.07s/it]
-[36m(batched_request pid=18284)[0m  20%|██        | 71/348 [24:49<1:40:14, 21.71s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  22%|██▏       | 78/348 [24:58<1:47:15, 23.83s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  21%|██        | 73/348 [25:04<1:39:08, 21.63s/it]
-[36m(batched_request pid=18289)[0m  21%|██        | 72/348 [25:04<1:50:32, 24.03s/it]
-[36m(batched_request pid=18286)[0m  22%|██▏       | 77/348 [25:16<1:35:56, 21.24s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  21%|██        | 73/348 [25:22<1:41:04, 22.05s/it]
-[36m(batched_request pid=18288)[0m  23%|██▎       | 79/348 [25:23<1:48:40, 24.24s/it]
-[36m(batched_request pid=18283)[0m  23%|██▎       | 80/348 [25:30<1:41:17, 22.68s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  22%|██▏       | 75/348 [25:44<1:33:41, 20.59s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  21%|██▏       | 74/348 [25:49<1:41:35, 22.25s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  22%|██▏       | 76/348 [25:58<1:24:04, 18.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  22%|██▏       | 75/348 [26:05<1:38:00, 21.54s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  22%|██▏       | 75/348 [26:13<1:33:22, 20.52s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  23%|██▎       | 80/348 [26:20<1:38:24, 22.03s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  24%|██▎       | 82/348 [26:26<1:35:37, 21.57s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  22%|██▏       | 76/348 [26:31<1:38:39, 21.76s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  22%|██▏       | 77/348 [26:40<1:28:42, 19.64s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  22%|██▏       | 77/348 [26:49<1:26:35, 19.17s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  24%|██▎       | 82/348 [26:54<1:25:37, 19.31s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  23%|██▎       | 79/348 [27:00<1:29:49, 20.04s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  24%|██▍       | 85/348 [27:06<1:21:40, 18.63s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  23%|██▎       | 79/348 [27:11<1:17:31, 17.29s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  23%|██▎       | 79/348 [27:24<1:20:24, 17.93s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18285)[0m  23%|██▎       | 79/348 [27:31<1:31:18, 20.37s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  23%|██▎       | 81/348 [27:38<1:29:17, 20.07s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  23%|██▎       | 81/348 [27:47<1:19:06, 17.78s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  26%|██▌       | 89/348 [27:54<1:02:26, 14.46s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  23%|██▎       | 81/348 [27:59<1:19:03, 17.76s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  26%|██▌       | 90/348 [28:04<57:31, 13.38s/it]  [32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  24%|██▎       | 82/348 [28:11<1:27:58, 19.85s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  24%|██▎       | 82/348 [28:17<1:18:54, 17.80s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  24%|██▎       | 82/348 [28:23<1:25:02, 19.18s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  26%|██▌       | 90/348 [28:31<1:04:04, 14.90s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  26%|██▋       | 92/348 [28:37<1:03:55, 14.98s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  25%|██▌       | 88/348 [28:43<1:07:17, 15.53s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  24%|██▍       | 84/348 [28:50<1:10:32, 16.03s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  24%|██▍       | 85/348 [29:02<1:12:02, 16.44s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  24%|██▍       | 84/348 [29:08<1:37:06, 22.07s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18290)[0m  25%|██▍       | 86/348 [29:15<1:01:42, 14.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  24%|██▍       | 85/348 [29:26<1:31:27, 20.86s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  27%|██▋       | 95/348 [29:33<1:17:48, 18.45s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18285)[0m  25%|██▌       | 88/348 [29:43<1:01:24, 14.17s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  25%|██▌       | 88/348 [29:48<1:07:53, 15.67s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  26%|██▌       | 89/348 [30:01<1:06:07, 15.32s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  27%|██▋       | 95/348 [30:06<1:16:40, 18.18s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  26%|██▋       | 92/348 [30:11<1:24:57, 19.91s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  28%|██▊       | 98/348 [30:20<1:05:37, 15.75s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  26%|██▌       | 91/348 [30:25<57:44, 13.48s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  26%|██▌       | 89/348 [30:31<1:29:31, 20.74s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  27%|██▋       | 94/348 [30:39<1:13:18, 17.32s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  28%|██▊       | 98/348 [30:46<1:03:28, 15.24s/it]
-[36m(batched_request pid=18287)[0m  26%|██▌       | 90/348 [30:47<1:24:50, 19.73s/it]
-[36m(batched_request pid=18289)[0m  26%|██▌       | 90/348 [30:55<1:32:33, 21.52s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18287)[0m  26%|██▌       | 91/348 [31:03<1:20:04, 18.70s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  29%|██▉       | 101/348 [31:09<1:08:18, 16.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  26%|██▌       | 90/348 [31:14<1:35:30, 22.21s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  26%|██▋       | 92/348 [31:27<1:26:11, 20.20s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  30%|██▉       | 103/348 [31:37<1:00:10, 14.74s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18290)[0m  27%|██▋       | 94/348 [31:46<1:19:48, 18.85s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  27%|██▋       | 94/348 [31:52<1:05:40, 15.51s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  27%|██▋       | 95/348 [31:57<1:09:18, 16.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  28%|██▊       | 98/348 [32:05<1:30:37, 21.75s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  30%|██▉       | 103/348 [32:12<1:05:22, 16.01s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  27%|██▋       | 93/348 [32:18<1:30:35, 21.32s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  28%|██▊       | 96/348 [32:27<1:07:44, 16.13s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  27%|██▋       | 94/348 [32:34<1:23:14, 19.66s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  28%|██▊       | 97/348 [32:40<1:03:20, 15.14s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m 'choices'
-[36m(batched_request pid=18286)[0m  29%|██▉       | 101/348 [32:45<1:08:40, 16.68s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  28%|██▊       | 97/348 [32:52<1:33:03, 22.24s/it]
-[36m(batched_request pid=18283)[0m  31%|███       | 107/348 [32:52<1:09:05, 17.20s/it]
-[36m(batched_request pid=18284)[0m  27%|██▋       | 95/348 [33:01<1:32:05, 21.84s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  28%|██▊       | 98/348 [33:06<1:17:05, 18.50s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  30%|███       | 106/348 [33:11<1:10:40, 17.52s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  29%|██▊       | 100/348 [33:19<1:20:54, 19.57s/it]
-[36m(batched_request pid=18283)[0m  31%|███▏      | 109/348 [33:20<1:01:08, 15.35s/it]
-[36m(batched_request pid=18288)[0m  31%|███       | 107/348 [33:26<1:07:16, 16.75s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  29%|██▊       | 100/348 [33:40<1:13:12, 17.71s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18283)[0m  32%|███▏      | 111/348 [33:48<59:13, 14.99s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  31%|███▏      | 109/348 [33:55<1:01:03, 15.33s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  28%|██▊       | 98/348 [34:00<1:49:29, 26.28s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  29%|██▉       | 102/348 [34:07<1:30:31, 22.08s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  32%|███▏      | 110/348 [34:13<1:04:06, 16.16s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  28%|██▊       | 98/348 [34:21<1:42:41, 24.64s/it]
-[36m(batched_request pid=18283)[0m  32%|███▏      | 113/348 [34:22<1:02:07, 15.86s/it]
-[36m(batched_request pid=18287)[0m  28%|██▊       | 99/348 [34:27<1:50:09, 26.55s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  32%|███▏      | 111/348 [34:36<1:12:02, 18.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  29%|██▉       | 102/348 [34:42<1:39:02, 24.16s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  30%|██▉       | 104/348 [34:48<1:27:56, 21.62s/it]
-[36m(batched_request pid=18289)[0m  30%|██▉       | 103/348 [34:48<1:24:33, 20.71s/it]
-[36m(batched_request pid=18284)[0m  28%|██▊       | 99/348 [34:55<1:54:22, 27.56s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  30%|██▉       | 104/348 [35:02<1:16:04, 18.71s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  30%|██▉       | 104/348 [35:10<1:19:09, 19.47s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  31%|███▏      | 109/348 [35:19<1:22:39, 20.75s/it]
-[36m(batched_request pid=18288)[0m  33%|███▎      | 114/348 [35:19<1:02:08, 15.93s/it]
-[36m(batched_request pid=18287)[0m  29%|██▉       | 101/348 [35:26<1:52:49, 27.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  30%|███       | 105/348 [35:33<1:22:39, 20.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  31%|███       | 107/348 [35:47<1:21:18, 20.24s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  29%|██▉       | 101/348 [35:53<1:54:36, 27.84s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  34%|███▍      | 118/348 [36:00<1:11:17, 18.60s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  31%|███       | 108/348 [36:07<1:20:41, 20.17s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  30%|██▉       | 103/348 [36:13<1:44:53, 25.69s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  31%|███       | 107/348 [36:21<1:27:11, 21.71s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  30%|██▉       | 104/348 [36:30<1:33:07, 22.90s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  34%|███▍      | 120/348 [36:36<1:07:38, 17.80s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  34%|███▍      | 119/348 [36:42<1:02:09, 16.29s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  31%|███▏      | 109/348 [36:48<1:31:28, 22.96s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  30%|███       | 105/348 [36:55<1:35:28, 23.57s/it]
-[36m(batched_request pid=18290)[0m  31%|███▏      | 109/348 [36:59<1:20:38, 20.25s/it]
-[36m(batched_request pid=18285)[0m  32%|███▏      | 111/348 [37:09<1:21:02, 20.52s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18287)[0m  30%|███       | 106/348 [37:16<1:32:49, 23.01s/it]
-[36m(batched_request pid=18286)[0m  33%|███▎      | 115/348 [37:20<1:20:29, 20.73s/it]
-[36m(batched_request pid=18285)[0m  32%|███▏      | 112/348 [37:26<1:16:57, 19.57s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  32%|███▏      | 113/348 [37:39<1:08:49, 17.57s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  31%|███       | 107/348 [37:44<1:38:25, 24.50s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  32%|███▏      | 112/348 [37:51<1:26:56, 22.10s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  32%|███▏      | 112/348 [37:57<1:15:31, 19.20s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  33%|███▎      | 114/348 [38:03<1:16:26, 19.60s/it]
-[36m(batched_request pid=18288)[0m  35%|███▌      | 123/348 [38:04<1:12:29, 19.33s/it]
-[36m(batched_request pid=18289)[0m  32%|███▏      | 113/348 [38:13<1:26:43, 22.14s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  31%|███       | 108/348 [38:18<1:48:58, 27.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  34%|███▍      | 119/348 [38:23<1:07:55, 17.80s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  36%|███▌      | 125/348 [38:30<59:33, 16.03s/it]  
-[36m(batched_request pid=18285)[0m  33%|███▎      | 116/348 [38:39<1:14:45, 19.33s/it]
-[36m(batched_request pid=18286)[0m  34%|███▍      | 120/348 [38:44<1:11:15, 18.75s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18287)[0m  31%|███▏      | 109/348 [38:53<1:57:35, 29.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  36%|███▋      | 127/348 [39:02<1:12:36, 19.71s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  31%|███▏      | 109/348 [39:09<1:48:39, 27.28s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  33%|███▎      | 116/348 [39:24<1:24:42, 21.91s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  32%|███▏      | 110/348 [39:35<1:46:21, 26.81s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  34%|███▎      | 117/348 [39:43<1:20:19, 20.87s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  34%|███▍      | 119/348 [39:51<1:24:51, 22.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  35%|███▌      | 123/348 [39:58<1:22:29, 22.00s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  37%|███▋      | 130/348 [40:05<1:08:01, 18.72s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  34%|███▍      | 118/348 [40:12<1:20:48, 21.08s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  32%|███▏      | 112/348 [40:19<1:35:22, 24.25s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  34%|███▍      | 119/348 [40:32<1:19:08, 20.73s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18284)[0m  32%|███▏      | 113/348 [40:40<1:30:54, 23.21s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  38%|███▊      | 132/348 [40:49<1:16:47, 21.33s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  34%|███▍      | 120/348 [40:57<1:23:31, 21.98s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  35%|███▌      | 122/348 [41:03<1:27:11, 23.15s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  38%|███▊      | 133/348 [41:08<1:14:41, 20.85s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  33%|███▎      | 115/348 [41:16<1:38:27, 25.35s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  38%|███▊      | 133/348 [41:22<1:24:52, 23.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  35%|███▌      | 123/348 [41:28<1:28:52, 23.70s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  39%|███▊      | 134/348 [41:33<1:18:28, 22.00s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  37%|███▋      | 128/348 [41:43<1:18:52, 21.51s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  33%|███▎      | 116/348 [41:56<1:35:52, 24.80s/it][32m [repeated 7x across cluster][0m
-[36m(batched_request pid=18286)[0m  37%|███▋      | 129/348 [42:03<1:16:51, 21.06s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  36%|███▌      | 125/348 [42:10<1:11:14, 19.17s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  36%|███▌      | 125/348 [42:21<1:10:10, 18.88s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  39%|███▉      | 136/348 [42:27<1:17:45, 22.01s/it]
-[36m(batched_request pid=18287)[0m  34%|███▍      | 119/348 [42:27<1:18:27, 20.56s/it]
-[36m(batched_request pid=18285)[0m  36%|███▌      | 126/348 [42:34<1:25:11, 23.02s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  39%|███▉      | 137/348 [42:40<1:08:00, 19.34s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  36%|███▋      | 127/348 [42:48<1:09:57, 18.99s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  36%|███▋      | 127/348 [42:55<1:04:47, 17.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  35%|███▍      | 121/348 [43:05<1:16:44, 20.28s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  37%|███▋      | 128/348 [43:16<1:08:36, 18.71s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  37%|███▋      | 129/348 [43:25<1:07:34, 18.51s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  37%|███▋      | 129/348 [43:31<1:03:29, 17.39s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18286)[0m  39%|███▊      | 134/348 [43:42<1:08:08, 19.11s/it]
-[36m(batched_request pid=18283)[0m  40%|████      | 140/348 [43:43<1:18:19, 22.59s/it]
-[36m(batched_request pid=18290)[0m  37%|███▋      | 130/348 [43:51<1:15:58, 20.91s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  41%|████      | 141/348 [43:57<1:09:08, 20.04s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  39%|███▉      | 135/348 [44:09<1:16:39, 21.59s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m 'choices'
-[36m(batched_request pid=18290)[0m  38%|███▊      | 131/348 [44:14<1:18:04, 21.59s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  35%|███▌      | 122/348 [44:22<1:36:58, 25.74s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  38%|███▊      | 131/348 [44:29<1:23:08, 22.99s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  36%|███▌      | 125/348 [44:40<1:26:02, 23.15s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  38%|███▊      | 132/348 [44:48<1:18:18, 21.75s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  38%|███▊      | 133/348 [44:54<1:10:27, 19.66s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  40%|███▉      | 138/348 [45:01<1:03:52, 18.25s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  36%|███▌      | 124/348 [45:06<1:29:07, 23.87s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  39%|███▊      | 134/348 [45:17<1:17:42, 21.79s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  40%|████      | 140/348 [45:23<2:04:36, 35.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  36%|███▌      | 125/348 [45:28<1:26:32, 23.28s/it]
-[36m(batched_request pid=18289)[0m  39%|███▉      | 135/348 [45:29<1:06:27, 18.72s/it]
-[36m(batched_request pid=18285)[0m  39%|███▊      | 134/348 [45:34<1:21:39, 22.89s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  39%|███▉      | 136/348 [45:41<59:14, 16.77s/it]  [32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  37%|███▋      | 128/348 [45:53<1:24:16, 22.99s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  41%|████      | 141/348 [45:58<1:04:58, 18.84s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  39%|███▉      | 137/348 [46:05<1:06:29, 18.91s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  41%|████      | 142/348 [46:11<58:47, 17.13s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  39%|███▉      | 136/348 [46:17<1:17:48, 22.02s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  41%|████      | 143/348 [46:27<1:35:45, 28.03s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  39%|███▉      | 137/348 [46:34<1:28:15, 25.10s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  37%|███▋      | 130/348 [46:44<1:29:49, 24.72s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  41%|████▏     | 144/348 [46:52<1:04:27, 18.96s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  40%|████      | 140/348 [47:02<1:07:33, 19.49s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  40%|███▉      | 138/348 [47:07<1:21:25, 23.26s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  42%|████▏     | 145/348 [47:16<1:30:03, 26.62s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  41%|████      | 141/348 [47:27<1:13:34, 21.33s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  40%|███▉      | 139/348 [47:34<1:36:04, 27.58s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  42%|████▏     | 146/348 [47:41<1:28:10, 26.19s/it]
-[36m(batched_request pid=18287)[0m  38%|███▊      | 132/348 [47:44<1:40:14, 27.84s/it]
-[36m(batched_request pid=18289)[0m  41%|████      | 142/348 [47:51<1:15:16, 21.92s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  44%|████▎     | 152/348 [47:56<1:17:31, 23.73s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  38%|███▊      | 132/348 [48:04<1:21:17, 22.58s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  41%|████      | 141/348 [48:12<1:15:25, 21.86s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18290)[0m  41%|████      | 141/348 [48:21<1:29:45, 26.02s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  43%|████▎     | 149/348 [48:32<1:08:12, 20.56s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  43%|████▎     | 150/348 [48:43<58:29, 17.73s/it]  [32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18287)[0m  39%|███▉      | 135/348 [48:49<1:24:46, 23.88s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  45%|████▍     | 155/348 [48:55<1:07:30, 20.99s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  43%|████▎     | 151/348 [49:00<57:39, 17.56s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  39%|███▉      | 135/348 [49:06<1:11:48, 20.23s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  39%|███▉      | 136/348 [49:13<1:24:32, 23.93s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  41%|████▏     | 144/348 [49:20<1:14:49, 22.01s/it]
-[36m(batched_request pid=18288)[0m  44%|████▎     | 152/348 [49:24<1:04:07, 19.63s/it]
-[36m(batched_request pid=18284)[0m  39%|███▉      | 136/348 [49:31<1:16:03, 21.52s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  43%|████▎     | 148/348 [49:36<56:41, 17.01s/it]  [32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  44%|████▍     | 153/348 [49:43<1:02:32, 19.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  39%|███▉      | 137/348 [49:51<1:14:03, 21.06s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  40%|███▉      | 138/348 [49:56<1:21:34, 23.31s/it]
-[36m(batched_request pid=18285)[0m  42%|████▏     | 146/348 [49:56<1:08:06, 20.23s/it]
-[36m(batched_request pid=18286)[0m  44%|████▍     | 154/348 [50:04<1:02:49, 19.43s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  45%|████▍     | 155/348 [50:16<58:00, 18.03s/it]
-[36m(batched_request pid=18284)[0m  40%|███▉      | 138/348 [50:16<1:18:07, 22.32s/it]
-[36m(batched_request pid=18287)[0m  40%|███▉      | 139/348 [50:21<1:22:46, 23.76s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  42%|████▏     | 147/348 [50:26<1:17:20, 23.09s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  45%|████▍     | 156/348 [50:35<59:15, 18.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  42%|████▏     | 147/348 [50:41<1:20:59, 24.18s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  46%|████▋     | 161/348 [50:55<1:00:12, 19.32s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  43%|████▎     | 149/348 [51:00<1:05:40, 19.80s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  45%|████▌     | 157/348 [51:05<1:09:48, 21.93s/it]
-[36m(batched_request pid=18290)[0m  43%|████▎     | 148/348 [51:07<1:22:13, 24.67s/it]
-[36m(batched_request pid=18284)[0m  40%|████      | 140/348 [51:14<1:31:03, 26.27s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  45%|████▌     | 158/348 [51:21<1:03:46, 20.14s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  45%|████▌     | 158/348 [51:27<1:05:37, 20.72s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  41%|████      | 142/348 [51:33<1:21:43, 23.81s/it]
-[36m(batched_request pid=18283)[0m  47%|████▋     | 163/348 [51:33<1:01:14, 19.86s/it]
-[36m(batched_request pid=18284)[0m  41%|████      | 141/348 [51:38<1:28:11, 25.56s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  46%|████▌     | 160/348 [51:43<44:34, 14.23s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  43%|████▎     | 150/348 [51:50<1:17:20, 23.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  46%|████▋     | 161/348 [51:59<45:25, 14.58s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  47%|████▋     | 165/348 [52:06<55:03, 18.05s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  46%|████▋     | 161/348 [52:14<55:18, 17.75s/it]  [32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  48%|████▊     | 166/348 [52:19<49:54, 16.45s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  41%|████▏     | 144/348 [52:26<1:25:19, 25.10s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  41%|████      | 143/348 [52:34<1:31:22, 26.74s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  45%|████▌     | 157/348 [52:49<1:14:35, 23.43s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18286)[0m  47%|████▋     | 164/348 [52:57<56:53, 18.55s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  41%|████▏     | 144/348 [53:05<1:34:58, 27.93s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  45%|████▌     | 158/348 [53:13<1:14:16, 23.46s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  47%|████▋     | 164/348 [53:19<1:00:53, 19.85s/it]
-[36m(batched_request pid=18289)[0m  46%|████▌     | 159/348 [53:20<58:54, 18.70s/it]  
-[36m(batched_request pid=18283)[0m  49%|████▊     | 169/348 [53:25<1:01:51, 20.74s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  46%|████▌     | 160/348 [53:31<51:07, 16.32s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  47%|████▋     | 165/348 [53:38<1:00:24, 19.80s/it]
-[36m(batched_request pid=18286)[0m  48%|████▊     | 166/348 [53:39<59:21, 19.57s/it]  
-[36m(batched_request pid=18283)[0m  49%|████▉     | 170/348 [53:45<1:01:02, 20.57s/it]
-[36m(batched_request pid=18289)[0m  46%|████▋     | 161/348 [53:48<51:18, 16.46s/it]
-[36m(batched_request pid=18286)[0m  48%|████▊     | 168/348 [54:01<45:16, 15.09s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18288)[0m  48%|████▊     | 166/348 [54:06<1:07:27, 22.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  45%|████▌     | 157/348 [54:14<1:15:32, 23.73s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  47%|████▋     | 163/348 [54:21<50:56, 16.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  48%|████▊     | 167/348 [54:28<1:06:40, 22.10s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  50%|████▉     | 173/348 [54:33<49:25, 16.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  45%|████▌     | 157/348 [54:43<1:21:53, 25.73s/it]
-[36m(batched_request pid=18289)[0m  47%|████▋     | 164/348 [54:43<55:21, 18.05s/it]
-[36m(batched_request pid=18287)[0m  43%|████▎     | 150/348 [54:50<1:15:00, 22.73s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  49%|████▊     | 169/348 [54:59<55:26, 18.58s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  45%|████▌     | 158/348 [55:05<1:17:57, 24.62s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  43%|████▎     | 151/348 [55:11<1:13:24, 22.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  49%|████▉     | 172/348 [55:17<50:17, 17.15s/it]
-[36m(batched_request pid=18289)[0m  48%|████▊     | 166/348 [55:19<54:53, 18.10s/it]
-[36m(batched_request pid=18285)[0m  46%|████▌     | 160/348 [55:24<1:12:34, 23.16s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  44%|████▎     | 152/348 [55:32<1:11:42, 21.95s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  51%|█████     | 177/348 [55:42<48:44, 17.10s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  49%|████▉     | 171/348 [55:47<1:02:58, 21.35s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  48%|████▊     | 168/348 [55:55<52:29, 17.50s/it]  [32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  49%|████▉     | 172/348 [56:01<56:05, 19.12s/it]  [32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  47%|████▋     | 162/348 [56:09<1:09:33, 22.44s/it]
-[36m(batched_request pid=18289)[0m  49%|████▊     | 169/348 [56:17<56:05, 18.80s/it]
-[36m(batched_request pid=18283)[0m  51%|█████▏    | 179/348 [56:23<54:08, 19.22s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  50%|████▉     | 173/348 [56:29<1:03:37, 21.81s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  47%|████▋     | 164/348 [56:41<58:30, 19.08s/it]  
-[36m(batched_request pid=18284)[0m  44%|████▍     | 154/348 [56:41<1:14:16, 22.97s/it]
-[36m(batched_request pid=18290)[0m  47%|████▋     | 162/348 [56:46<1:17:46, 25.09s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  51%|█████     | 177/348 [56:54<1:00:39, 21.28s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  50%|█████     | 174/348 [56:59<1:10:08, 24.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  45%|████▍     | 155/348 [57:07<1:16:52, 23.90s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  52%|█████▏    | 182/348 [57:13<46:31, 16.82s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  45%|████▍     | 156/348 [57:20<1:21:57, 25.61s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  49%|████▉     | 172/348 [57:27<59:29, 20.28s/it]  [32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  48%|████▊     | 166/348 [57:34<1:09:00, 22.75s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  53%|█████▎    | 183/348 [57:39<54:14, 19.72s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  50%|█████     | 174/348 [57:49<45:30, 15.70s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  47%|████▋     | 165/348 [57:54<1:13:18, 24.04s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  53%|█████▎    | 184/348 [58:00<54:28, 19.93s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  45%|████▌     | 158/348 [58:16<1:13:26, 23.19s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  51%|█████▏    | 179/348 [58:21<54:05, 19.21s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  48%|████▊     | 166/348 [58:26<1:20:12, 26.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  51%|█████     | 177/348 [58:32<42:54, 15.06s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  46%|████▌     | 159/348 [58:38<1:12:26, 22.99s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  49%|████▊     | 169/348 [58:46<1:10:15, 23.55s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  46%|████▌     | 160/348 [58:53<1:04:01, 20.44s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  48%|████▊     | 167/348 [59:00<1:26:07, 28.55s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  46%|████▋     | 161/348 [59:06<1:05:14, 20.93s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  52%|█████▏    | 182/348 [59:13<49:22, 17.85s/it]
-[36m(batched_request pid=18283)[0m  54%|█████▍    | 189/348 [59:14<39:49, 15.03s/it]
-[36m(batched_request pid=18289)[0m  51%|█████▏    | 179/348 [59:21<55:29, 19.70s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  53%|█████▎    | 183/348 [59:28<47:32, 17.29s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  49%|████▉     | 171/348 [59:37<1:11:04, 24.09s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  53%|█████▎    | 184/348 [59:44<45:48, 16.76s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  49%|████▊     | 169/348 [59:53<1:20:37, 27.03s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  53%|█████▎    | 185/348 [59:58<43:31, 16.02s/it]
-[36m(batched_request pid=18283)[0m  55%|█████▍    | 191/348 [59:59<50:48, 19.42s/it]
-[36m(batched_request pid=18284)[0m  47%|████▋     | 163/348 [1:00:06<1:11:18, 23.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  53%|█████▎    | 186/348 [1:00:11<40:46, 15.10s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  53%|█████▎    | 186/348 [1:00:21<55:10, 20.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  50%|█████     | 174/348 [1:00:26<53:33, 18.47s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  47%|████▋     | 165/348 [1:00:34<1:08:55, 22.60s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  53%|█████▎    | 183/348 [1:00:43<53:10, 19.34s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  54%|█████▎    | 187/348 [1:00:48<59:58, 22.35s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  48%|████▊     | 166/348 [1:00:56<1:08:13, 22.49s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  53%|█████▎    | 184/348 [1:01:03<53:33, 19.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  49%|████▉     | 172/348 [1:01:13<1:15:50, 25.86s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  51%|█████     | 177/348 [1:01:24<53:37, 18.82s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  48%|████▊     | 166/348 [1:01:29<1:19:12, 26.11s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  48%|████▊     | 168/348 [1:01:34<1:02:48, 20.93s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  51%|█████     | 178/348 [1:01:39<50:40, 17.89s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  50%|█████     | 174/348 [1:01:49<1:02:21, 21.50s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  51%|█████▏    | 179/348 [1:01:55<48:23, 17.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  55%|█████▌    | 192/348 [1:02:01<48:04, 18.49s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  49%|████▊     | 169/348 [1:02:06<1:12:37, 24.34s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  54%|█████▎    | 187/348 [1:02:13<57:34, 21.46s/it]  [32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  55%|█████▌    | 193/348 [1:02:18<46:47, 18.11s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  57%|█████▋    | 199/348 [1:02:23<43:09, 17.38s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  56%|█████▌    | 194/348 [1:02:32<43:43, 17.04s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  57%|█████▋    | 200/348 [1:02:39<41:16, 16.73s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  49%|████▉     | 171/348 [1:02:44<1:03:07, 21.40s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  52%|█████▏    | 182/348 [1:02:49<50:19, 18.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  58%|█████▊    | 201/348 [1:02:56<41:16, 16.85s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  54%|█████▍    | 189/348 [1:03:01<1:00:26, 22.81s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  49%|████▉     | 171/348 [1:03:10<57:15, 19.41s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  58%|█████▊    | 202/348 [1:03:15<42:52, 17.62s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  52%|█████▏    | 180/348 [1:03:26<45:07, 16.12s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  49%|████▉     | 172/348 [1:03:34<1:01:13, 20.87s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18286)[0m  56%|█████▌    | 195/348 [1:03:40<55:56, 21.94s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  52%|█████▏    | 181/348 [1:03:50<51:17, 18.43s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  50%|█████     | 174/348 [1:03:57<1:09:23, 23.93s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  55%|█████▌    | 192/348 [1:04:04<54:59, 21.15s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  59%|█████▉    | 206/348 [1:04:16<39:16, 16.60s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  55%|█████▌    | 193/348 [1:04:26<55:12, 21.37s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18290)[0m  53%|█████▎    | 183/348 [1:04:34<54:49, 19.93s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  54%|█████▍    | 188/348 [1:04:40<43:02, 16.14s/it]
-[36m(batched_request pid=18284)[0m  50%|█████     | 175/348 [1:04:40<1:01:24, 21.30s/it]
-[36m(batched_request pid=18287)[0m  51%|█████     | 176/348 [1:04:46<1:09:57, 24.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  57%|█████▋    | 198/348 [1:04:52<57:21, 22.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  56%|█████▌    | 195/348 [1:05:01<48:06, 18.87s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  57%|█████▋    | 199/348 [1:05:14<56:33, 22.78s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  53%|█████▎    | 185/348 [1:05:21<59:06, 21.76s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  51%|█████     | 178/348 [1:05:26<1:02:58, 22.23s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  57%|█████▋    | 200/348 [1:05:33<53:36, 21.74s/it]
-[36m(batched_request pid=18283)[0m  60%|██████    | 210/348 [1:05:36<41:19, 17.97s/it]
-[36m(batched_request pid=18284)[0m  51%|█████     | 178/348 [1:05:44<59:51, 21.13s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  58%|█████▊    | 201/348 [1:05:51<50:06, 20.45s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  55%|█████▌    | 192/348 [1:05:59<49:49, 19.16s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  61%|██████    | 211/348 [1:06:04<47:46, 20.92s/it]
-[36m(batched_request pid=18289)[0m  57%|█████▋    | 198/348 [1:06:05<50:49, 20.33s/it]
-[36m(batched_request pid=18286)[0m  58%|█████▊    | 202/348 [1:06:11<49:27, 20.32s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  52%|█████▏    | 180/348 [1:06:19<1:08:10, 24.35s/it]
-[36m(batched_request pid=18285)[0m  55%|█████▌    | 193/348 [1:06:24<54:02, 20.92s/it]
-[36m(batched_request pid=18284)[0m  52%|█████▏    | 180/348 [1:06:29<1:00:35, 21.64s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  52%|█████▏    | 181/348 [1:06:41<1:05:42, 23.61s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  52%|█████▏    | 181/348 [1:06:51<1:00:21, 21.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  59%|█████▊    | 204/348 [1:06:56<52:32, 21.89s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18284)[0m  52%|█████▏    | 182/348 [1:07:07<55:44, 20.15s/it]  [32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  59%|█████▉    | 205/348 [1:07:12<48:18, 20.27s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  53%|█████▎    | 183/348 [1:07:20<49:22, 17.96s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  61%|██████    | 211/348 [1:07:30<45:47, 20.06s/it]
-[36m(batched_request pid=18283)[0m  62%|██████▏   | 215/348 [1:07:34<48:15, 21.77s/it]
-[36m(batched_request pid=18288)[0m  61%|██████    | 212/348 [1:07:41<39:16, 17.32s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  62%|██████▏   | 216/348 [1:07:51<44:52, 20.40s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18284)[0m  53%|█████▎    | 185/348 [1:07:57<48:35, 17.88s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  55%|█████▌    | 193/348 [1:08:02<53:11, 20.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  58%|█████▊    | 203/348 [1:08:09<1:00:06, 24.87s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  62%|██████▏   | 217/348 [1:08:18<49:01, 22.45s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  53%|█████▎    | 185/348 [1:08:26<1:07:50, 24.97s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  62%|██████▏   | 215/348 [1:08:37<41:05, 18.54s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  53%|█████▎    | 186/348 [1:08:44<1:01:48, 22.89s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18290)[0m  56%|█████▌    | 195/348 [1:08:52<57:41, 22.62s/it]
-[36m(batched_request pid=18288)[0m  62%|██████▏   | 216/348 [1:08:56<40:53, 18.58s/it]
-[36m(batched_request pid=18284)[0m  54%|█████▍    | 188/348 [1:09:06<57:08, 21.43s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  63%|██████▎   | 220/348 [1:09:19<43:52, 20.57s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  62%|██████▏   | 217/348 [1:09:25<46:58, 21.52s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  54%|█████▍    | 188/348 [1:09:31<1:01:55, 23.22s/it]
-[36m(batched_request pid=18285)[0m  58%|█████▊    | 201/348 [1:09:32<58:33, 23.90s/it]
-[36m(batched_request pid=18286)[0m  60%|██████    | 210/348 [1:09:38<1:03:17, 27.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  64%|██████▎   | 221/348 [1:09:44<46:19, 21.89s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  57%|█████▋    | 198/348 [1:09:54<50:25, 20.17s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  55%|█████▍    | 190/348 [1:09:59<1:02:23, 23.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  64%|██████▍   | 222/348 [1:10:04<44:50, 21.35s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  60%|█████▉    | 208/348 [1:10:09<54:25, 23.33s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  57%|█████▋    | 199/348 [1:10:16<51:38, 20.80s/it]
-[36m(batched_request pid=18288)[0m  63%|██████▎   | 220/348 [1:10:17<38:11, 17.90s/it]
-[36m(batched_request pid=18286)[0m  61%|██████    | 212/348 [1:10:23<56:20, 24.86s/it]  [32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  60%|██████    | 209/348 [1:10:34<55:00, 23.74s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  59%|█████▉    | 205/348 [1:10:41<43:54, 18.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  61%|██████    | 213/348 [1:10:48<56:12, 24.98s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  58%|█████▊    | 201/348 [1:10:58<50:57, 20.80s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  64%|██████▍   | 222/348 [1:11:05<43:59, 20.95s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  59%|█████▉    | 207/348 [1:11:18<43:31, 18.52s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  65%|██████▍   | 226/348 [1:11:26<43:50, 21.56s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  56%|█████▌    | 194/348 [1:11:32<1:00:53, 23.72s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  55%|█████▌    | 193/348 [1:11:44<1:05:54, 25.51s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  59%|█████▊    | 204/348 [1:11:54<47:07, 19.64s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18287)[0m  56%|█████▌    | 194/348 [1:12:06<1:03:05, 24.58s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  60%|██████    | 210/348 [1:12:12<42:05, 18.30s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  62%|██████▏   | 217/348 [1:12:18<53:50, 24.66s/it]
-[36m(batched_request pid=18289)[0m  61%|██████    | 213/348 [1:12:19<57:07, 25.39s/it]
-[36m(batched_request pid=18288)[0m  65%|██████▍   | 226/348 [1:12:25<42:22, 20.84s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  57%|█████▋    | 197/348 [1:12:30<54:04, 21.49s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  66%|██████▋   | 231/348 [1:12:42<28:11, 14.46s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  61%|██████    | 212/348 [1:12:47<41:29, 18.30s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  56%|█████▋    | 196/348 [1:12:54<1:02:11, 24.55s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  57%|█████▋    | 198/348 [1:13:01<1:00:59, 24.39s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  66%|██████▌   | 229/348 [1:13:08<31:10, 15.72s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  62%|██████▏   | 215/348 [1:13:15<59:40, 26.92s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  66%|██████▌   | 230/348 [1:13:23<30:19, 15.42s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m 'choices'
-[36m(batched_request pid=18285)[0m  61%|██████▏   | 214/348 [1:13:36<46:47, 20.95s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  62%|██████▏   | 216/348 [1:13:42<58:56, 26.79s/it]
-[36m(batched_request pid=18283)[0m  68%|██████▊   | 235/348 [1:13:44<30:32, 16.22s/it]
-[36m(batched_request pid=18285)[0m  62%|██████▏   | 215/348 [1:13:52<43:01, 19.41s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  60%|██████    | 210/348 [1:14:03<55:22, 24.08s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  67%|██████▋   | 232/348 [1:14:09<35:37, 18.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  63%|██████▎   | 218/348 [1:14:16<48:08, 22.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  67%|██████▋   | 233/348 [1:14:21<31:48, 16.60s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  68%|██████▊   | 238/348 [1:14:30<29:35, 16.14s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  67%|██████▋   | 234/348 [1:14:40<33:12, 17.48s/it]
-[36m(batched_request pid=18285)[0m  62%|██████▏   | 217/348 [1:14:42<48:41, 22.30s/it]
-[36m(batched_request pid=18283)[0m  69%|██████▊   | 239/348 [1:14:48<30:39, 16.88s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  63%|██████▎   | 218/348 [1:15:00<45:13, 20.87s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  68%|██████▊   | 235/348 [1:15:10<39:50, 21.15s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  69%|██████▉   | 240/348 [1:15:17<36:33, 20.31s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18289)[0m  64%|██████▎   | 221/348 [1:15:23<44:45, 21.15s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  63%|██████▎   | 220/348 [1:15:30<37:43, 17.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  59%|█████▊    | 204/348 [1:15:39<1:03:07, 26.30s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  68%|██████▊   | 237/348 [1:15:47<37:45, 20.41s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  58%|█████▊    | 202/348 [1:15:52<1:15:22, 30.97s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  62%|██████▏   | 215/348 [1:15:57<51:25, 23.20s/it]
-[36m(batched_request pid=18286)[0m  65%|██████▍   | 226/348 [1:15:58<53:16, 26.20s/it]
-[36m(batched_request pid=18288)[0m  68%|██████▊   | 238/348 [1:16:04<35:36, 19.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  64%|██████▍   | 222/348 [1:16:10<40:11, 19.14s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  62%|██████▏   | 216/348 [1:16:17<48:38, 22.11s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  65%|██████▌   | 227/348 [1:16:22<51:44, 25.66s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  70%|███████   | 244/348 [1:16:28<30:23, 17.53s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  62%|██████▏   | 217/348 [1:16:36<46:11, 21.16s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  70%|███████   | 245/348 [1:16:41<27:48, 16.20s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  69%|██████▉   | 240/348 [1:16:50<37:54, 21.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  63%|██████▎   | 218/348 [1:16:57<46:16, 21.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  69%|██████▉   | 241/348 [1:17:06<34:56, 19.59s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  59%|█████▉    | 207/348 [1:17:11<1:04:12, 27.32s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  65%|██████▍   | 225/348 [1:17:17<41:45, 20.37s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  70%|██████▉   | 242/348 [1:17:27<34:57, 19.79s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  65%|██████▌   | 227/348 [1:17:35<43:22, 21.51s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  64%|██████▎   | 221/348 [1:17:44<37:34, 17.75s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  65%|██████▌   | 227/348 [1:17:50<37:59, 18.83s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  66%|██████▌   | 228/348 [1:17:59<44:30, 22.25s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  66%|██████▋   | 231/348 [1:18:05<51:04, 26.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  66%|██████▌   | 228/348 [1:18:12<39:29, 19.75s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  70%|███████   | 245/348 [1:18:20<31:23, 18.28s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  72%|███████▏  | 251/348 [1:18:32<30:20, 18.76s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  60%|██████    | 210/348 [1:18:38<1:05:39, 28.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  64%|██████▍   | 224/348 [1:18:43<39:18, 19.02s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  72%|███████▏  | 252/348 [1:18:48<28:55, 18.08s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  60%|██████    | 210/348 [1:18:54<49:43, 21.62s/it]
-[36m(batched_request pid=18283)[0m  73%|███████▎  | 253/348 [1:19:00<25:27, 16.08s/it]
-[36m(batched_request pid=18284)[0m  61%|██████    | 211/348 [1:19:06<1:04:58, 28.46s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  65%|██████▍   | 226/348 [1:19:15<34:50, 17.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  67%|██████▋   | 232/348 [1:19:20<37:58, 19.65s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  61%|██████    | 211/348 [1:19:27<57:24, 25.14s/it]
-[36m(batched_request pid=18286)[0m  68%|██████▊   | 235/348 [1:19:29<41:08, 21.85s/it]
-[36m(batched_request pid=18288)[0m  72%|███████▏  | 249/348 [1:19:36<30:24, 18.42s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  67%|██████▋   | 233/348 [1:19:43<39:45, 20.75s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  72%|███████▏  | 250/348 [1:19:48<27:06, 16.60s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  67%|██████▋   | 233/348 [1:19:53<40:25, 21.09s/it]
-[36m(batched_request pid=18284)[0m  61%|██████    | 213/348 [1:19:58<1:00:56, 27.09s/it]
-[36m(batched_request pid=18287)[0m  61%|██████    | 212/348 [1:20:03<1:04:09, 28.30s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  74%|███████▎  | 256/348 [1:20:11<34:10, 22.29s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  66%|██████▌   | 229/348 [1:20:19<40:05, 20.21s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  61%|██████    | 213/348 [1:20:28<1:01:15, 27.23s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  72%|███████▏  | 252/348 [1:20:37<32:34, 20.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  62%|██████▏   | 215/348 [1:20:44<54:59, 24.81s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  68%|██████▊   | 236/348 [1:20:49<35:59, 19.28s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  73%|███████▎  | 253/348 [1:20:56<31:32, 19.92s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  68%|██████▊   | 237/348 [1:21:03<37:53, 20.48s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  62%|██████▏   | 215/348 [1:21:11<52:50, 23.84s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  73%|███████▎  | 254/348 [1:21:16<31:20, 20.00s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  68%|██████▊   | 238/348 [1:21:25<38:47, 21.16s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  73%|███████▎  | 255/348 [1:21:31<28:37, 18.47s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  70%|██████▉   | 242/348 [1:21:38<33:02, 18.70s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  67%|██████▋   | 233/348 [1:21:43<39:57, 20.85s/it]
-[36m(batched_request pid=18287)[0m  62%|██████▏   | 217/348 [1:21:47<45:03, 20.64s/it]
-[36m(batched_request pid=18284)[0m  63%|██████▎   | 218/348 [1:21:52<50:12, 23.17s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  75%|███████▍  | 260/348 [1:21:59<37:27, 25.54s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  67%|██████▋   | 234/348 [1:22:05<40:30, 21.32s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  63%|██████▎   | 220/348 [1:22:14<36:23, 17.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  69%|██████▉   | 241/348 [1:22:24<35:55, 20.14s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  63%|██████▎   | 220/348 [1:22:32<36:38, 17.17s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  74%|███████▍  | 258/348 [1:22:40<33:37, 22.42s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  64%|██████▍   | 222/348 [1:22:47<34:36, 16.48s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  70%|██████▉   | 242/348 [1:22:53<37:20, 21.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  71%|███████   | 246/348 [1:22:59<35:14, 20.73s/it]
-[36m(batched_request pid=18289)[0m  70%|██████▉   | 243/348 [1:22:59<33:06, 18.92s/it]
-[36m(batched_request pid=18290)[0m  68%|██████▊   | 237/348 [1:23:05<36:59, 20.00s/it]
-[36m(batched_request pid=18284)[0m  64%|██████▍   | 223/348 [1:23:05<35:27, 17.02s/it]
-[36m(batched_request pid=18286)[0m  71%|███████   | 247/348 [1:23:16<33:16, 19.77s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  64%|██████▍   | 224/348 [1:23:22<34:48, 16.84s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  70%|███████   | 244/348 [1:23:28<34:11, 19.73s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  71%|███████▏  | 248/348 [1:23:35<32:40, 19.60s/it]
-[36m(batched_request pid=18289)[0m  70%|███████   | 245/348 [1:23:36<31:33, 18.38s/it]
-[36m(batched_request pid=18287)[0m  64%|██████▍   | 224/348 [1:23:45<37:19, 18.06s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  69%|██████▉   | 240/348 [1:23:50<29:27, 16.37s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  65%|██████▍   | 225/348 [1:24:01<35:56, 17.54s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18290)[0m  69%|██████▉   | 241/348 [1:24:12<32:11, 18.06s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  75%|███████▌  | 261/348 [1:24:18<41:27, 28.60s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  72%|███████▏  | 251/348 [1:24:23<28:11, 17.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  70%|██████▉   | 242/348 [1:24:30<31:49, 18.02s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  65%|██████▌   | 227/348 [1:24:35<33:28, 16.60s/it]
-[36m(batched_request pid=18284)[0m  66%|██████▌   | 229/348 [1:24:37<28:12, 14.22s/it]
-[36m(batched_request pid=18288)[0m  75%|███████▌  | 262/348 [1:24:46<40:45, 28.43s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  71%|███████▏  | 248/348 [1:24:53<32:54, 19.75s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  77%|███████▋  | 267/348 [1:25:02<36:26, 26.99s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  70%|███████   | 244/348 [1:25:08<32:21, 18.67s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  76%|███████▌  | 263/348 [1:25:15<40:24, 28.52s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  77%|███████▋  | 268/348 [1:25:20<32:26, 24.33s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  72%|███████▏  | 251/348 [1:25:25<22:19, 13.81s/it]
-[36m(batched_request pid=18289)[0m  72%|███████▏  | 252/348 [1:25:27<26:26, 16.53s/it]
-[36m(batched_request pid=18287)[0m  66%|██████▋   | 231/348 [1:25:32<29:23, 15.07s/it]
-[36m(batched_request pid=18286)[0m  73%|███████▎  | 255/348 [1:25:32<28:16, 18.24s/it]
-[36m(batched_request pid=18290)[0m  70%|███████   | 245/348 [1:25:38<37:37, 21.92s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  77%|███████▋  | 269/348 [1:25:43<31:25, 23.87s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  73%|███████▎  | 253/348 [1:25:50<20:36, 13.02s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  67%|██████▋   | 233/348 [1:25:59<27:01, 14.10s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  73%|███████▎  | 254/348 [1:26:05<26:51, 17.15s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  78%|███████▊  | 270/348 [1:26:12<33:18, 25.63s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  71%|███████   | 247/348 [1:26:20<35:54, 21.33s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  73%|███████▎  | 255/348 [1:26:25<24:06, 15.56s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  78%|███████▊  | 271/348 [1:26:33<30:58, 24.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  71%|███████▏  | 248/348 [1:26:38<34:14, 20.54s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  68%|██████▊   | 235/348 [1:26:44<35:37, 18.92s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  68%|██████▊   | 237/348 [1:26:51<31:00, 16.76s/it]
-[36m(batched_request pid=18285)[0m  74%|███████▎  | 256/348 [1:26:52<28:53, 18.84s/it]
-[36m(batched_request pid=18287)[0m  68%|██████▊   | 236/348 [1:26:57<31:49, 17.05s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  74%|███████▍  | 257/348 [1:27:09<28:05, 18.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  74%|███████▍  | 258/348 [1:27:17<27:06, 18.07s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  74%|███████▍  | 258/348 [1:27:24<26:05, 17.39s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  75%|███████▌  | 262/348 [1:27:32<24:46, 17.29s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  72%|███████▏  | 251/348 [1:27:42<33:29, 20.72s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  68%|██████▊   | 238/348 [1:27:49<39:57, 21.80s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  76%|███████▌  | 263/348 [1:27:54<26:32, 18.74s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  72%|███████▏  | 252/348 [1:28:00<32:14, 20.16s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  78%|███████▊  | 271/348 [1:28:08<26:36, 20.73s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  79%|███████▉  | 276/348 [1:28:19<26:50, 22.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  75%|███████▌  | 262/348 [1:28:29<28:53, 20.16s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  80%|███████▉  | 277/348 [1:28:34<23:50, 20.14s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  75%|███████▌  | 262/348 [1:28:40<26:02, 18.17s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  76%|███████▌  | 263/348 [1:28:48<28:05, 19.83s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  70%|██████▉   | 243/348 [1:28:56<33:43, 19.27s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  69%|██████▉   | 241/348 [1:29:09<45:16, 25.38s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  70%|███████   | 244/348 [1:29:17<34:16, 19.77s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18289)[0m  76%|███████▌  | 265/348 [1:29:24<25:58, 18.78s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  77%|███████▋  | 268/348 [1:29:32<26:56, 20.20s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  76%|███████▋  | 266/348 [1:29:42<25:08, 18.40s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18285)[0m  76%|███████▋  | 266/348 [1:29:53<27:01, 19.77s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  74%|███████▍  | 257/348 [1:30:00<35:08, 23.17s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  78%|███████▊  | 270/348 [1:30:05<23:19, 17.94s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  81%|████████  | 282/348 [1:30:13<20:18, 18.47s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  77%|███████▋  | 268/348 [1:30:24<27:12, 20.41s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  77%|███████▋  | 268/348 [1:30:31<25:24, 19.06s/it][32m [repeated 6x across cluster][0m
-[36m(batched_request pid=18283)[0m  81%|████████▏ | 283/348 [1:30:40<22:56, 21.18s/it]
-[36m(batched_request pid=18290)[0m  75%|███████▍  | 260/348 [1:30:44<27:03, 18.45s/it]
-[36m(batched_request pid=18284)[0m  71%|███████▏  | 248/348 [1:30:51<38:23, 23.03s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  70%|███████   | 245/348 [1:30:58<46:27, 27.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  78%|███████▊  | 273/348 [1:31:06<24:24, 19.53s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  78%|███████▊  | 270/348 [1:31:12<25:04, 19.28s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  82%|████████▏ | 285/348 [1:31:19<21:45, 20.73s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  80%|████████  | 280/348 [1:31:26<23:52, 21.07s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  79%|███████▊  | 274/348 [1:31:33<26:35, 21.56s/it]
-[36m(batched_request pid=18289)[0m  78%|███████▊  | 271/348 [1:31:33<28:51, 22.48s/it]
-[36m(batched_request pid=18283)[0m  82%|████████▏ | 286/348 [1:31:41<21:50, 21.13s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  81%|████████  | 281/348 [1:31:46<23:15, 20.83s/it]
-[36m(batched_request pid=18286)[0m  79%|███████▉  | 275/348 [1:31:49<24:26, 20.08s/it]
-[36m(batched_request pid=18284)[0m  72%|███████▏  | 251/348 [1:31:59<38:05, 23.56s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  79%|███████▉  | 276/348 [1:32:06<22:49, 19.02s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  78%|███████▊  | 273/348 [1:32:12<26:05, 20.87s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  83%|████████▎ | 288/348 [1:32:19<19:40, 19.68s/it]
-[36m(batched_request pid=18284)[0m  72%|███████▏  | 252/348 [1:32:21<36:49, 23.02s/it]
-[36m(batched_request pid=18285)[0m  78%|███████▊  | 273/348 [1:32:28<29:08, 23.31s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  79%|███████▊  | 274/348 [1:32:34<26:08, 21.19s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  83%|████████▎ | 289/348 [1:32:40<19:42, 20.05s/it]
-[36m(batched_request pid=18284)[0m  73%|███████▎  | 253/348 [1:32:42<35:24, 22.36s/it]
-[36m(batched_request pid=18290)[0m  76%|███████▋  | 266/348 [1:32:51<31:51, 23.31s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  82%|████████▏ | 284/348 [1:32:59<25:17, 23.71s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  73%|███████▎  | 254/348 [1:33:05<35:13, 22.48s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  77%|███████▋  | 267/348 [1:33:12<30:25, 22.53s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  79%|███████▉  | 276/348 [1:33:21<24:13, 20.18s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  80%|███████▉  | 277/348 [1:33:33<23:44, 20.06s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  82%|████████▏ | 286/348 [1:33:40<22:34, 21.85s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  81%|████████  | 281/348 [1:33:45<21:49, 19.55s/it]
-[36m(batched_request pid=18285)[0m  80%|███████▉  | 277/348 [1:33:46<25:36, 21.65s/it]
-[36m(batched_request pid=18284)[0m  74%|███████▎  | 256/348 [1:33:52<36:15, 23.65s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  82%|████████▏ | 287/348 [1:33:58<21:04, 20.72s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  80%|████████  | 279/348 [1:34:09<21:51, 19.01s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  84%|████████▍ | 293/348 [1:34:14<21:32, 23.50s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  81%|████████▏ | 283/348 [1:34:19<19:51, 18.33s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  80%|████████  | 279/348 [1:34:29<25:32, 22.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  78%|███████▊  | 271/348 [1:34:38<28:18, 22.05s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  81%|████████  | 281/348 [1:34:43<20:40, 18.52s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  73%|███████▎  | 255/348 [1:34:56<32:00, 20.65s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  81%|████████  | 281/348 [1:35:02<21:21, 19.13s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  78%|███████▊  | 272/348 [1:35:14<33:04, 26.12s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  81%|████████  | 282/348 [1:35:21<21:13, 19.29s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  84%|████████▎ | 291/348 [1:35:29<23:15, 24.47s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  78%|███████▊  | 273/348 [1:35:36<31:16, 25.01s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  82%|████████▏ | 287/348 [1:35:45<21:37, 21.27s/it]
-[36m(batched_request pid=18283)[0m  85%|████████▌ | 297/348 [1:35:45<18:59, 22.35s/it]
-[36m(batched_request pid=18285)[0m  81%|████████▏ | 283/348 [1:35:51<24:10, 22.32s/it]
-[36m(batched_request pid=18289)[0m  82%|████████▏ | 284/348 [1:35:52<22:34, 21.17s/it]
-[36m(batched_request pid=18284)[0m  75%|███████▍  | 260/348 [1:35:58<44:13, 30.15s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  74%|███████▍  | 257/348 [1:36:05<41:59, 27.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  82%|████████▏ | 285/348 [1:36:13<22:15, 21.20s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  79%|███████▉  | 275/348 [1:36:18<28:07, 23.11s/it]
-[36m(batched_request pid=18288)[0m  84%|████████▍ | 293/348 [1:36:20<22:29, 24.54s/it]
-[36m(batched_request pid=18284)[0m  75%|███████▌  | 261/348 [1:36:31<45:06, 31.11s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  86%|████████▌ | 299/348 [1:36:37<20:04, 24.58s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  74%|███████▍  | 259/348 [1:36:44<34:47, 23.45s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  82%|████████▏ | 287/348 [1:36:51<20:03, 19.74s/it]
-[36m(batched_request pid=18283)[0m  86%|████████▌ | 300/348 [1:36:53<17:37, 22.03s/it]
-[36m(batched_request pid=18286)[0m  83%|████████▎ | 290/348 [1:37:02<23:29, 24.30s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  83%|████████▎ | 288/348 [1:37:12<20:08, 20.14s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  84%|████████▎ | 291/348 [1:37:21<21:37, 22.76s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  85%|████████▌ | 296/348 [1:37:27<20:25, 23.57s/it]
-[36m(batched_request pid=18289)[0m  83%|████████▎ | 289/348 [1:37:28<18:45, 19.07s/it]
-[36m(batched_request pid=18284)[0m  76%|███████▌  | 264/348 [1:37:34<34:23, 24.56s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  83%|████████▎ | 290/348 [1:37:39<16:06, 16.66s/it]
-[36m(batched_request pid=18283)[0m  87%|████████▋ | 303/348 [1:37:41<12:51, 17.15s/it]
-[36m(batched_request pid=18284)[0m  76%|███████▌  | 265/348 [1:37:47<29:08, 21.07s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  87%|████████▋ | 304/348 [1:37:54<11:35, 15.81s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  76%|███████▋  | 266/348 [1:38:04<27:12, 19.91s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  84%|████████▍ | 292/348 [1:38:13<15:35, 16.70s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  88%|████████▊ | 305/348 [1:38:19<13:29, 18.82s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  83%|████████▎ | 290/348 [1:38:26<21:33, 22.31s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  84%|████████▍ | 293/348 [1:38:35<16:35, 18.10s/it]
-[36m(batched_request pid=18290)[0m  81%|████████  | 281/348 [1:38:37<24:55, 22.33s/it]
-[36m(batched_request pid=18284)[0m  77%|███████▋  | 268/348 [1:38:43<26:39, 20.00s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  84%|████████▍ | 294/348 [1:38:54<16:33, 18.40s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  77%|███████▋  | 269/348 [1:39:02<25:46, 19.57s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  86%|████████▋ | 301/348 [1:39:09<15:28, 19.75s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  85%|████████▍ | 295/348 [1:39:18<17:40, 20.00s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  87%|████████▋ | 302/348 [1:39:25<14:23, 18.77s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  89%|████████▉ | 309/348 [1:39:37<12:10, 18.73s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18290)[0m  82%|████████▏ | 284/348 [1:39:42<22:45, 21.34s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  87%|████████▋ | 303/348 [1:39:48<14:54, 19.87s/it]
-[36m(batched_request pid=18286)[0m  86%|████████▌ | 298/348 [1:39:49<17:09, 20.59s/it]
-[36m(batched_request pid=18289)[0m  85%|████████▌ | 297/348 [1:39:55<16:20, 19.23s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  77%|███████▋  | 267/348 [1:40:02<27:29, 20.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  88%|████████▊ | 305/348 [1:40:14<11:48, 16.49s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  86%|████████▌ | 298/348 [1:40:22<18:03, 21.66s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18288)[0m  88%|████████▊ | 306/348 [1:40:31<11:40, 16.68s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  86%|████████▌ | 300/348 [1:40:37<17:44, 22.18s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18289)[0m  86%|████████▌ | 299/348 [1:40:44<17:42, 21.69s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  85%|████████▌ | 297/348 [1:40:49<17:50, 20.98s/it]
-[36m(batched_request pid=18288)[0m  88%|████████▊ | 307/348 [1:40:50<11:47, 17.26s/it]
-[36m(batched_request pid=18290)[0m  82%|████████▏ | 287/348 [1:40:55<23:26, 23.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  86%|████████▋ | 301/348 [1:41:01<17:46, 22.68s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m  86%|████████▌ | 300/348 [1:41:07<17:47, 22.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  86%|████████▌ | 299/348 [1:41:19<14:27, 17.70s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  80%|███████▉  | 277/348 [1:41:25<21:13, 17.94s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18290)[0m  83%|████████▎ | 289/348 [1:41:34<21:18, 21.67s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18285)[0m  86%|████████▋ | 301/348 [1:41:44<11:34, 14.79s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  87%|████████▋ | 303/348 [1:41:52<17:58, 23.98s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  91%|█████████▏| 318/348 [1:42:00<08:17, 16.59s/it]
-[36m(batched_request pid=18288)[0m  89%|████████▉ | 311/348 [1:41:57<11:01, 17.89s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  90%|████████▉ | 312/348 [1:42:06<09:05, 15.15s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  87%|████████▋ | 304/348 [1:42:13<16:48, 22.91s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  87%|████████▋ | 303/348 [1:42:18<11:52, 15.83s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  92%|█████████▏| 319/348 [1:42:19<08:22, 17.34s/it]
-[36m(batched_request pid=18285)[0m  87%|████████▋ | 304/348 [1:42:31<11:08, 15.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  87%|████████▋ | 304/348 [1:42:40<16:39, 22.71s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18283)[0m  92%|█████████▏| 320/348 [1:42:41<08:52, 19.00s/it]
-[36m(batched_request pid=18288)[0m  91%|█████████ | 315/348 [1:42:49<08:03, 14.66s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18283)[0m  92%|█████████▏| 321/348 [1:42:53<07:31, 16.71s/it]
-[36m(batched_request pid=18284)[0m  81%|████████  | 281/348 [1:42:56<24:20, 21.80s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  91%|█████████ | 316/348 [1:43:04<07:58, 14.97s/it]
-[36m(batched_request pid=18289)[0m  88%|████████▊ | 305/348 [1:43:05<16:40, 23.28s/it]
-[36m(batched_request pid=18283)[0m  93%|█████████▎| 322/348 [1:43:10<07:16, 16.78s/it]
-[36m(batched_request pid=18284)[0m  81%|████████  | 282/348 [1:43:09<21:04, 19.16s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  80%|███████▉  | 278/348 [1:43:18<23:32, 20.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  85%|████████▍ | 295/348 [1:43:25<15:29, 17.55s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  91%|█████████▏| 318/348 [1:43:32<07:01, 14.05s/it]
-[36m(batched_request pid=18286)[0m  88%|████████▊ | 307/348 [1:43:26<15:58, 23.38s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  92%|█████████▏| 319/348 [1:43:40<06:00, 12.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  88%|████████▊ | 307/348 [1:43:41<14:06, 20.64s/it]
-[36m(batched_request pid=18285)[0m  89%|████████▊ | 308/348 [1:43:50<12:50, 19.27s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  92%|█████████▏| 320/348 [1:43:53<05:52, 12.60s/it]
-[36m(batched_request pid=18286)[0m  89%|████████▊ | 308/348 [1:43:56<16:47, 25.18s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  93%|█████████▎| 324/348 [1:43:54<07:42, 19.28s/it]
-[36m(batched_request pid=18289)[0m  89%|████████▊ | 308/348 [1:44:06<14:36, 21.92s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  92%|█████████▏| 321/348 [1:44:11<06:24, 14.24s/it]
-[36m(batched_request pid=18285)[0m  89%|████████▉ | 309/348 [1:44:08<12:24, 19.10s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  93%|█████████▎| 325/348 [1:44:12<07:16, 18.99s/it]
-[36m(batched_request pid=18286)[0m  89%|████████▉ | 309/348 [1:44:16<15:31, 23.90s/it]
-[36m(batched_request pid=18287)[0m  80%|████████  | 280/348 [1:44:18<28:51, 25.47s/it]
-[36m(batched_request pid=18289)[0m  89%|████████▉ | 309/348 [1:44:25<13:47, 21.22s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  93%|█████████▎| 322/348 [1:44:27<06:23, 14.75s/it]
-[36m(batched_request pid=18284)[0m  82%|████████▏ | 286/348 [1:44:27<19:48, 19.17s/it]
-[36m(batched_request pid=18283)[0m  94%|█████████▎| 326/348 [1:44:36<07:30, 20.48s/it]
-[36m(batched_request pid=18284)[0m  82%|████████▏ | 287/348 [1:44:37<16:46, 16.50s/it]
-[36m(batched_request pid=18289)[0m  89%|████████▉ | 310/348 [1:44:43<12:45, 20.14s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  93%|█████████▎| 323/348 [1:44:43<06:17, 15.09s/it]
-[36m(batched_request pid=18287)[0m  81%|████████  | 281/348 [1:44:43<28:07, 25.19s/it]
-[36m(batched_request pid=18283)[0m  94%|█████████▍| 327/348 [1:44:51<06:33, 18.72s/it]
-[36m(batched_request pid=18285)[0m  90%|████████▉ | 312/348 [1:44:51<09:33, 15.93s/it]
-[36m(batched_request pid=18289)[0m  89%|████████▉ | 311/348 [1:45:01<12:02, 19.53s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18288)[0m  93%|█████████▎| 324/348 [1:45:01<06:22, 15.92s/it]
-[36m(batched_request pid=18284)[0m  83%|████████▎ | 289/348 [1:45:06<15:09, 15.42s/it]
-[36m(batched_request pid=18290)[0m  86%|████████▋ | 301/348 [1:45:07<12:48, 16.35s/it]
-[36m(batched_request pid=18283)[0m  94%|█████████▍| 328/348 [1:45:11<06:23, 19.17s/it]
-[36m(batched_request pid=18287)[0m  81%|████████  | 282/348 [1:45:09<28:01, 25.48s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  93%|█████████▎| 325/348 [1:45:16<05:59, 15.64s/it]
-[36m(batched_request pid=18287)[0m  81%|████████▏ | 283/348 [1:45:24<24:04, 22.23s/it]
-[36m(batched_request pid=18284)[0m  83%|████████▎ | 290/348 [1:45:24<15:40, 16.22s/it]
-[36m(batched_request pid=18288)[0m  94%|█████████▎| 326/348 [1:45:32<05:44, 15.66s/it]
-[36m(batched_request pid=18290)[0m  87%|████████▋ | 302/348 [1:45:27<13:22, 17.45s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  95%|█████████▍| 329/348 [1:45:36<06:36, 20.86s/it]
-[36m(batched_request pid=18284)[0m  84%|████████▎ | 291/348 [1:45:43<16:10, 17.03s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  94%|█████████▍| 327/348 [1:45:48<05:30, 15.74s/it]
-[36m(batched_request pid=18290)[0m  87%|████████▋ | 303/348 [1:45:49<13:58, 18.63s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  82%|████████▏ | 285/348 [1:45:56<19:50, 18.90s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18283)[0m  95%|█████████▍| 330/348 [1:45:58<06:23, 21.33s/it]
-[36m(batched_request pid=18285)[0m  91%|█████████ | 316/348 [1:46:06<09:21, 17.55s/it]
-[36m(batched_request pid=18288)[0m  94%|█████████▍| 328/348 [1:45:59<04:48, 14.43s/it]
-[36m(batched_request pid=18290)[0m  87%|████████▋ | 304/348 [1:46:09<14:05, 19.21s/it]
-[36m(batched_request pid=18289)[0m  90%|█████████ | 314/348 [1:46:15<13:00, 22.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  95%|█████████▍| 329/348 [1:46:17<04:55, 15.57s/it]
-[36m(batched_request pid=18287)[0m  82%|████████▏ | 286/348 [1:46:21<21:15, 20.57s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  95%|█████████▌| 331/348 [1:46:25<06:29, 22.89s/it]
-[36m(batched_request pid=18289)[0m  91%|█████████ | 315/348 [1:46:27<10:45, 19.57s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  84%|████████▍ | 293/348 [1:46:32<18:53, 20.60s/it]
-[36m(batched_request pid=18290)[0m  88%|████████▊ | 305/348 [1:46:33<14:40, 20.47s/it]
-[36m(batched_request pid=18283)[0m  95%|█████████▌| 332/348 [1:46:38<05:18, 19.94s/it]
-[36m(batched_request pid=18287)[0m  82%|████████▏ | 287/348 [1:46:35<19:05, 18.78s/it]
-[36m(batched_request pid=18286)[0m  91%|█████████ | 316/348 [1:46:40<11:53, 22.31s/it]
-[36m(batched_request pid=18285)[0m  91%|█████████▏| 318/348 [1:46:43<09:04, 18.15s/it]
-[36m(batched_request pid=18288)[0m  95%|█████████▍| 330/348 [1:46:45<05:45, 19.21s/it]
-[36m(batched_request pid=18284)[0m  84%|████████▍ | 294/348 [1:46:44<16:07, 17.91s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  88%|████████▊ | 307/348 [1:46:59<11:39, 17.06s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18288)[0m  95%|█████████▌| 331/348 [1:47:00<05:07, 18.07s/it]
-[36m(batched_request pid=18287)[0m  83%|████████▎ | 289/348 [1:47:07<17:08, 17.43s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  92%|█████████▏| 319/348 [1:47:01<08:39, 17.90s/it]
-[36m(batched_request pid=18283)[0m  96%|█████████▌| 333/348 [1:47:08<05:45, 23.03s/it]
-[36m(batched_request pid=18289)[0m  91%|█████████ | 317/348 [1:47:18<11:52, 22.99s/it]
-[36m(batched_request pid=18286)[0m  91%|█████████▏| 318/348 [1:47:18<10:17, 20.57s/it]
-[36m(batched_request pid=18287)[0m  83%|████████▎ | 290/348 [1:47:19<15:16, 15.80s/it]
-[36m(batched_request pid=18288)[0m  95%|█████████▌| 332/348 [1:47:21<05:03, 18.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  85%|████████▌ | 296/348 [1:47:28<17:50, 20.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  92%|█████████▏| 321/348 [1:47:37<08:00, 17.81s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  84%|████████▎ | 291/348 [1:47:39<16:09, 17.01s/it]
-[36m(batched_request pid=18288)[0m  96%|█████████▌| 333/348 [1:47:45<05:03, 20.21s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  89%|████████▉ | 309/348 [1:47:40<12:07, 18.66s/it]
-[36m(batched_request pid=18290)[0m  89%|████████▉ | 310/348 [1:47:52<10:37, 16.77s/it]
-[36m(batched_request pid=18283)[0m  96%|█████████▋| 335/348 [1:47:52<04:50, 22.35s/it]
-[36m(batched_request pid=18284)[0m  85%|████████▌ | 297/348 [1:47:58<19:49, 23.32s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  92%|█████████▏| 320/348 [1:47:54<09:06, 19.52s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  96%|█████████▌| 334/348 [1:48:04<04:39, 19.95s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18286)[0m  92%|█████████▏| 321/348 [1:48:14<08:54, 19.79s/it]
-[36m(batched_request pid=18283)[0m  97%|█████████▋| 336/348 [1:48:15<04:29, 22.44s/it]
-[36m(batched_request pid=18284)[0m  86%|████████▌ | 298/348 [1:48:15<17:49, 21.39s/it]
-[36m(batched_request pid=18289)[0m  92%|█████████▏| 320/348 [1:48:21<10:01, 21.46s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  84%|████████▍ | 293/348 [1:48:15<16:11, 17.66s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  90%|████████▉ | 312/348 [1:48:28<10:08, 16.91s/it]
-[36m(batched_request pid=18288)[0m  96%|█████████▋| 335/348 [1:48:31<04:46, 22.02s/it]
-[36m(batched_request pid=18287)[0m  84%|████████▍ | 294/348 [1:48:34<16:07, 17.92s/it]
-[36m(batched_request pid=18285)[0m  93%|█████████▎| 324/348 [1:48:33<07:22, 18.45s/it]
-[36m(batched_request pid=18283)[0m  97%|█████████▋| 337/348 [1:48:38<04:08, 22.61s/it]
-[36m(batched_request pid=18284)[0m  86%|████████▌ | 299/348 [1:48:38<17:50, 21.85s/it]
-[36m(batched_request pid=18290)[0m  90%|████████▉ | 313/348 [1:48:47<10:10, 17.44s/it]
-[36m(batched_request pid=18286)[0m  93%|█████████▎| 322/348 [1:48:43<09:44, 22.46s/it]
-[36m(batched_request pid=18289)[0m  92%|█████████▏| 321/348 [1:48:48<10:25, 23.17s/it]
-[36m(batched_request pid=18287)[0m  85%|████████▍ | 295/348 [1:48:49<15:06, 17.11s/it]
-[36m(batched_request pid=18285)[0m  93%|█████████▎| 325/348 [1:48:59<07:53, 20.58s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  86%|████████▌ | 300/348 [1:49:00<17:27, 21.83s/it]
-[36m(batched_request pid=18286)[0m  93%|█████████▎| 323/348 [1:49:09<09:47, 23.49s/it]
-[36m(batched_request pid=18289)[0m  93%|█████████▎| 322/348 [1:49:09<09:45, 22.51s/it]
-[36m(batched_request pid=18287)[0m  85%|████████▌ | 296/348 [1:49:13<16:37, 19.17s/it]
-[36m(batched_request pid=18288)[0m  97%|█████████▋| 337/348 [1:49:16<04:05, 22.36s/it]
-[36m(batched_request pid=18283)[0m  97%|█████████▋| 339/348 [1:49:18<03:16, 21.82s/it]
-[36m(batched_request pid=18284)[0m  86%|████████▋ | 301/348 [1:49:17<15:59, 20.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  94%|█████████▎| 326/348 [1:49:19<07:29, 20.43s/it]
-[36m(batched_request pid=18287)[0m  85%|████████▌ | 297/348 [1:49:27<14:58, 17.62s/it]
-[36m(batched_request pid=18288)[0m  97%|█████████▋| 338/348 [1:49:28<03:14, 19.42s/it]
-[36m(batched_request pid=18290)[0m  91%|█████████ | 315/348 [1:49:30<10:30, 19.10s/it]
-[36m(batched_request pid=18289)[0m  93%|█████████▎| 323/348 [1:49:36<09:58, 23.92s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  87%|████████▋ | 302/348 [1:49:33<14:35, 19.03s/it]
-[36m(batched_request pid=18283)[0m  98%|█████████▊| 340/348 [1:49:42<02:59, 22.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  86%|████████▌ | 298/348 [1:49:44<14:30, 17.42s/it]
-[36m(batched_request pid=18288)[0m  97%|█████████▋| 339/348 [1:49:50<03:00, 20.08s/it]
-[36m(batched_request pid=18284)[0m  87%|████████▋ | 303/348 [1:49:46<13:02, 17.39s/it]
-[36m(batched_request pid=18290)[0m  91%|█████████ | 316/348 [1:49:52<10:38, 19.95s/it]
-[36m(batched_request pid=18286)[0m  93%|█████████▎| 325/348 [1:49:56<09:05, 23.71s/it]
-[36m(batched_request pid=18284)[0m  87%|████████▋ | 304/348 [1:50:01<12:16, 16.73s/it]
-[36m(batched_request pid=18289)[0m  93%|█████████▎| 324/348 [1:50:00<09:30, 23.79s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  91%|█████████ | 317/348 [1:50:09<09:51, 19.09s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18283)[0m  98%|█████████▊| 341/348 [1:50:09<02:47, 23.88s/it]
-[36m(batched_request pid=18289)[0m  93%|█████████▎| 325/348 [1:50:15<08:09, 21.30s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  88%|████████▊ | 305/348 [1:50:22<12:48, 17.86s/it]
-[36m(batched_request pid=18288)[0m  98%|█████████▊| 340/348 [1:50:18<03:00, 22.51s/it]
-[36m(batched_request pid=18283)[0m  98%|█████████▊| 342/348 [1:50:23<02:04, 20.82s/it]
-[36m(batched_request pid=18287)[0m  86%|████████▌ | 300/348 [1:50:26<15:17, 19.11s/it]
-[36m(batched_request pid=18290)[0m  91%|█████████▏| 318/348 [1:50:32<10:11, 20.37s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18288)[0m  98%|█████████▊| 341/348 [1:50:43<02:42, 23.24s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  86%|████████▋ | 301/348 [1:50:44<14:48, 18.91s/it]
-[36m(batched_request pid=18290)[0m  92%|█████████▏| 319/348 [1:50:50<09:28, 19.62s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  88%|████████▊ | 306/348 [1:50:52<14:59, 21.41s/it]
-[36m(batched_request pid=18285)[0m  95%|█████████▌| 331/348 [1:50:56<05:38, 19.93s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  87%|████████▋ | 302/348 [1:51:03<14:31, 18.94s/it]
-[36m(batched_request pid=18289)[0m  94%|█████████▍| 328/348 [1:50:57<05:22, 16.14s/it]
-[36m(batched_request pid=18285)[0m  95%|█████████▌| 332/348 [1:51:04<04:24, 16.54s/it]
-[36m(batched_request pid=18284)[0m  88%|████████▊ | 307/348 [1:51:09<13:54, 20.35s/it]
-[36m(batched_request pid=18288)[0m  98%|█████████▊| 342/348 [1:51:10<02:25, 24.21s/it]
-[36m(batched_request pid=18289)[0m  95%|█████████▍| 329/348 [1:51:18<05:32, 17.50s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  89%|████████▊ | 308/348 [1:51:21<11:51, 17.80s/it]
-[36m(batched_request pid=18288)[0m  99%|█████████▊| 343/348 [1:51:23<01:44, 20.83s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  87%|████████▋ | 303/348 [1:51:32<16:27, 21.95s/it]
-[36m(batched_request pid=18290)[0m  92%|█████████▏| 321/348 [1:51:27<08:28, 18.84s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  89%|████████▉ | 309/348 [1:51:40<11:46, 18.11s/it]
-[36m(batched_request pid=18285)[0m  96%|█████████▌| 334/348 [1:51:34<03:39, 15.64s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  87%|████████▋ | 304/348 [1:51:44<13:55, 18.99s/it]
-[36m(batched_request pid=18286)[0m  95%|█████████▌| 331/348 [1:51:46<05:23, 19.03s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  88%|████████▊ | 305/348 [1:51:59<12:42, 17.74s/it]
-[36m(batched_request pid=18289)[0m  95%|█████████▌| 331/348 [1:51:51<04:51, 17.15s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  89%|████████▉ | 310/348 [1:51:59<11:39, 18.40s/it]
-[36m(batched_request pid=18288)[0m  99%|█████████▉| 345/348 [1:52:06<01:02, 20.87s/it][32m [repeated 5x across cluster][0m
-[36m(batched_request pid=18284)[0m  89%|████████▉ | 311/348 [1:52:12<10:19, 16.75s/it]
-[36m(batched_request pid=18289)[0m  95%|█████████▌| 332/348 [1:52:10<04:44, 17.81s/it]
-[36m(batched_request pid=18290)[0m  93%|█████████▎| 324/348 [1:52:12<06:29, 16.23s/it]
-[36m(batched_request pid=18286)[0m  96%|█████████▌| 333/348 [1:52:21<04:35, 18.35s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  88%|████████▊ | 306/348 [1:52:24<13:55, 19.90s/it]
-[36m(batched_request pid=18285)[0m  97%|█████████▋| 338/348 [1:52:28<02:17, 13.77s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  90%|████████▉ | 312/348 [1:52:26<09:32, 15.90s/it]
-[36m(batched_request pid=18286)[0m  96%|█████████▌| 334/348 [1:52:34<03:52, 16.64s/it]
-[36m(batched_request pid=18288)[0m 100%|█████████▉| 347/348 [1:52:40<00:19, 19.03s/it]
-[36m(batched_request pid=18287)[0m  88%|████████▊ | 307/348 [1:52:45<13:49, 20.23s/it]
-[36m(batched_request pid=18289)[0m  96%|█████████▌| 334/348 [1:52:46<04:12, 18.03s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18284)[0m  90%|████████▉ | 313/348 [1:52:47<10:05, 17.30s/it]
-[36m(batched_request pid=18286)[0m  96%|█████████▋| 335/348 [1:52:55<03:53, 17.96s/it]
-[36m(batched_request pid=18290)[0m  94%|█████████▎| 326/348 [1:52:55<06:43, 18.33s/it]
-[36m(batched_request pid=18287)[0m  89%|████████▊ | 308/348 [1:53:01<12:43, 19.10s/it]
-[36m(batched_request pid=18285)[0m  98%|█████████▊| 340/348 [1:52:59<01:59, 14.99s/it]
-[36m(batched_request pid=18288)[0m 100%|██████████| 348/348 [1:53:03<00:00, 20.30s/it]100%|██████████| 348/348 [1:53:03<00:00, 19.49s/it]
-[36m(batched_request pid=18284)[0m  90%|█████████ | 314/348 [1:53:07<10:20, 18.26s/it]
-[36m(batched_request pid=18290)[0m  94%|█████████▍| 327/348 [1:53:14<06:26, 18.43s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18284)[0m  91%|█████████ | 315/348 [1:53:16<08:32, 15.53s/it]
-[36m(batched_request pid=18289)[0m  97%|█████████▋| 336/348 [1:53:21<03:30, 17.56s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  89%|████████▉ | 309/348 [1:53:21<12:37, 19.41s/it]
-[36m(batched_request pid=18284)[0m  91%|█████████ | 316/348 [1:53:26<07:25, 13.93s/it]
-[36m(batched_request pid=18285)[0m  98%|█████████▊| 342/348 [1:53:24<01:19, 13.25s/it]
-[36m(batched_request pid=18290)[0m  94%|█████████▍| 328/348 [1:53:27<05:33, 16.70s/it]
-[36m(batched_request pid=18289)[0m  97%|█████████▋| 337/348 [1:53:32<02:51, 15.60s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18285)[0m  99%|█████████▊| 343/348 [1:53:37<01:07, 13.43s/it]
-[36m(batched_request pid=18286)[0m  97%|█████████▋| 338/348 [1:53:42<02:47, 16.76s/it]
-[36m(batched_request pid=18284)[0m  91%|█████████ | 317/348 [1:53:46<08:06, 15.71s/it]
-[36m(batched_request pid=18289)[0m  97%|█████████▋| 338/348 [1:53:47<02:35, 15.56s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  89%|████████▉ | 310/348 [1:53:49<13:49, 21.83s/it]
-[36m(batched_request pid=18285)[0m  99%|█████████▉| 344/348 [1:53:58<01:02, 15.70s/it]
-[36m(batched_request pid=18290)[0m  95%|█████████▍| 330/348 [1:54:00<04:52, 16.24s/it]
-[36m(batched_request pid=18287)[0m  89%|████████▉ | 311/348 [1:54:02<11:53, 19.30s/it]
-[36m(batched_request pid=18284)[0m  91%|█████████▏| 318/348 [1:54:07<08:32, 17.08s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18286)[0m  98%|█████████▊| 340/348 [1:54:16<02:10, 16.37s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  90%|████████▉ | 312/348 [1:54:20<11:17, 18.82s/it]
-[36m(batched_request pid=18289)[0m  98%|█████████▊| 340/348 [1:54:21<02:10, 16.28s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18285)[0m  99%|█████████▉| 346/348 [1:54:31<00:31, 15.70s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  95%|█████████▌| 332/348 [1:54:36<04:35, 17.23s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  90%|████████▉ | 313/348 [1:54:38<10:48, 18.52s/it]
-[36m(batched_request pid=18290)[0m  96%|█████████▌| 333/348 [1:54:50<04:05, 16.36s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  90%|█████████ | 314/348 [1:54:57<10:31, 18.59s/it]
-[36m(batched_request pid=18285)[0m 100%|█████████▉| 347/348 [1:54:53<00:17, 17.70s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18289)[0m  98%|█████████▊| 342/348 [1:55:04<01:55, 19.30s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  91%|█████████ | 315/348 [1:55:09<09:13, 16.77s/it]
-[36m(batched_request pid=18284)[0m  93%|█████████▎| 324/348 [1:55:24<05:46, 14.45s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18287)[0m  91%|█████████ | 316/348 [1:55:27<09:08, 17.13s/it]
-[36m(batched_request pid=18284)[0m  93%|█████████▎| 325/348 [1:55:34<05:01, 13.09s/it][32m [repeated 4x across cluster][0m
-[36m(batched_request pid=18286)[0m  99%|█████████▉| 345/348 [1:55:39<00:48, 16.14s/it]
-[36m(batched_request pid=18289)[0m  99%|█████████▉| 344/348 [1:55:40<01:12, 18.13s/it]
-[36m(batched_request pid=18287)[0m  91%|█████████ | 317/348 [1:55:46<09:03, 17.53s/it]
-[36m(batched_request pid=18290)[0m  97%|█████████▋| 336/348 [1:55:48<03:45, 18.80s/it]
-[36m(batched_request pid=18286)[0m  99%|█████████▉| 346/348 [1:55:58<00:33, 16.93s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18287)[0m  91%|█████████▏| 318/348 [1:56:05<09:00, 18.03s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  94%|█████████▍| 327/348 [1:56:13<05:45, 16.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  97%|█████████▋| 338/348 [1:56:19<02:53, 17.30s/it][32m [repeated 3x across cluster][0m
-[36m(batched_request pid=18289)[0m 100%|█████████▉| 347/348 [1:56:25<00:16, 16.48s/it]
-[36m(batched_request pid=18284)[0m  94%|█████████▍| 328/348 [1:56:28<05:22, 16.11s/it]
-[36m(batched_request pid=18286)[0m 100%|██████████| 348/348 [1:56:33<00:00, 17.48s/it]100%|██████████| 348/348 [1:56:33<00:00, 20.10s/it]
-[36m(batched_request pid=18287)[0m  92%|█████████▏| 320/348 [1:56:36<08:07, 17.40s/it]
-[36m(batched_request pid=18284)[0m  95%|█████████▍| 329/348 [1:56:43<05:00, 15.84s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  92%|█████████▏| 321/348 [1:56:50<07:24, 16.46s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  95%|█████████▍| 330/348 [1:57:00<04:48, 16.03s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  98%|█████████▊| 341/348 [1:57:08<01:52, 16.06s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  98%|█████████▊| 342/348 [1:57:18<01:25, 14.25s/it]
-[36m(batched_request pid=18287)[0m  93%|█████████▎| 323/348 [1:57:19<06:26, 15.46s/it]
-[36m(batched_request pid=18284)[0m  95%|█████████▌| 332/348 [1:57:35<04:20, 16.30s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  93%|█████████▎| 324/348 [1:57:41<06:58, 17.42s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18290)[0m  99%|█████████▉| 344/348 [1:57:50<00:58, 14.72s/it]
-[36m(batched_request pid=18284)[0m  96%|█████████▌| 333/348 [1:57:51<04:05, 16.37s/it]
-[36m(batched_request pid=18287)[0m  93%|█████████▎| 325/348 [1:57:57<06:31, 17.03s/it]
-[36m(batched_request pid=18290)[0m  99%|█████████▉| 345/348 [1:58:04<00:43, 14.49s/it]
-[36m(batched_request pid=18284)[0m  96%|█████████▌| 334/348 [1:58:09<03:56, 16.87s/it]
-[36m(batched_request pid=18287)[0m  94%|█████████▎| 326/348 [1:58:13<06:04, 16.55s/it]
-[36m(batched_request pid=18290)[0m  99%|█████████▉| 346/348 [1:58:19<00:29, 14.84s/it]
-[36m(batched_request pid=18284)[0m  96%|█████████▋| 335/348 [1:58:29<03:51, 17.84s/it]
-[36m(batched_request pid=18290)[0m 100%|█████████▉| 347/348 [1:58:39<00:16, 16.36s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  94%|█████████▍| 328/348 [1:58:48<05:38, 16.92s/it]
-[36m(batched_request pid=18284)[0m  97%|█████████▋| 336/348 [1:58:50<03:43, 18.60s/it]
-[36m(batched_request pid=18290)[0m 100%|██████████| 348/348 [1:58:56<00:00, 16.41s/it]100%|██████████| 348/348 [1:58:56<00:00, 20.51s/it]
-[36m(batched_request pid=18287)[0m  95%|█████████▍| 329/348 [1:59:00<04:54, 15.50s/it]
-[36m(batched_request pid=18287)[0m  95%|█████████▍| 330/348 [1:59:21<05:06, 17.05s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  95%|█████████▌| 331/348 [1:59:42<05:13, 18.44s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  95%|█████████▌| 332/348 [1:59:56<04:30, 16.89s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  98%|█████████▊| 340/348 [2:00:13<02:55, 21.94s/it]
-[36m(batched_request pid=18287)[0m  96%|█████████▌| 333/348 [2:00:22<04:55, 19.67s/it]
-[36m(batched_request pid=18284)[0m  98%|█████████▊| 341/348 [2:00:29<02:20, 20.06s/it]
-[36m(batched_request pid=18284)[0m  98%|█████████▊| 342/348 [2:00:39<01:42, 17.04s/it]
-[36m(batched_request pid=18284)[0m  99%|█████████▊| 343/348 [2:00:59<01:30, 18.01s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  97%|█████████▋| 336/348 [2:01:10<03:19, 16.59s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  99%|█████████▉| 344/348 [2:01:16<01:10, 17.68s/it]
-[36m(batched_request pid=18287)[0m  97%|█████████▋| 337/348 [2:01:33<03:22, 18.43s/it]
-[36m(batched_request pid=18287)[0m  97%|█████████▋| 338/348 [2:01:45<02:45, 16.51s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18284)[0m  99%|█████████▉| 346/348 [2:01:51<00:34, 17.20s/it]
-[36m(batched_request pid=18284)[0m 100%|█████████▉| 347/348 [2:02:06<00:16, 16.69s/it]
-[36m(batched_request pid=18287)[0m  98%|█████████▊| 340/348 [2:02:22<02:15, 16.89s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  98%|█████████▊| 341/348 [2:02:38<01:57, 16.81s/it][32m [repeated 2x across cluster][0m
-[36m(batched_request pid=18287)[0m  98%|█████████▊| 342/348 [2:03:03<01:54, 19.03s/it]
-[36m(batched_request pid=18287)[0m  99%|█████████▊| 343/348 [2:03:26<01:41, 20.24s/it]
-[36m(batched_request pid=18287)[0m  99%|█████████▉| 344/348 [2:03:37<01:10, 17.68s/it]
-[36m(batched_request pid=18287)[0m  99%|█████████▉| 345/348 [2:03:59<00:56, 18.92s/it]
-[36m(batched_request pid=18287)[0m  99%|█████████▉| 346/348 [2:04:14<00:35, 17.74s/it]
-[36m(batched_request pid=18287)[0m 100%|█████████▉| 347/348 [2:04:43<00:21, 21.00s/it]
-[36m(batched_request pid=18287)[0m 100%|██████████| 348/348 [2:05:08<00:00, 22.28s/it]100%|██████████| 348/348 [2:05:08<00:00, 21.58s/it]
-model: gpt4, data: auto-j
-{'accuracy': 0.5395114942528736, 'consistency': 0.7593390804597702}

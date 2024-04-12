@@ -5,7 +5,7 @@ def create_prompt(model_type, data_type):
 [Question]
 {question_body}
 
-The Start of Assistant 1's Answer]
+[The Start of Assistant 1's Answer]
 {answer1_body}
 
 [The End of Assistant 1's Answer]

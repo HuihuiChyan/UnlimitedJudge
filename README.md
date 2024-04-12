@@ -29,9 +29,7 @@ Please also download the respective testsets and put them under ``data``. Specif
 
 * [Auto-J-test](https://github.com/GAIR-NLP/auto-j/blob/main/data/test/testdata_pairwise.jsonl)
 
-* [Prometheus-test-ind](https://github.com/kaistAI/prometheus/blob/main/evaluation/benchmark/data/feedback_collection_test.json)
-
-* [Prometheus-test-ood](https://github.com/kaistAI/prometheus/blob/main/evaluation/benchmark/data/feedback_collection_ood_test.json)
+* [Prometheus-test](https://github.com/kaistAI/prometheus/blob/main/evaluation/benchmark/data)
 
 * [MT-bench-test](https://huggingface.co/datasets/lmsys/mt_bench_human_judgments)
 

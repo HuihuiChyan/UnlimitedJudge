@@ -27,7 +27,7 @@ Please first output a single line containing only two values indicating the scor
 {question_body}
 
 [The Start of Assistant's Answer]
-{reference}
+{answer_body}
 
 [The End of Assistant's Answer]
 
@@ -96,28 +96,7 @@ Here are the instructions to assess and compare the two responses:
 Write critiques for this response. After that, you should give a final rating for the response on a scale of 1 to 10 by strictly following this format: "[[rating]]", for example: "Rating: [[5]]". [/INST]"""
 
     elif model_type == "prometheus":
-        if "prometheus" in data_type:
-            instruction = """[INST] <<SYS>>
-You are a fair evaluator language model.
-<</SYS>>
-
-###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
-4. Please do not generate any other opening, closing, and explanations.
-
-###Score Rubrics:
-{rubric}
-
-###The instruction and response to evaluate:
-[User Question]\n{question_body}\n\n[The Start of Assistant's Answer]\n{answer_body}\n[The End of Assistant's Answer]
-
-###Feedback: [/INST]"""
-            instruction = "[INST]{rubric}\n[Question]\n{question_body}\n\n[The Start of Response]\n{answer_body}\n\n[The End of Response]\n\n[Feedback]\n[/INST]"
-        else:
-            instruction = """[INST] <<SYS>>
+        instruction = """[INST] <<SYS>>
 You are a fair evaluator language model.
 <</SYS>>
 

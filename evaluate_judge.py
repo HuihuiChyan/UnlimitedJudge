@@ -411,12 +411,11 @@ if __name__ == "__main__":
         
         answers.append(example["score"])
 
-    predictions = batched_generation(args.model_name_or_path, prompts[:100], 
+    predictions = batched_generation(args.model_name_or_path, prompts, 
                                      max_new_token=args.max_new_token, 
                                      temperature=args.temperature,
                                      top_p=args.top_p)
 
-    import pdb;pdb.set_trace()
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type)
     
     if args.logit_file is not None:

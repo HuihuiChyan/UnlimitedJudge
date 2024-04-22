@@ -5,7 +5,6 @@ import argparse
 import random
 import torch
 import copy
-import vllm
 import scipy
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
@@ -82,6 +81,7 @@ def batched_generation(
     top_p=1.0,
 ):
     print("start load model")
+    import vllm
     model = vllm.LLM(model=model_path, tensor_parallel_size=1)
     sampling_params = vllm.SamplingParams(
         temperature=temperature,

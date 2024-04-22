@@ -21,7 +21,7 @@ Please download pre-trained LLMs and put them under ``models``. Specifically, ou
 
 * [Auto-J-13b](https://huggingface.co/GAIR/autoj-13b)
 
-Please also download the respective testsets and put them under ``data``. Specifically, our study are based on the following test sets:
+Our study are based on the following data, and we have downloaded the respective testsets and put them under ``data``. 
 
 * [JudgeLM-test](https://huggingface.co/datasets/BAAI/JudgeLM-100K/)
 
@@ -37,14 +37,28 @@ Please also download the respective testsets and put them under ``data``. Specif
 
 ## Evaluate judges on different benchmarks
 
+Run the following script to evaluate one judge model on one testset.
+
+```shell
+MODEL_PATH=./models/JudgeLM-7B
+MODEL_TYPE=judgelm
+DATA_TYPE=judgelm
+python3 -u evaluate_judge.py \
+    --model-name-or-path $MODEL_PATH \
+    --model-type $MODEL_TYPE \
+    --data-type $DATA_TYPE \
+    --eval-batch-size 16 \
+    --max-new-token 1024
+```
+
 Run the following script to evaluate the finetuned judges on different testsets.
 
 ```shell
-MODEL_PATH=llama2-7b-chat
-MODEL_TYPE=judgelm
-DATA_TYPE=mt_bench
+MODEL_PATH=./models/llama2-7b-chat-finetuned
+MODEL_TYPE=llama
+DATA_TYPE=judgelm
 CLASS_TYPE=generation
-python -u evaluate_gen.py \
+python -u evaluate_finetuned.py \
     --model-name-or-path $MODEL_NAME \
     --model-type $MODEL_TYPE \
     --data-type $DATA_TYPE \
@@ -54,12 +68,10 @@ python -u evaluate_gen.py \
 Run the following script to evaluate GPT-3.5/4 on different testsets.
 
 ```shell
-DATA_TYPE=mt_bench
-CLASS_TYPE=generation
+DATA_TYPE=judgelm
 python -u evaluate_selfeval.py \
-    --model-type "auto-j" \
-    --data-type $DATA_TYPE \
-    --class-type $CLASS_TYPE
+    --model-type "gpt-4" \
+    --data-type $DATA_TYPE
 ```
 
 ## Fine-tune your own judge

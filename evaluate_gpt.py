@@ -15,15 +15,9 @@ from evaluate_judge import build_dataset, parse_predictions, calculate_metrics
 def build_params_gpt():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model-name",
-        type=str,
-        default="gpt4",
-        choices=("gpt-3.5", "gpt-4")
-    )
-    parser.add_argument(
         "--model-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j", "prometheus", "llama", "deberta"),
+        choices=("gpt-4", "gpt-3.5"),
         default=None,
     )
     parser.add_argument(
@@ -49,12 +43,12 @@ def build_params_gpt():
         default=0.0,
         help="The temperature for sampling.",
     )
-    parser.add_argument(
-        "--top-p",
-        type=float,
-        default=1.0,
-        help="The temperature for sampling.",
-    )
+    # parser.add_argument(
+    #     "--top-p",
+    #     type=float,
+    #     default=1.0,
+    #     help="The temperature for sampling.",
+    # )
     parser.add_argument(
         "--logit-file",
         type=str,
@@ -68,24 +62,10 @@ def build_params_gpt():
     parser.add_argument(
         "--multi-process",
         type=str,
-        default="True",        
+        default="False",        
     )
     args = parser.parse_args()
     return args
-
-def parse_score_gpt(review):
-    try:
-        score = re.search(r"\[\[[A|B|C]\]\]", review).group()
-        if score == "[[A]]":
-            return [1, 0]
-        elif score == "[[B]]":
-            return [0, 1]
-        else:
-            return [1, 1]
-    except Exception as e:
-        # print(f'{e}\nContent: {review}\n'
-        #              'You must manually fix the score pair.')
-        return [-1, -1]
 
 def request_gpt4(prompt, temperature, max_new_token):
     url = "https://api.chatgpt-3.vip/v1/chat/completions"
@@ -102,31 +82,80 @@ def request_gpt4(prompt, temperature, max_new_token):
             data = {"model": "gpt-4-1106-preview", "messages": messages, "temperature": temperature, "max_tokens": max_new_token}
             response = requests.post(url, headers=headers, data=json.dumps(data))
             response = response.json()
-            print(response)
             res = response['choices'][0]['message']['content'].strip()
-
             break
         except Exception as e:
-            print(response)
+            print("Exception! The response is "+str(response))
             time.sleep(2)
             continue
     return res
 
+def parse_score_gpt(review, is_pair=True):
+    if is_pair:
+        try:
+            score_pair = review.split('\n')[0]
+            score_pair = score_pair.replace(',', ' ')
+            sp = score_pair.split(' ')
+            return [float(sp[0]), float(sp[1])]
+        except Exception as e:
+            return [1.0, 1.0] # default is Tie 
+    else:
+        try:
+            score = review.split('\n')[0].strip()
+            return float(score)
+        except Exception as e:
+            return 5.0 # default is middle score
+
 def create_prompt_gpt(data_type):
     if "prometheus" not in data_type:
-        instruction = """Please act as an impartial judge and evaluate the quality of the responses provided by two AI assistants to the user question displayed below. You should choose the assistant that follows the user's instructions and answers the user's question better. Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of their responses. Begin your evaluation by comparing the two responses and provide a short explanation. Avoid any position biases and ensure that the order in which the responses were presented does not influence your decision. Do not allow the length of the responses to influence your evaluation. Do not favor certain names of the assistants. Always choose a better answer and do not output a tie. Be as objective as possible. After providing your explanation, output your final verdict by strictly following this format: \"[[A]]\" if assistant A is better, \"[[B]]\" if assistant B is better..
+        # We use JudgeLM prompt directly.
+        instruction = """You are a helpful and precise assistant for checking the quality of the answer.
+[Question]
+{question_body}
 
-    # [User Question]\n{question_body}\n\n[The Start of Assistant A's Answer]\n{answer1_body}\n[The End of Assistant A's Answer]\n\n[The Start of Assistant B's Answer]\n{answer2_body}\n[The End of Assistant B's Answer]
+[The Start of Assistant 1's Answer]
+{answer1_body}
 
-    # Your Evaluation:"""
+[The End of Assistant 1's Answer]
+
+[The Start of Assistant 2's Answer]
+{answer2_body}
+
+[The End of Assistant 2's Answer]
+
+[System]
+We would like to request your feedback on the performance of two AI assistants in response to the user question displayed above.
+{rubric} Each assistant receives an overall score on a scale of 1 to 10, where a higher score indicates better overall performance.
+Please first output a single line containing only two values indicating the scores for Assistant 1 and 2, respectively. The two scores are separated by a space. In the subsequent line, please provide a comprehensive explanation of your evaluation, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.
+
+### Response:"""
     else:
-        pass
+        # We use Prometheus prompt directly.
+        instruction = """You are a fair evaluator language model.
+
+###Task Description:
+An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
+1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
+2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
+4. Please do not generate any other opening, closing, and explanations.
+
+###The instruction to evaluate:
+{question_body}
+
+###Response to evaluate:
+{answer_body}
+
+###Score Rubrics:
+{rubric}
+
+###Feedback: [/INST]"""
+
     return instruction
 
 def gpt4_scoring(prompt):
 
     prediction = request_gpt4(prompt, temperature=0.0, max_new_token=1024)
-    prediction = parse_score_gpt(prediction)
 
     counter.value += 1    
     print(f"gpt4_scoring {counter.value} finished.")
@@ -167,15 +196,18 @@ if __name__ == "__main__":
     pool = multiprocessing.Pool(processes=args.pool_number, initializer=init, initargs=(counter,))
 
     if args.multi_process == "False":
-        pred_scores = [gpt4_scoring(sample) for sample in dataset]
+        predictions = [gpt4_scoring(sample) for sample in prompts]
     else:
-        pred_scores = pool.map(gpt4_scoring, dataset)
+        predictions = pool.map(gpt4_scoring, prompts)
+    
+    pred_scores = [parse_score_gpt(p) for p in predictions]
 
     if args.logit_file is not None:
         with open(args.logit_file, "w", encoding="utf-8") as fout:
             for pred in pred_scores:
                 fout.write(json.dumps(pred)+"\n")
 
+    import pdb;pdb.set_trace()
     metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)
     print(f"model: {args.model_type}, data: {args.data_type}")
     print(metrics_dicts)

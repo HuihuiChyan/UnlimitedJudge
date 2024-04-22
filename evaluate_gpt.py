@@ -2,30 +2,23 @@ import os
 import json
 import argparse
 import random
-import torch
-import datasets
 import re
 import copy
 import tqdm
 import time
 import json
-import openai
 import requests
 import multiprocessing
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoModelForCausalLM, StoppingCriteria, GPT2Tokenizer
 
-def build_params():
+from evaluate_judge import build_dataset, parse_predictions, calculate_metrics
+
+def build_params_gpt():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model-name-or-path",
+        "--model-name",
         type=str,
-        default=None,
-    )
-    parser.add_argument(
-        "--class-type",
-        type=str,
-        choices=("generation", "regression", "classification"),
-        default=None,
+        default="gpt4",
+        choices=("gpt-3.5", "gpt-4")
     )
     parser.add_argument(
         "--model-type",
@@ -43,12 +36,6 @@ def build_params():
         "--data-path",
         type=str,
         default="./data",
-    )
-    parser.add_argument(
-        "--eval-batch-size", 
-        type=int, 
-        default=1, 
-        help="Batch size for evaluation."
     )
     parser.add_argument(
         "--max-new-token",
@@ -125,15 +112,18 @@ def request_gpt4(prompt, temperature, max_new_token):
             continue
     return res
 
-def gpt4_scoring(sample):
-    instruction = """Please act as an impartial judge and evaluate the quality of the responses provided by two AI assistants to the user question displayed below. You should choose the assistant that follows the user's instructions and answers the user's question better. Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of their responses. Begin your evaluation by comparing the two responses and provide a short explanation. Avoid any position biases and ensure that the order in which the responses were presented does not influence your decision. Do not allow the length of the responses to influence your evaluation. Do not favor certain names of the assistants. Always choose a better answer and do not output a tie. Be as objective as possible. After providing your explanation, output your final verdict by strictly following this format: \"[[A]]\" if assistant A is better, \"[[B]]\" if assistant B is better..
+def create_prompt_gpt(data_type):
+    if "prometheus" not in data_type:
+        instruction = """Please act as an impartial judge and evaluate the quality of the responses provided by two AI assistants to the user question displayed below. You should choose the assistant that follows the user's instructions and answers the user's question better. Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of their responses. Begin your evaluation by comparing the two responses and provide a short explanation. Avoid any position biases and ensure that the order in which the responses were presented does not influence your decision. Do not allow the length of the responses to influence your evaluation. Do not favor certain names of the assistants. Always choose a better answer and do not output a tie. Be as objective as possible. After providing your explanation, output your final verdict by strictly following this format: \"[[A]]\" if assistant A is better, \"[[B]]\" if assistant B is better..
 
-# [User Question]\n{question_body}\n\n[The Start of Assistant A's Answer]\n{answer1_body}\n[The End of Assistant A's Answer]\n\n[The Start of Assistant B's Answer]\n{answer2_body}\n[The End of Assistant B's Answer]
+    # [User Question]\n{question_body}\n\n[The Start of Assistant A's Answer]\n{answer1_body}\n[The End of Assistant A's Answer]\n\n[The Start of Assistant B's Answer]\n{answer2_body}\n[The End of Assistant B's Answer]
 
-# Your Evaluation:"""
+    # Your Evaluation:"""
+    else:
+        pass
+    return instruction
 
-
-    prompt = instruction.format(**sample)
+def gpt4_scoring(prompt):
 
     prediction = request_gpt4(prompt, temperature=0.0, max_new_token=1024)
     prediction = parse_score_gpt(prediction)
@@ -148,55 +138,44 @@ def init(c):
     counter = c
 
 if __name__ == "__main__":
-    args = build_params()
+    args = build_params_gpt()
     random.seed(42)
 
-    data_path_question = "question.jsonl"
-    data_path_answer = "llama2-7b-chat-logprobs-entropy-auto-j.jsonl"
+    dataset = build_dataset(args.data_type, args.data_path)
 
-    with open(data_path_question, "r") as fin:
-        lines_qes = [line.strip() for line in fin.readlines()]
-        lines_qes = [json.loads(line) for line in lines_qes]
-        dataset_qes = [line['turns'][0] for line in lines_qes]
+    instruction = create_prompt_gpt(args.data_type)
+    prompts = []
+    answers = []
+    for example in dataset:
+        if "prometheus" in args.data_type:
+            prompt = instruction.format(question_body=example["question_body"],
+                                        rubric=example["rubric"],
+                                        answer_body=example["answer_body"])
+            prompts.append(prompt)
+        else:
+            example["rubric"] = "Please rate the helpfulness, relevance, accuracy, level of details of their responses."
+            prompt = instruction.format(question_body=example["question_body"],
+                                        rubric=example["rubric"],
+                                        answer1_body=example["answer1_body"],
+                                        answer2_body=example["answer2_body"])
+            prompts.append(prompt)
 
-    with open(data_path_answer, "r") as fin:
-        lines_ans = [line.strip() for line in fin.readlines()]
-        lines_ans = [json.loads(line) for line in lines_ans]
-        dataset_ans = [[line['choices'][0]['turns'][0], line['choices'][1]['turns'][0]] for line in lines_ans]
-
-    dataset = []
-    for qes, ans in zip(dataset_qes, dataset_ans):
-        example = {"rubric": "Please rate the helpfulness, relevance, accuracy, level of details of their responses."}
-        example["question_body"] = qes
-        example["answer1_body"] = ans[0]
-        example["answer2_body"] = ans[1]
-        dataset.append(example)
-
-    import pdb;pdb.set_trace()
-    answers = [example["score"] for example in dataset]
+        answers.append(example["score"])
 
     manager = multiprocessing.Manager()
     counter = manager.Value("counter", 0)
     pool = multiprocessing.Pool(processes=args.pool_number, initializer=init, initargs=(counter,))
 
-    # if args.cot_augmentation == "self-cot":
-    #     if args.multi_process == "False":
-    #         samples = [gpt4_planning(sample) for sample in dataset]
-    #         samples = [gpt4_aspecting(sample) for sample in samples]
-    #         predictions = [gpt4_scoring_cot_with_score(sample) for sample in samples]
-    #     else:
-    #         samples = pool.map(gpt4_planning, dataset)
-    #         counter.value = 0
-    #         samples = pool.map(gpt4_aspecting, samples)
-    #         counter.value = 0
-    #         predictions = pool.map(gpt4_scoring_cot_with_score, samples)
-
     if args.multi_process == "False":
-        predictions = [gpt4_scoring(sample) for sample in dataset]
+        pred_scores = [gpt4_scoring(sample) for sample in dataset]
     else:
-        predictions = pool.map(gpt4_scoring, dataset)
+        pred_scores = pool.map(gpt4_scoring, dataset)
 
-    with open(data_path_answer.rstrip(".jsonl")+"-gpt4.jsonl", "w") as fout:
-        for line, score in zip(lines_ans, predictions):
-            line["judge_score"] = score
-            fout.write(json.dumps(line)+"\n")
+    if args.logit_file is not None:
+        with open(args.logit_file, "w", encoding="utf-8") as fout:
+            for pred in pred_scores:
+                fout.write(json.dumps(pred)+"\n")
+
+    metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)
+    print(f"model: {args.model_type}, data: {args.data_type}")
+    print(metrics_dicts)

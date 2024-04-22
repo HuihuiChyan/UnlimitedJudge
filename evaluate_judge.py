@@ -6,8 +6,8 @@ import random
 import torch
 import copy
 import vllm
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import scipy
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 from build_prompt import create_prompt
 
@@ -72,17 +72,6 @@ def build_params():
     )
     args = parser.parse_args()
     return args
-
-def translate_score_to_win_list(score_list, T=0.0):
-    win_list = []
-    for i in range(len(score_list)):
-        if score_list[i][0] - score_list[i][1] > T:
-            win_list.append(1)
-        elif score_list[i][1] - score_list[i][0] > T:
-            win_list.append(-1)
-        else:
-            win_list.append(0)
-    return win_list
 
 @torch.inference_mode()
 def batched_generation(
@@ -313,6 +302,18 @@ def parse_predictions(predictions, model_type, data_type):
     return pred_scores
 
 def calculate_metrics(y_true_list, y_pred_list, data_type):
+
+    def translate_score_to_win_list(score_list, T=0.0):
+        win_list = []
+        for i in range(len(score_list)):
+            if score_list[i][0] - score_list[i][1] > T:
+                win_list.append(1)
+            elif score_list[i][1] - score_list[i][0] > T:
+                win_list.append(-1)
+            else:
+                win_list.append(0)
+        return win_list
+
     if "prometheus" not in data_type:
         y_true = translate_score_to_win_list(y_true_list)
         y_pred = translate_score_to_win_list(y_pred_list)
@@ -391,7 +392,6 @@ if __name__ == "__main__":
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
                 prompts.append(prompt)
-
         elif args.model_type == "prometheus":
             if "prometheus" in args.data_type:
                 prompt = instruction.format(question_body=example["question_body"],

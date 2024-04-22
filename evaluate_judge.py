@@ -384,8 +384,6 @@ if __name__ == "__main__":
     random.seed(42)
 
     dataset = build_dataset(args.data_type, args.data_path)
-
-    import pdb;pdb.set_trace()
     
     instruction = create_prompt(args.model_type, args.data_type)
     prompts = []

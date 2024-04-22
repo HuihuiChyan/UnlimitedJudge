@@ -5,4 +5,4 @@ python3 -u evaluate_judge.py \
     --model-type "auto-j" \
     --data-type "auto-j" \
     --eval-batch-size 16 \
-    --max-new-token 32
+    --max-new-token 1024

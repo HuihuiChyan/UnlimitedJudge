@@ -160,6 +160,8 @@ def build_dataset(data_type, data_path):
     elif data_type == "prometheus-ind":
         with open(os.path.join(data_path, "prometheus/feedback_collection_test.json"), "r") as fin:
             lines = json.load(fin)
+
+            dataset = []
             for line in lines:
                 example = {}
                 example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]
@@ -170,6 +172,8 @@ def build_dataset(data_type, data_path):
     elif data_type == "prometheus-ood":
         with open(os.path.join(data_path, "prometheus/feedback_collection_ood_test.json"), "r") as fin:
             lines = [line.strip() for line in fin.readlines()]
+
+            dataset = []
             for line in lines:
                 example = {}
                 example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]

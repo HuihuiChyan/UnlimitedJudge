@@ -162,15 +162,19 @@ def build_dataset(data_type, data_path):
             lines = json.load(fin)
             for line in lines:
                 example = {}
-                example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"])
-                example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"])
+                example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]
+                example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"]).group()[25:-21]
                 example["rubric"] = re.search(r"###Score Rubrics:\n\[[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
-                import pdb;pdb.set_trace()
             dataset = [json.loads(line) for line in lines]
 
     elif data_type == "prometheus-ood":
         with open(os.path.join(data_path, "prometheus/feedback_collection_ood_test.json"), "r") as fin:
             lines = [line.strip() for line in fin.readlines()]
+            for line in lines:
+                example = {}
+                example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]
+                example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"]).group()[25:-21]
+                example["rubric"] = re.search(r"###Score Rubrics:\n\[[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
             dataset = [json.loads(line) for line in lines]
 
     elif data_type == "llmbar-neighbor":
@@ -374,6 +378,8 @@ if __name__ == "__main__":
     random.seed(42)
 
     dataset = build_dataset(args.data_type, args.data_path)
+
+    import pdb;pdb.set_trace()
     
     instruction = create_prompt(args.model_type, args.data_type)
     prompts = []

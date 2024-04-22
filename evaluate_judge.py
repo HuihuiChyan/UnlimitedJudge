@@ -172,18 +172,15 @@ def build_dataset(data_type, data_path):
 
     elif data_type == "prometheus-ood":
         with open(os.path.join(data_path, "prometheus/feedback_collection_ood_test.json"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
+            lines = json.load(fin)
 
             dataset = []
             for line in lines:
                 example = {}
-                try:
-                    example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]
-                    example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"]).group()[25:-21]
-                    example["rubric"] = re.search(r"###Score Rubrics:\n\[[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
-                    example["score"] = line["gpt4_score"]
-                except:
-                    import pdb;pdb.set_trace()
+                example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"]).group()[32:-25]
+                example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"]).group()[25:-21]
+                example["rubric"] = re.search(r"###Score Rubrics:\n\[[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
+                example["score"] = line["gpt4_score"]
                 dataset.append(example)
 
     elif data_type == "llmbar-neighbor":

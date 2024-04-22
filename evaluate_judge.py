@@ -164,7 +164,7 @@ def build_dataset(data_type, data_path):
                 example = {}
                 example["question_body"] = re.search(r"###The instruction to evaluate:\n[\s\S]+\n\n###Response to evaluate", line["instruction"])
                 example["answer_body"] = re.search(r"###Response to evaluate:\n[\s\S]+\n\n###Reference Answer", line["instruction"])
-                example["rubric"] = re.search(r"###Score Rubrics:\n\[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
+                example["rubric"] = re.search(r"###Score Rubrics:\n\[[\s\S]+\]\nScore 1", line["instruction"]).group()[19:-9]
                 import pdb;pdb.set_trace()
             dataset = [json.loads(line) for line in lines]
 

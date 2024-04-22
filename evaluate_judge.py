@@ -183,30 +183,21 @@ def build_dataset(data_type, data_path):
                 example["score"] = line["gpt4_score"]
                 dataset.append(example)
 
-    elif data_type == "llmbar-neighbor":
-        with open(os.path.join(data_path, "llmbar/Neighbor/dataset.jsonl"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
-            dataset = [json.loads(line) for line in lines]    
+    elif "llmbar" in data_type:
+        llmbar_category = data_type.replace("llmbar-", "") 
+        with open(os.path.join(data_path, "llmbar/"+llmbar_category+"/dataset.json"), "r") as fin:
+            lines = json.load(fin)
 
-    elif data_type == "llmbar-natural":
-        with open(os.path.join(data_path, "llmbar/Natural/dataset.jsonl"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
-            dataset = [json.loads(line) for line in lines]
-
-    elif data_type == "llmbar-manual":
-        with open(os.path.join(data_path, "llmbar/Manual/dataset.jsonl"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
-            dataset = [json.loads(line) for line in lines]
-
-    elif data_type == "llmbar-gptinst":
-        with open(os.path.join(data_path, "llmbar/GPTInst/dataset.jsonl"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
-            dataset = [json.loads(line) for line in lines]
-
-    elif data_type == "llmbar-gptout":
-        with open(os.path.join(data_path, "llmbar/GPTOut/dataset.jsonl"), "r") as fin:
-            lines = [line.strip() for line in fin.readlines()]
-            dataset = [json.loads(line) for line in lines]
+            dataset = []
+            for line in lines:
+                example = {}
+                example["question_body"] = line["input"]
+                example["answer1_body"] = line["output_1"]
+                example["answer2_body"] = line["output_2"]
+                # unify the score to judgelm format
+                score_mapping = {"0": [1, 1], "1": [1, 0], "2": [0, 1]}
+                example["score"] = score_mapping[str(line["label"])]
+                dataset.append(example)
     
     return dataset
 

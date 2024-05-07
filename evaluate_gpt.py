@@ -1,16 +1,14 @@
-import os
 import json
 import argparse
 import random
-import re
-import copy
-import tqdm
 import time
 import json
 import requests
 import multiprocessing
+from functools import partial
 
-from evaluate_judge import build_dataset, parse_predictions, calculate_metrics
+from evaluate_judge import build_dataset, calculate_metrics
+
 
 def build_params_gpt():
     parser = argparse.ArgumentParser()
@@ -21,9 +19,16 @@ def build_params_gpt():
         default=None,
     )
     parser.add_argument(
+        "--prompt-type",
+        type=str,
+        choices=("vanilla", "cot"),
+        default=None,
+    )
+    parser.add_argument(
         "--data-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood", "llmbar-neighbor", "llmbar-natural", "llmbar-gptinst", "llmbar-gptout", "llmbar-manual"),
+        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood",
+                 "llmbar-neighbor", "llmbar-natural", "llmbar-gptinst", "llmbar-gptout", "llmbar-manual"),
         default=None,
     )
     parser.add_argument(
@@ -57,81 +62,112 @@ def build_params_gpt():
     parser.add_argument(
         "--pool-number",
         type=int,
-        default=8,        
+        default=8,
     )
     parser.add_argument(
         "--multi-process",
         type=str,
-        default="False",        
+        default="False",
     )
     args = parser.parse_args()
     return args
 
-def request_gpt4(prompt, temperature, max_new_token):
+
+def request_gpt(prompt, model, temperature, max_new_token):
+
+    if model == "gpt-3.5":
+        model = "gpt-3.5-turbo"
+    elif model == "gpt-4":
+        model = "gpt-4-1106-preview"
     url = "https://api.chatgpt-3.vip/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-YbA0PBLo6X76clo88aAb29Fc0852428c8850390375AbA32d", # 请确保替换'$sk'为您的实际token
+        "Authorization": "Bearer sk-YbA0PBLo6X76clo88aAb29Fc0852428c8850390375AbA32d",
     }
-    max_tries = 2
+    max_tries = 5
     res = ''
     response = None
     for i in range(max_tries):
         try:
             messages = [{"role": "user", "content": prompt}]
-            data = {"model": "gpt-4-1106-preview", "messages": messages, "temperature": temperature, "max_tokens": max_new_token}
-            response = requests.post(url, headers=headers, data=json.dumps(data))
+            data = {"model": model, "messages": messages,
+                    "temperature": temperature, "max_tokens": max_new_token}
+            response = requests.post(
+                url, headers=headers, data=json.dumps(data))
             response = response.json()
             res = response['choices'][0]['message']['content'].strip()
             break
         except Exception as e:
-            print("Exception! The response is "+str(response))
-            time.sleep(2)
+            print("Exception! The response is " + str(response))
+            time.sleep(5)
             continue
     return res
 
-def parse_score_gpt(review, is_pair=True):
+
+def parse_score_gpt(review, prompt_type, is_pair=True):
     if is_pair:
-        try:
-            score_pair = review.split('\n')[0]
-            score_pair = score_pair.replace(',', ' ')
-            sp = score_pair.split(' ')
-            return [float(sp[0]), float(sp[1])]
-        except Exception as e:
-            return [1.0, 1.0] # default is Tie 
+        if prompt_type == "cot":
+            evaluation = review.strip()
+
+            pos = evaluation.rfind('Therefore, ')
+            label = [-1, -1]
+
+            if pos != -1:
+                decision = evaluation[pos +
+                                      len('Therefore, '):].strip().lower()
+
+                if decision.startswith('output (a) is better.'):
+                    return [1, 0]
+                elif decision.startswith('output (b) is better.'):
+                    return [0, 1]
+                elif decision.startswith('there is a tie.'):
+                    return [1, 1]
+
+            return label
+        else:
+            if review == "Output (a)":
+                return [1, 0]
+            elif review == "Output (b)":
+                return [0, 1]
+            elif review == "Tie":
+                return [1, 1]
+            else:
+                return [1, 1]  # default is Tie
     else:
         try:
             score = review.split('\n')[0].strip()
             return float(score)
         except Exception as e:
-            return 5.0 # default is middle score
+            return 5.0  # default is middle score
 
-def create_prompt_gpt(data_type):
-    if "prometheus" not in data_type:
-        # We use JudgeLM prompt directly.
-        instruction = """You are a helpful and precise assistant for checking the quality of the answer.
-[Question]
+
+def create_prompt_gpt(data_type, prompt_type):
+    if prompt_type == "vanilla":
+        if "prometheus" not in data_type:
+            instruction = """<|im_start|>system
+You are a helpful assistant tasked with evaluating the outputs from two different AI chatbots based on a given instruction. Your objective is to identify which output adheres better to the instruction or if they are of equal quality.
+<|im_end|>
+<|im_start|>user
+Evaluate and compare Output (a) and Output (b) which are generated by two different AI chatbots. Determine if either output demonstrates a clearer understanding of the instruction or if both display a comparable level of competency.
+
+Do NOT provide any explanation for your choice.
+You should answer using ONLY "Output (a)" or "Output (b)" or "Tie". Do NOT output any other words.
+
+# Instruction:
 {question_body}
 
-[The Start of Assistant 1's Answer]
+# Output (a):
 {answer1_body}
 
-[The End of Assistant 1's Answer]
-
-[The Start of Assistant 2's Answer]
+# Output (b):
 {answer2_body}
 
-[The End of Assistant 2's Answer]
+# Which is better, Output (a), Output (b), or Tie? Your response should be "Output (a)", "Output (b)", or "Tie":
+<|im_end|>:"""
 
-[System]
-We would like to request your feedback on the performance of two AI assistants in response to the user question displayed above.
-{rubric} Each assistant receives an overall score on a scale of 1 to 10, where a higher score indicates better overall performance.
-Please first output a single line containing only two values indicating the scores for Assistant 1 and 2, respectively. The two scores are separated by a space. In the subsequent line, please provide a comprehensive explanation of your evaluation, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.
-
-### Response:"""
-    else:
-        # We use Prometheus prompt directly.
-        instruction = """You are a fair evaluator language model.
+        else:
+            # We use Prometheus prompt directly.
+            instruction = """You are a fair evaluator language model.
 
 ###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
@@ -151,20 +187,51 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 
 ###Feedback: [/INST]"""
 
+    elif prompt_type == "cot":
+        if "prometheus" not in data_type:
+            instruction = """<|im_start|>system
+You are a helpful assistant tasked with evaluating the outputs from two different AI chatbots based on a given instruction. Your objective is to identify which output adheres better to the instruction or if they are of equal quality.
+<|im_end|>
+<|im_start|>user
+Evaluate and compare Output (a) and Output (b) from two different AI chatbots by considering the instruction given. Use your reasoning to assess which output more accurately and completely responds to the instruction.
+
+Provide your assessment with a brief explanation, and conclude your response with one of the following statements:
+- "Therefore, Output (a) is better."
+- "Therefore, Output (b) is better."
+- "Therefore, there is a tie."
+
+Your explanation should directly precede the evaluative statement and should not include extraneous commentary.
+
+# Instruction:
+{question_body}
+
+# Output (a):
+{answer1_body}
+
+# Output (b):
+{answer2_body}
+
+# Evaluation (Explain your reasoning concisely and end with one of the specified evaluative statements):
+<|im_end|>:"""
+
     return instruction
 
-def gpt4_scoring(prompt):
 
-    prediction = request_gpt4(prompt, temperature=0.0, max_new_token=1024)
+def gpt_scoring(prompt, model):
 
-    counter.value += 1    
-    print(f"gpt4_scoring {counter.value} finished.")
+    prediction = request_gpt(
+        prompt, model, temperature=0.0, max_new_token=1024)
+
+    counter.value += 1
+    print(f"gpt_scoring {counter.value} finished.")
 
     return prediction
+
 
 def init(c):
     global counter
     counter = c
+
 
 if __name__ == "__main__":
     args = build_params_gpt()
@@ -172,7 +239,8 @@ if __name__ == "__main__":
 
     dataset = build_dataset(args.data_type, args.data_path)
 
-    instruction = create_prompt_gpt(args.data_type)
+    instruction = create_prompt_gpt(args.data_type, args.prompt_type)
+
     prompts = []
     answers = []
     for example in dataset:
@@ -193,21 +261,26 @@ if __name__ == "__main__":
 
     manager = multiprocessing.Manager()
     counter = manager.Value("counter", 0)
-    pool = multiprocessing.Pool(processes=args.pool_number, initializer=init, initargs=(counter,))
+    pool = multiprocessing.Pool(
+        processes=args.pool_number, initializer=init, initargs=(counter,))
 
     if args.multi_process == "False":
-        predictions = [gpt4_scoring(sample) for sample in prompts]
+        predictions = [gpt_scoring(sample, args.model_type)
+                       for sample in prompts]
     else:
-        predictions = pool.map(gpt4_scoring, prompts)
-    
-    pred_scores = [parse_score_gpt(p) for p in predictions]
+        pool_fn = partial(gpt_scoring, model=args.model_type)
+        predictions = pool.map(pool_fn, prompts)
+
+    pred_scores = [parse_score_gpt(p, args.prompt_type) for p in predictions]
 
     if args.logit_file is not None:
         with open(args.logit_file, "w", encoding="utf-8") as fout:
             for pred in pred_scores:
                 fout.write(json.dumps(pred)+"\n")
 
-    import pdb;pdb.set_trace()
+    import pdb
+    pdb.set_trace()
+    print(args)
     metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)
     print(f"model: {args.model_type}, data: {args.data_type}")
     print(metrics_dicts)

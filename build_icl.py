@@ -17,27 +17,49 @@ def build_trainset(data_type, data_path):
 
         for line in lines:
             parts = line["input_sequence"].split("###")
+            output_parts = line["output_sequence"].split("\n\n### ")
 
             example = {
                 "question_body": "",
                 "answer1_body": "",
                 "answer2_body": "",
-                "review": ""
+                "winner": "",
+                "score": "",
+                "reason": "",
+                "reference": ""
             }
 
-            example["review"] = line["output_sequence"]
+            # Extract winner from the first line of output_sequence
+            winner = output_parts[0].strip()
+            example["winner"] = winner
+            # Based on winner assign score
+            if winner == "1":
+                example["score"] = "5 0"
+            elif winner == "2":
+                example["score"] = "0 5"
+            elif winner == "Tie":
+                example["score"] = "5 5"
+            else:
+                # In case of invalid or missing winner
+                example["score"] = "0 0"
+
+            # Extract reason and reference from output_parts
+            for part in output_parts[1:]:
+                part = part.strip()
+                if part.startswith("Reason:"):
+                    example["reason"] = part[len("Reason:"):].strip()
+                if part.startswith("Reference:"):
+                    example["reference"] = part[len("Reference:"):].strip()
+
             for part in parts:
                 section = part.strip()
                 if section.startswith("Instruction:"):
-                    # Skip the "Instruction:" part and get the rest
                     example["question_body"] = section[len(
                         "Instruction:"):].strip()
                 elif section.startswith("Response 1:"):
-                    # Skip the "Response 1:" part and get the rest
                     example["answer1_body"] = section[len(
                         "Response 1:"):].strip()
                 elif section.startswith("Response 2:"):
-                    # Skip the "Response 2:" part and get the rest
                     example["answer2_body"] = section[len(
                         "Response 2:"):].strip()
 
@@ -46,18 +68,12 @@ def build_trainset(data_type, data_path):
     return trainset
 
 
-def concat_sentence(example, data_type):
+def concat_sentence(example):
     question_body = str(example["question_body"])
 
-    if "prometheus" in data_type:
-        answer_body = str(example["answer_body"])
-        sentence = question_body + answer_body
-
-    else:
-        answer1_body = str(example["answer1_body"])
-        answer2_body = str(example["answer2_body"])
-        sentence = question_body + \
-            answer1_body + answer2_body
+    answer1_body = str(example["answer1_body"])
+    answer2_body = str(example["answer2_body"])
+    sentence = question_body + answer1_body + answer2_body
 
     return sentence
 
@@ -68,8 +84,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j",
-                 "prometheus-ind", "prometheus-ood"),
+        choices=("judgelm", "pandalm"),
         default=None,
     )
     parser.add_argument(
@@ -112,7 +127,7 @@ if __name__ == "__main__":
 
     test_embeddings = np.array(results_test)
 
-    neigh = NearestNeighbors(n_neighbors=1, metric="cosine")
+    neigh = NearestNeighbors(n_neighbors=3, metric="cosine")
     neigh.fit(train_embeddings)
 
     distances, indices = neigh.kneighbors(test_embeddings)
@@ -120,8 +135,15 @@ if __name__ == "__main__":
     nearest_neighbors_data = []
 
     for i, idx in enumerate(indices):
-        nearest_neighbor_example = trainset[idx[0]]
-        nearest_neighbors_data.append(nearest_neighbor_example)
+        neighbors = []
+        for j in idx:
+            neighbor_example = trainset[j]
+            neighbors.append(neighbor_example)
+
+        nearest_neighbors_data.append({
+            "test_index": i,
+            "neighbors": neighbors
+        })
 
     with open(os.path.join(args.data_path, args.data_type, "nearest_neighbors_data.json"), "w") as outfile:
         json.dump(nearest_neighbors_data, outfile,

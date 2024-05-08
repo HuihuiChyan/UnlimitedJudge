@@ -117,8 +117,14 @@ def build_dataset(data_type, data_path):
             lines = [line.strip() for line in fin.readlines()]
             dataset_score = [json.loads(line) for line in lines]
 
+        new_dataset = []
         for example, example_score in zip(dataset, dataset_score):
             example["score"] = example_score["score"]
+
+            if example["score"] != [-1, -1]:
+                new_dataset.append(example)
+        
+        dataset = new_dataset
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/testset-v1.json"), "r") as fin:

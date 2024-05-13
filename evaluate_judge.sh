@@ -6,4 +6,5 @@ python3 -u evaluate_judge.py \
     --model-type "auto-j" \
     --data-type "toxic-chat" \
     --eval-batch-size 16 \
-    --max-new-token 1024
+    --max-new-token 1024 \
+    --logit-file auto-j-toxic-chat.jsonl

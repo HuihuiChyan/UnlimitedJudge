@@ -567,14 +567,24 @@ if __name__ == "__main__":
 
         answers.append(example["score"])
 
-    predictions = batched_generation(args.model_name_or_path, prompts,
-                                     max_new_token=args.max_new_token,
-                                     temperature=args.temperature,
-                                     top_p=args.top_p)
+    # predictions = batched_generation(args.model_name_or_path, prompts,
+    #                                  max_new_token=args.max_new_token,
+    #                                  temperature=args.temperature,
+    #                                  top_p=args.top_p)
 
-    import pdb;pdb.set_trace()
-    pred_scores = parse_predictions(
-        predictions, args.model_type, args.data_type, args.prompt_type)
+    # pred_scores = parse_predictions(
+    #     predictions, args.model_type, args.data_type, args.prompt_type)
+
+    def convert_score(score):
+        if score < 5:
+            return 1
+        else:
+            return 0
+
+    with open(args.logit_file, "r", encoding="utf-8") as fout:
+        predictions = [float(line) for line in fout.readlines()]
+
+        pred_scores = [convert_score(line) for line in predictions]
 
     if args.logit_file is not None:
         with open(args.logit_file, "w", encoding="utf-8") as fout:

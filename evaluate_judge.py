@@ -408,7 +408,7 @@ def parse_predictions(predictions, model_type, data_type, prompt_type):
         pred_scores = [parse_score_pandalm(
             pred, is_pair=is_pair) for pred in predictions]
     elif model_type == "auto-j":
-        is_pair = "prometheus" not in data_type
+        is_pair = "prometheus" not in data_type and data_type not in ['toxic-chat', 'halu-eval']
         pred_scores = [parse_score_autoj(
             pred, is_pair=is_pair) for pred in predictions]
     elif model_type == "prometheus":
@@ -572,6 +572,7 @@ if __name__ == "__main__":
                                      temperature=args.temperature,
                                      top_p=args.top_p)
 
+    import pdb;pdb.set_trace()
     pred_scores = parse_predictions(
         predictions, args.model_type, args.data_type, args.prompt_type)
 

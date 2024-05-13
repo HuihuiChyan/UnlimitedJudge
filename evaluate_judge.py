@@ -573,10 +573,7 @@ if __name__ == "__main__":
     pred_scores = parse_predictions(
         predictions, args.model_type, args.data_type, args.prompt_type)
 
-    with open(args.logit_file, "r", encoding="utf-8") as fout:
-        predictions = [float(line) for line in fout.readlines()]
-
-        pred_scores = [convert_score(line) for line in predictions]
+    import pdb;pdb.set_trace()
 
     if args.logit_file is not None:
         with open(args.logit_file, "w", encoding="utf-8") as fout:

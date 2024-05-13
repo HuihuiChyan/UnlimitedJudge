@@ -1,5 +1,5 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=7
 python3 -u evaluate_judge.py \
     --model-name-or-path "./models/Auto-J-13B" \
     --prompt-type "vanilla" \

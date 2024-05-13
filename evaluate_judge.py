@@ -528,8 +528,6 @@ if __name__ == "__main__":
                                             answer_body=example["answer_body"])
                 prompts.append(prompt)
             else:
-
-                
                 if args.prompt_type == "icl":
                     neighbor_example = nearest_neighbors_data[index]
                     neighbor_example["rubric"] = "Please rate the helpfulness, relevance, accuracy, level of details of their responses."
@@ -567,19 +565,13 @@ if __name__ == "__main__":
 
         answers.append(example["score"])
 
-    # predictions = batched_generation(args.model_name_or_path, prompts,
-    #                                  max_new_token=args.max_new_token,
-    #                                  temperature=args.temperature,
-    #                                  top_p=args.top_p)
+    predictions = batched_generation(args.model_name_or_path, prompts,
+                                     max_new_token=args.max_new_token,
+                                     temperature=args.temperature,
+                                     top_p=args.top_p)
 
-    # pred_scores = parse_predictions(
-    #     predictions, args.model_type, args.data_type, args.prompt_type)
-
-    def convert_score(score):
-        if score < 5:
-            return 1
-        else:
-            return 0
+    pred_scores = parse_predictions(
+        predictions, args.model_type, args.data_type, args.prompt_type)
 
     with open(args.logit_file, "r", encoding="utf-8") as fout:
         predictions = [float(line) for line in fout.readlines()]

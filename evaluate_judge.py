@@ -42,7 +42,7 @@ def build_params():
     parser.add_argument(
         "--data-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval"
+        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval",
                  "llmbar-neighbor", "llmbar-natural", "llmbar-gptinst", "llmbar-gptout", "llmbar-manual"),
         default=None,
     )

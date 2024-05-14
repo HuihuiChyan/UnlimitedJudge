@@ -1,6 +1,6 @@
 #!/bin/bash
 python -u evaluate_gpt_domain.py \
-    --model-type "gpt-4-1106-preview" \
+    --model-type "gpt-3.5-turbo-0613" \
     --prompt-type "vanilla" \
     --data-type "halu-eval" \
     --data-path ./data \

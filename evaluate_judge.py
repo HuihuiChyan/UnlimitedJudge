@@ -607,8 +607,7 @@ if __name__ == "__main__":
                     prompt = neighbor_prompt + \
                         neighbor_example["review"] + prompt
                 prompts.append(prompt)
-                print(prompt)
-                print("--------------------------------")
+                
         elif args.model_type == "prometheus":
             if "prometheus" in args.data_type:
                 prompt = instruction.format(question_body=example["question_body"],

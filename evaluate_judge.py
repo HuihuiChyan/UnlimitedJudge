@@ -550,8 +550,10 @@ def calculate_metrics(y_true_list, y_pred_list, data_type):
             else:
                 if metrics_dict['accuracy'] > best_metrics_dict['accuracy']:
                     best_metrics_dict = metrics_dict
+        
+        metrics_dict = best_metrics_dict
 
-    return best_metrics_dict
+    return metrics_dict
 
 
 def get_nearest_neighbor(data_type, data_path, dataset, prompt):

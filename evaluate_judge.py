@@ -226,20 +226,7 @@ def build_dataset(data_type, data_path):
                 example["score"] = score_mapping[str(line["label"])]
                 dataset.append(example)
 
-    elif data_type == "halu-eval":
-        # with open("data/halu-eval/general_data.jsonl", "r") as fin:
-        #     lines = [json.loads(line) for line in fin.readlines()][:100]
-
-        #     dataset = []
-        #     for line in lines:
-        #         example = {}
-        #         example["question_body"] = line["user_query"]
-        #         example["answer_body"] = line["chatgpt_response"]
-        #         example["rubric"] = "Please evaluate the factual accuracy of the response. Determine if the response is likely to be a hallucination, meaning it contains unverifiable, non-factual, or irrelevant information."
-        #         score_mapping = {"no": 1, "yes": 0}
-        #         example["score"] = score_mapping[str(line["hallucination"])]
-        #         dataset.append(example)
-
+    elif data_type == "halu-eval-qa":
         with open("data/halu-eval/qa.jsonl", "r") as fin:
             lines = [json.loads(line) for line in fin.readlines()][:100]
 
@@ -254,6 +241,40 @@ def build_dataset(data_type, data_path):
                     example["answer_body"] = line["hallucinated_answer"]
                     example['score'] = 0
                 example["rubric"] = "Please evaluate the factual accuracy of the response. Determine if the response is likely to be a hallucination, meaning it contains unverifiable, non-factual, or irrelevant information."
+                dataset.append(example)
+
+    elif data_type == "halu-eval-summary":
+        with open("data/halu-eval/summary.jsonl", "r") as fin:
+            lines = [json.loads(line) for line in fin.readlines()][:100]
+
+            dataset = []
+            for line in lines:
+                example = {}
+                example["question_body"] = line["document"]
+                if random.random() >= 0.5:
+                    example["answer_body"] = line["right_summary"]
+                    example['score'] = 1
+                else:
+                    example["answer_body"] = line["hallucinated_summary"]
+                    example['score'] = 0
+                example["rubric"] = "Please evaluate the factual accuracy of the summary based on the document. Determine if the summary is likely to be a hallucination, meaning it contains unverifiable, non-factual, or irrelevant information."
+                dataset.append(example)
+
+    elif data_type == "halu-eval-dialogue":
+        with open("data/halu-eval/dialogue.jsonl", "r") as fin:
+            lines = [json.loads(line) for line in fin.readlines()][:100]
+
+            dataset = []
+            for line in lines:
+                example = {}
+                example["question_body"] = line["dialogue_history"]
+                if random.random() >= 0.5:
+                    example["answer_body"] = line["right_response"]
+                    example['score'] = 1
+                else:
+                    example["answer_body"] = line["hallucinated_response"]
+                    example['score'] = 0
+                example["rubric"] = "Please evaluate the factual accuracy of the summary based on the document. Determine if the summary is likely to be a hallucination, meaning it contains unverifiable, non-factual, or irrelevant information."
                 dataset.append(example)
     
     elif data_type == "toxic-chat":
@@ -407,7 +428,7 @@ def calculate_metrics(y_true_list, y_pred_list, data_type):
                 win_list.append(0)
         return win_list
 
-    if "prometheus" not in data_type and data_type not in ["halu-eval", "toxic-chat"]:
+    if data_type not in ["prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval-summary", "halu-eval-qa", "halu-eval-dialogue"]:
         y_true = translate_score_to_win_list(y_true_list)
         y_pred = translate_score_to_win_list(y_pred_list)
     else:
@@ -460,7 +481,7 @@ def calculate_metrics(y_true_list, y_pred_list, data_type):
             'spearman': spearman,
         }
 
-    elif data_type in ["halu-eval", "toxic-chat"]:
+    elif data_type in ["halu-eval-summary", "halu-eval-qa", "halu-eval-dialogue", "toxic-chat"]:
 
         # add metrics to dict
         best_metrics_dict = {

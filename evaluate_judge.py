@@ -399,7 +399,7 @@ def parse_predictions(predictions, model_type, data_type, prompt_type):
         pred_scores = [parse_score_pandalm(
             pred, is_pair=is_pair) for pred in predictions]
     elif model_type == "auto-j":
-        is_pair = "prometheus" not in data_type and data_type not in ['toxic-chat', 'halu-eval']
+        is_pair = "prometheus" not in data_type and data_type not in ['toxic-chat', 'halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue']
         pred_scores = [parse_score_autoj(
             pred, is_pair=is_pair) for pred in predictions]
     elif model_type == "prometheus":

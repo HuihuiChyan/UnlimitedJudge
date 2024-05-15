@@ -542,7 +542,7 @@ if __name__ == "__main__":
     answers = []
     for index, example in enumerate(dataset):
         if args.model_type in ["judgelm", "pandalm", "auto-j"]:
-            if "prometheus" in args.data_type or args.data_type in ["toxic-chat", "halu-eval"]:
+            if "prometheus" in args.data_type or args.data_type in ["toxic-chat", "halu-eval-summary", "halu-eval-dialogue", "halu-eval-qa"]:
                 prompt = instruction.format(question_body=example["question_body"],
                                             rubric=example["rubric"],
                                             answer_body=example["answer_body"])

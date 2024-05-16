@@ -290,7 +290,7 @@ def build_dataset(data_type, data_path):
             example["score"] = 1 - line["toxicity"]
             dataset.append(example)
 
-        random.int(42)
+        random.seed(42)
         random.shuffle(dataset)
         dataset = dataset[:1000] #only use 1k
 
@@ -607,7 +607,7 @@ if __name__ == "__main__":
                     prompt = neighbor_prompt + \
                         neighbor_example["review"] + prompt
                 prompts.append(prompt)
-                
+
         elif args.model_type == "prometheus":
             if "prometheus" in args.data_type:
                 prompt = instruction.format(question_body=example["question_body"],

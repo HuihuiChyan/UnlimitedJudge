@@ -2,6 +2,7 @@ import os
 import json
 import random
 import scipy
+import numpy as np
 from datasets import load_dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 

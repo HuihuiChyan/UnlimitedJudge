@@ -1,4 +1,5 @@
 def create_prompt_mtbench(model_type, data_type):
+    assert data_type == "mt-bench"
     if model_type == "judgelm":
         instruction_single = """We would like to request your feedback on the performance of two AI assistants in response to the user question displayed above.
 

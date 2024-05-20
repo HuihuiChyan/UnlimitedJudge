@@ -100,6 +100,7 @@ if __name__ == "__main__":
 
     dataset = build_dataset(args.data_type, args.data_path)
 
+    import pdb;pdb.set_trace()
     if args.prompt_type == "vanilla":
         instruction = create_prompt(args.model_type, args.data_type)
     else:

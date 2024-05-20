@@ -4,4 +4,4 @@ python -u evaluate_gpt.py \
     --prompt-type "icl" \
     --data-type "judgelm" \
     --data-path ./data \
-    --multi-process True
+    --multi-process True \

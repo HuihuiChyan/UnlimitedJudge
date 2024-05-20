@@ -1,13 +1,14 @@
 import os
 import json
 import torch
+import random
 import argparse
 import numpy as np
 from tqdm import tqdm
 
 
 def build_trainset(data_type, data_path):
-    trainset = []
+    trainset = {"win": [], "lose": [], "tie": []}
     if data_type == "judgelm":
         with open(os.path.join(data_path, "judgelm/judgelm_train_100k.jsonl"), "r") as fin:
             lines = [json.loads(line.strip()) for line in fin.readlines()]
@@ -18,7 +19,12 @@ def build_trainset(data_type, data_path):
                     "answer2_body": line["answer2_body"],
                     "evaluation": line["text"],
                 }
-                trainset.append(example)
+                if line['score'][0] > line['score'][1]:
+                    trainset['win'].append(example)
+                elif line['score'][0] < line['score'][1]:
+                    trainset['lose'].append(example)
+                else:
+                    trainset['tie'].append(example)
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/train.json"), "r") as fin:
@@ -88,53 +94,24 @@ def concat_sentence(example):
 
 def build_demo_instruction(model_type):
     if "gpt" in model_type:
-        instruction = """The following is an in-context illustration for the evaluation task:
-[Question]
-{demo1_question_body}
-
-[The Start of Assistant 1's Answer]
-{demo1_answer1_body}
-[The End of Assistant 1's Answer]
-
-[The Start of Assistant 2's Answer]
-{demo1_answer2_body}
-[The End of Assistant 2's Answer]
-
-[Your Evaluation]
-{demo1_evaluation}
-
-The following is another in-context illustration for the evaluation task:
-[Question]
-{demo2_question_body}
-
-[The Start of Assistant 1's Answer]
-{demo2_answer1_body}
-[The End of Assistant 1's Answer]
-
-[The Start of Assistant 2's Answer]
-{demo2_answer2_body}
-[The End of Assistant 2's Answer]
-
-[Your Evaluation]
-{demo2_evaluation}
-"""
+        instruction = "[Question]\n{question_body}\n\n[The Start of Assistant 1's Answer]\n{answer1_body}\n[The End of Assistant 1's Answer]\n\n[The Start of Assistant 2's Answer]\n{answer2_body}\n[The End of Assistant 2's Answer]\n\n[Your Evaluation]\n{evaluation}"
     return instruction
 
 def build_icl(data_type, data_path, model_type, test_samples):
-
     dataset = []
     trainset = build_trainset(data_type, data_path)
     instruction = build_demo_instruction(model_type)
     for sample in test_samples:
-        demo_samples = np.random.choice(trainset, 2, replace=False)
-        demonstrations = instruction.format(demo1_question_body=demo_samples[0]["demo1_question_body"],
-                                           demo1_answer1_body=demo_samples[0]["demo1_answer1_body"], 
-                                           demo1_answer2_body=demo_samples[0]["demo1_answer2_body"], 
-                                           demo1_evaluation=demo_samples[0]["demo1_evaluation"], 
-                                           demo2_question_body=demo_samples[1]["demo2_question_body"],
-                                           demo2_answer1_body=demo_samples[1]["demo2_answer1_body"], 
-                                           demo2_answer2_body=demo_samples[1]["demo2_answer2_body"], 
-                                           demo2_evaluation=demo_samples[1]["demo2_evaluation"])
-        sample["demonstrations"] = demonstrations
+        demo_sample_win = np.random.choice(trainset['win'], 4, replace=False)
+        demo_sample_lose = np.random.choice(trainset['lose'], 4, replace=False)
+        demo_samples = list(demo_sample_win) + list(demo_sample_lose)
+        random.shuffle(demo_samples)
+        demonstrations = []
+        for demo_sample in demo_samples:
+            demonstrations.append(instruction.format(question_body=demo_sample["question_body"],
+                                                     answer1_body=demo_sample["answer1_body"], 
+                                                     answer2_body=demo_sample["answer2_body"], 
+                                                     evaluation=demo_sample["evaluation"]))
+        sample["demonstrations"] = "\n\n".join(demonstrations)
         dataset.append(sample)
     return dataset

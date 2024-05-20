@@ -80,7 +80,7 @@ def request_gpt(prompt, model, temperature, max_new_tokens):
         "Content-Type": "application/json",
         "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
     }
-    max_tries = 5
+    max_tries = 1
     res = ''
     response = None
     sys_info = {"role": "system", "content": "You are a helpful and precise assistant for checking the quality of the answer."}
@@ -186,6 +186,8 @@ if __name__ == "__main__":
         else:
             pool_fn = partial(gpt_scoring, model=args.model_type, temperature=args.temperature, max_new_tokens=args.max_new_token)
             predictions = pool.map(pool_fn, prompts)
+    
+    import pdb;pdb.set_trace()
 
     is_pair = "prometheus" not in args.data_type
     is_cot = args.prompt_type == "cot"

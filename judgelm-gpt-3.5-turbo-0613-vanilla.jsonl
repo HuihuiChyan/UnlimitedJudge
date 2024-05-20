@@ -1,100 +1,500 @@
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
-{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1 provided a helpful and relevant"}
 {"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpfulness: 7"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8 - The"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
-{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 7\n-"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1 provided a short and concise answer by mentioning Clemson"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 - The"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a clear and concise response with five different"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by addressing the"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, explaining the"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpfulness: 7"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is helpful"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a concise and accurate answer to the question"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: I would rate Assistant 1's response"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by giving specific"}
-{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: \n- Helpfulness: 7 -"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8 -"}
-{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpfulness: 7 -"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpfulness: 8\n-"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: \n- Helpfulness"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
-{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: 8.5"}
 {"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1:\n- Helpful: 7 - The description"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a detailed step-by-step guide on how"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
 {"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Assistant 1 provided incomplete answers"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: 7\n- Helpful: 7"}
-{"score": [8.0, 3.0], "prediction": "8 3\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
-{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a comprehensive list of tips for saving money"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, addressing the"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a concise and accurate response by stating \""}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1 provided a helpful and relevant response by suggesting the"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
 {"score": [8.0, 5.0], "prediction": "8 5\n\nAssistant 1: 8\nAssistant 2:"}
 {"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpfulness: 8\n-"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpfulness: 8\n-"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [6.0, 2.0], "prediction": "6 2\n\nAssistant 1: 6\nAssistant 2:"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpfulness: 7"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8 \n-"}
-{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1:\n- Helpful: 8\n- Re"}
-{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
-{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7 \n-"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpfulness: 8\n-"}
-{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant response with a good"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response provided by Assistant 1 is"}
-{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1 provided a helpful and relevant response by providing information"}
-{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
-{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: \n- Helpfulness: 8"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\n- Helpful: 9"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
-{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
-{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
-{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpful: 7\n- Re"}
 {"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 1 provided a"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 9.5], "prediction": "7.5 9.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.5, 9.5], "prediction": "7.5 9.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by suggesting researching"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1 provided a helpful and relevant response by correctly stating"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: The response from Assistant 1 was helpful"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1 provided a helpful and relevant response by correctly identifying"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1 provided a helpful and relevant response by accurately stating"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by explaining the"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1 provided a helpful, relevant, and accurate response"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant response by listing several"}
+{"score": [8.5, 7.5], "prediction": "8.5 7.5\n\nAssistant 1: 8.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\n- Helpful: 7"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 provides several"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by confirming that"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response, addressing the"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [6.0, 2.0], "prediction": "6 2\n\nAssistant 1: 6\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful, relevant, and accurate response"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a detailed and informative response about SCSS"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is quite"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \nHelpfulness: 7\nRe"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response is helpful, relevant, and"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by suggesting several"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: 8.5"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1 provided a helpful and relevant"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: \n- Helpfulness: 9"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a more detailed and comprehensive response compared to"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by explaining that"}
+{"score": [7.5, 9.0], "prediction": "7.5 9.0\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1:\n- Helpfulness: 7\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 1 provides a"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpfulness: 7 -"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1 provided a helpful and relevant response with a good"}
+{"score": [7.5, 9.5], "prediction": "7.5 9.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided two alternative synonyms for the word \"ade"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1 provided a list of possible names for the television"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 - The"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 1's response"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant response by giving information"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 - Assistant"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1 provided a good introduction to the topic and gave"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is quite"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1 provided a helpful and relevant response by giving tips"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 was helpful"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: I would rate Assistant 1 a"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: \n- Helpfulness"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: \n- Helpful:"}
+{"score": [8.0, 9.0], "prediction": "8 9\nAssistant 1: I would rate Assistant 1's response"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1 provided a helpful response with a score of"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by stating that"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 1's response"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: The response from Assistant 1 was helpful"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response with a good"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7 - The"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and detailed response. It suggested"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 3.0], "prediction": "8 3\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by giving specific"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpfulness: 7 -"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \nHelpfulness: 8\nRe"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 9.0], "prediction": "7.5 9.0\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by accurately explaining"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and detailed response, addressing the"}
+{"score": [8.0, 5.0], "prediction": "8 5\n\nAssistant 1 provided a helpful and accurate response by correctly identifying"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response to the question"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 1's response"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [8.0, 3.0], "prediction": "8 3\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1 provided a score of 7, indicating a"}
+{"score": [7.5, 9.5], "prediction": "7.5 9.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a detailed and comprehensive explanation of the different"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1 provided a helpful and relevant response by correctly identifying"}
+{"score": [7.5, 9.5], "prediction": "7.5 9.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: I would rate Assistant 1's response"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a comprehensive and informative answer to the question"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by explaining that"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: \n- Helpful:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response provided by Assistant 1 is"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant analysis of the given"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant response by addressing the"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpfulness: 7 -"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a detailed and informative response about what a"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, addressing the"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a clear and detailed explanation of the difference"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is helpful"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [8.0, 5.0], "prediction": "8 5\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: \n- Helpful:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is helpful"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, describing an"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by suggesting various"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1 provided a helpful and relevant response by stating that"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1 provides a good overview of"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by clearly explaining"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1 provided a response that was somewhat relevant to the"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by citing reputable"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 4.5], "prediction": "7.5 4.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\n- Helpful: The re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, explaining that"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: Score 8\nAssistant 1 provides"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 10.0], "prediction": "8 10\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: I would give Assistant 1 a score"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a clear and straightforward survey question that could"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response. The answer"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant answer by explaining that"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1's response was helpful, relevant, and accurate"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1 provided a helpful response with a score of"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: I would rate Assistant 1's response"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1 provided a helpful and relevant"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1:\n- Helpfulness: 7 - The"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1:\n- Helpfulness: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: \n- Helpful: 7 \n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1:\n- Helpfulness: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by suggesting the"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8 -"}
+{"score": [8.0, 3.0], "prediction": "8 3\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.5, 3.5], "prediction": "7.5 3.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpful: 8\n- Re"}
+{"score": [7.0, 3.0], "prediction": "7 3\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\nAssistant 1 provided a brief example but did not fully explain"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: 8.5"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\n- Helpful: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: 8.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a correct answer by stating that the frequency"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [7.5, 8.5], "prediction": "7.5 8.5\n\nAssistant 1: 7.5"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpfulness: 7"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: The response from Assistant 1 is helpful"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by suggesting the"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response with a good"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response to the user"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by explaining the"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response, with a"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 is helpful"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1 provided a helpful, relevant, and accurate response"}
+{"score": [8.0, 2.0], "prediction": "8 2\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1 provided a response that was somewhat relevant to the"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8 \n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1 provided a helpful and relevant response by suggesting various"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 4.0], "prediction": "8 4\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: \n- Helpful:"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 6.0], "prediction": "7 6\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a clear and concise explanation of the difference"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 5.0], "prediction": "7 5\n\nAssistant 1:\nHelpfulness: 7\nRelevance"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [7.5, 6.5], "prediction": "7.5 6.5\n\nAssistant 1: 7.5"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 2.0], "prediction": "7 2\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [7.0, 4.0], "prediction": "7 4\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1:\n- Helpfulness: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response from Assistant 1 provides a"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 6.0], "prediction": "8 6\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [7.0, 8.0], "prediction": "7 8\n\nAssistant 1: \n- Helpful: 7\n-"}
+{"score": [8.5, 9.5], "prediction": "8.5 9.5\n\nAssistant 1: \n- Helpful:"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1 provided a helpful and relevant response by explaining the"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: 8\nAssistant 2:"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1: 7\nAssistant 2:"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1:\n- Helpful: 8\n- Relevant"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: Score 8\nAssistant 1 provided"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: The response provided by Assistant 1 is"}
+{"score": [7.0, 9.0], "prediction": "7 9\n\nAssistant 1:\n- Helpful: 7\n- Re"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpfulness: 8"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 9.0], "prediction": "8 9\n\nAssistant 1: \n- Helpful: 8\n-"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 1 provides a"}
+{"score": [8.0, 7.0], "prediction": "8 7\n\nAssistant 1: 8\nAssistant 2:"}

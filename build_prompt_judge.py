@@ -188,6 +188,8 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 
 ###Feedback: [/INST]"""
 
+    return instruction
+
 def create_prompt_cot(model_type, data_type):
     assert data_type in ["judgelm", "pandalm"]
     assert model_type in ["judgelm", "pandalm"]
@@ -225,6 +227,8 @@ In the subsequent line, please output a single line containing only two values i
 {answer2_body}
 
 ### Evaluation:\n"""
+
+    return instruction
 
 def parse_predictions(predictions, model_type, data_type, prompt_type):
     def parse_score_judgelm(review, is_pair=True):

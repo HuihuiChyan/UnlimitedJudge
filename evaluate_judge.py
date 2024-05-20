@@ -100,7 +100,6 @@ if __name__ == "__main__":
 
     dataset = build_dataset(args.data_type, args.data_path)
 
-    import pdb;pdb.set_trace()
     if args.prompt_type == "vanilla":
         instruction = create_prompt(args.model_type, args.data_type)
     else:
@@ -144,6 +143,8 @@ if __name__ == "__main__":
                                      max_new_token=args.max_new_token,
                                      temperature=args.temperature,
                                      top_p=args.top_p)
+    
+    import pdb;pdb.set_trace()
 
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type, args.prompt_type)
 

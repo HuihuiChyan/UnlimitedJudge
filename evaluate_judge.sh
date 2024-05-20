@@ -5,5 +5,4 @@ python3 -u evaluate_judge.py \
     --prompt-type "vanilla" \
     --model-type "prometheus" \
     --data-type "toxic-chat" \
-    --eval-batch-size 16 \
     --max-new-token 1024

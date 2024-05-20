@@ -336,7 +336,8 @@ def parse_predictions(predictions, model_type, data_type, prompt_type):
         pred_scores = [parse_score_autoj(pred, is_pair=is_pair) for pred in predictions]
     elif model_type == "prometheus":
         pred_scores = [parse_score_prometheus(pred, is_pair=False) for pred in predictions]
-        if data_type not in ['prometheus-ind', 'prometheus-ood','toxic-chat', 'halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue']
+        is_pair = data_type not in ['prometheus-ind', 'prometheus-ood','toxic-chat', 'halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue']
+        if is_pair:
             predictions_a = [pred for pred in pred_scores[0::2]]
             predictions_b = [pred for pred in pred_scores[1::2]]
             pred_scores = [[pred[0], pred[1]] for pred in zip(predictions_a, predictions_b)]

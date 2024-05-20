@@ -8,12 +8,14 @@ import requests
 import multiprocessing
 from functools import partial
 
-from evaluate_judge import build_dataset, calculate_metrics
+from build_dataset import build_dataset, calculate_metrics
+from build_prompt_gpt import create_prompt_gpt
+
 
 def build_params_gpt():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model-type",
+        "--model-name",
         type=str,
         choices=("gpt-4-1106-preview", "gpt-4-0125-preview", "gpt-4-turbo-2024-04-09", 
                  "gpt-3.5-turbo-0613", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-0125"),
@@ -28,7 +30,8 @@ def build_params_gpt():
     parser.add_argument(
         "--data-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood",
+        choices=("judgelm", "pandalm", "auto-j", "prometheus-ind", "prometheus-ood", "mt-bench",
+                 "halu-eval-summary", "halu-eval-qa", "halu-eval-dialogue", "salad-bench", "toxic-chat",
                  "llmbar-neighbor", "llmbar-natural", "llmbar-gptinst", "llmbar-gptout", "llmbar-manual"),
         default=None,
     )
@@ -49,12 +52,6 @@ def build_params_gpt():
         default=0.0,
         help="The temperature for sampling.",
     )
-    # parser.add_argument(
-    #     "--top-p",
-    #     type=float,
-    #     default=1.0,
-    #     help="The temperature for sampling.",
-    # )
     parser.add_argument(
         "--logit-file",
         type=str,
@@ -103,7 +100,7 @@ def request_gpt(prompt, model, temperature, max_new_tokens):
     return res
 
 
-def parse_score_gpt(review, is_pair=True, is_cot=False):
+def parse_score(review, is_pair=True, is_cot=False):
     if is_pair:
         if is_cot:
             try:
@@ -292,7 +289,7 @@ if __name__ == "__main__":
 
     is_pair = "prometheus" not in args.data_type
     is_cot = args.prompt_type == "cot"
-    pred_scores = [parse_score_gpt(p, is_pair=is_pair, is_cot=is_cot) for p in predictions]
+    pred_scores = [parse_score(p, is_pair=is_pair, is_cot=is_cot) for p in predictions]
 
     # 存储prediction和score到文件中，便于后续确认是否后处理存在问题
     if args.logit_file is not None:

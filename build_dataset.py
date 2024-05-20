@@ -189,7 +189,7 @@ def build_dataset(data_type, data_path = "./data"):
 
         random.seed(42)
         random.shuffle(dataset)
-        dataset = dataset[:1000] #only use 1k
+        dataset = dataset[:100] #only use 1k
 
     elif data_type == "salad-bench":
         hf_dataset = load_dataset("json", data_files="./data/salad-bench/mcq_set.json")['train'] # 其实是test

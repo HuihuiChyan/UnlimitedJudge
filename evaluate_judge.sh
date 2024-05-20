@@ -5,4 +5,4 @@ python3 -u evaluate_judge.py \
     --prompt-type "vanilla" \
     --model-type "prometheus" \
     --data-type "toxic-chat" \
-    --max-new-token 102
+    --max-new-token 1024

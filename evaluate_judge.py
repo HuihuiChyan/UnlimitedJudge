@@ -122,7 +122,7 @@ if __name__ == "__main__":
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":
-            if "prometheus" in args.data_type:
+            if args.data_type in ["prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval-summary", "halu-eval-dialogue", "halu-eval-qa"]:
                 prompt = instruction.format(question_body=example["question_body"],
                                             rubric=example["rubric"],
                                             answer_body=example["answer_body"])

@@ -6,3 +6,4 @@ python3 -u evaluate_judge.py \
     --model-type "prometheus" \
     --data-type "toxic-chat" \
     --max-new-token 1024
+    

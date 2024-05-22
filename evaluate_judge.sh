@@ -1,5 +1,5 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=4,5
+export CUDA_VISIBLE_DEVICES=4
 python3 -u evaluate_judge.py \
     --model-name-or-path "./models/PandaLM-7B" \
     --prompt-type "icl" \

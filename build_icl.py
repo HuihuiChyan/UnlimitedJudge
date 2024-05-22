@@ -86,7 +86,7 @@ def build_demo_instruction(model_type, data_type):
             instruction = "[Question]\n{question_body}\n\n[Response 1]\n{answer1_body}\n\n[Response 2]\n{answer2_body}\n\n[Your Evaluation]\n{evaluation}"
     else:
         from build_prompt_judge import create_prompt
-        instruction = create_prompt(args.model_type, args.data_type)+"{evaluation}"
+        instruction = create_prompt(model_type, data_type)+"{evaluation}"
     return instruction
 
 def build_icl(data_type, data_path, model_type, test_samples, pos_num=2, neg_num=2, tie_num=1):

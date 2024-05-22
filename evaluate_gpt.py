@@ -60,6 +60,12 @@ def build_params_gpt():
         default=None
     )
     parser.add_argument(
+        "--save-logit",
+        type=str,
+        choices=("True", "False"),
+        default="True"
+    )
+    parser.add_argument(
         "--pool-number",
         type=int,
         default=10,
@@ -75,12 +81,14 @@ def build_params_gpt():
 
 def request_gpt(prompt, model, temperature, max_new_tokens):
 
-    url = "https://api.ai-gaochao.cn/v1/chat/completions"
+    url = "https://api.chatgpt-3.vip/v1/chat/completions"
+    # url = "https://api.ai-gaochao.vip/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
+        # "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
+        "Authorization": "Bearer sk-YbA0PBLo6X76clo88aAb29Fc0852428c8850390375AbA32d",
     }
-    max_tries = 1
+    max_tries = 5
     res = ''
     response = None
     sys_info = {"role": "system", "content": "You are a helpful and precise assistant for checking the quality of the answer."}
@@ -168,7 +176,7 @@ if __name__ == "__main__":
         args.logit_file = f"{args.data_type}-{args.model_type}-{args.prompt_type}.jsonl"
 
     # 如果logit_file已经存在，就直接读取内容，仅仅对其进行重新后处理抽取分数
-    if args.logit_file is not None and os.path.exists(args.logit_file):
+    if os.path.exists(args.logit_file):
         with open(args.logit_file, "r", encoding="utf-8") as fin:
             lines = [json.loads(line) for line in fin.readlines()]
 
@@ -186,18 +194,14 @@ if __name__ == "__main__":
         else:
             pool_fn = partial(gpt_scoring, model=args.model_type, temperature=args.temperature, max_new_tokens=args.max_new_token)
             predictions = pool.map(pool_fn, prompts)
-    
-    import pdb;pdb.set_trace()
 
-    is_pair = "prometheus" not in args.data_type
-    is_cot = args.prompt_type == "cot"
-    pred_scores = [parse_score_gpt(p, is_pair=is_pair, is_cot=is_cot) for p in predictions]
+    pred_scores = [parse_score_gpt(p, args.data_type, args.prompt_type) for p in predictions]
 
     # 存储prediction和score到文件中，便于后续确认是否后处理存在问题
-    if args.logit_file is not None:
+    if args.save_logit == "True":
         with open(args.logit_file, "w", encoding="utf-8") as fout:
-            for prediction, score in zip(predictions, pred_scores):
-                json_line = {"score": score, "prediction": prediction}
+            for prediction, score, prompt in zip(predictions, pred_scores, prompts):
+                json_line = {"score": score, "prediction": prediction, "instruction": prompt}
                 fout.write(json.dumps(json_line)+"\n")
 
     print(args)

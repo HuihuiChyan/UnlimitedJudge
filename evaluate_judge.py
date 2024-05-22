@@ -21,7 +21,7 @@ def build_params():
     parser.add_argument(
         "--prompt-type",
         type=str,
-        choices=("vanilla", "cot"),
+        choices=("vanilla", "cot", "icl"),
         default="vanilla",
     )
     parser.add_argument(
@@ -104,6 +104,9 @@ if __name__ == "__main__":
         instruction = create_prompt(args.model_type, args.data_type)
     else:
         instruction = create_prompt_cot(args.model_type, args.data_type)
+    
+    if args.prompt_type == "icl":
+        dataset = build_icl(args.data_type, args.data_path, args.model_type, dataset, pos_num=1, neg_num=1, tie_num=0)
 
     prompts = []
     answers = []
@@ -118,6 +121,8 @@ if __name__ == "__main__":
                 prompt = instruction.format(question_body=example["question_body"],
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
+                if args.prompt_type == "icl":
+                    prompt = example["demonstrations"] + prompt
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":

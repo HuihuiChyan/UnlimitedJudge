@@ -24,11 +24,6 @@ def build_dataset(data_type, data_path = "./data"):
 
             if example["score"] != [-1, -1]:
                 new_dataset.append(example)
-        
-        import random
-        random.seed(42)
-        random.shuffle(new_dataset)
-        dataset = new_dataset[:500]
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/testset-v1.json"), "r") as fin:
@@ -55,6 +50,10 @@ def build_dataset(data_type, data_path = "./data"):
             score_mapping = {"0": [1, 1], "1": [1, 0], "2": [0, 1]}
             example["score"] = score_mapping[str(example["score"])]
             dataset.append(example)
+        
+        # random.seed(42)
+        # random.shuffle(dataset)
+        # dataset = dataset[:100]
 
     elif data_type == "auto-j":
         with open(os.path.join(data_path, "auto-j/testdata_pairwise.jsonl"), "r") as fin:

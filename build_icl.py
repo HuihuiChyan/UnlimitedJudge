@@ -31,80 +31,72 @@ def build_trainset(data_type, data_path):
             lines = json.load(fin)
 
         for line in lines:
-            parts = line["input_sequence"].split("###")
+            input_parts = line["input_sequence"].split("###")
             output_parts = line["output_sequence"].split("\n\n### ")
 
-            example = {
-                "question_body": "",
-                "answer1_body": "",
-                "answer2_body": "",
-                "winner": "",
-                "score": "",
-                "reason": "",
-                "reference": ""
-            }
+            example = {}
 
             # Extract winner from the first line of output_sequence
             winner = output_parts[0].strip()
-            example["winner"] = winner
+                
             # Based on winner assign score
             if winner == "1":
-                example["score"] = "5 0"
+                example["evaluation"] = "Response 1 is better."
             elif winner == "2":
-                example["score"] = "0 5"
+                example["evaluation"] = "Response 2 is better."
             elif winner == "Tie":
-                example["score"] = "5 5"
+                example["evaluation"] = "There is a tie."
             else:
                 # In case of invalid or missing winner
-                example["score"] = "0 0"
+                example["evaluation"] = "There is a tie."
+
+            for part in input_parts:
+                section = part.strip()
+                if section.startswith("Instruction:"):
+                    example["question_body"] = section[len("Instruction:"):].strip()
+                elif section.startswith("Response 1:"):
+                    example["answer1_body"] = section[len("Response 1:"):].strip()
+                elif section.startswith("Response 2:"):
+                    example["answer2_body"] = section[len("Response 2:"):].strip()
 
             # Extract reason and reference from output_parts
             for part in output_parts[1:]:
                 part = part.strip()
                 if part.startswith("Reason:"):
-                    example["reason"] = part[len("Reason:"):].strip()
-                if part.startswith("Reference:"):
-                    example["reference"] = part[len("Reference:"):].strip()
+                    reason = part[len("Reason:"):].strip()
+                # if part.startswith("Reference:"):
+                #     reference = part[len("Reference:"):].strip()
 
-            for part in parts:
-                section = part.strip()
-                if section.startswith("Instruction:"):
-                    example["question_body"] = section[len(
-                        "Instruction:"):].strip()
-                elif section.startswith("Response 1:"):
-                    example["answer1_body"] = section[len(
-                        "Response 1:"):].strip()
-                elif section.startswith("Response 2:"):
-                    example["answer2_body"] = section[len(
-                        "Response 2:"):].strip()
-
-            trainset.append(example)
-
+            example["evaluation"] = example["evaluation"] + "\n" + reason
+            
+            if winner == "1":
+                trainset["win"].append(example)
+            elif winner == "2":
+                trainset["lose"].append(example)
+            else:
+                trainset["tie"].append(example)
     return trainset
 
 
-def concat_sentence(example):
-    question_body = str(example["question_body"])
-
-    answer1_body = str(example["answer1_body"])
-    answer2_body = str(example["answer2_body"])
-    sentence = question_body + answer1_body + answer2_body
-
-    return sentence
-
-def build_demo_instruction(model_type):
+def build_demo_instruction(model_type, data_type):
     if "gpt" in model_type:
-        instruction = "[Question]\n{question_body}\n\n[The Start of Assistant 1's Answer]\n{answer1_body}\n[The End of Assistant 1's Answer]\n\n[The Start of Assistant 2's Answer]\n{answer2_body}\n[The End of Assistant 2's Answer]\n\n[Your Evaluation]\n{evaluation}"
+        if data_type == "judgelm":
+            instruction = "## Please evaluate the given responses according to the question.\n[Question]\n{question_body}\n\n[The Start of Assistant 1's Answer]\n{answer1_body}\n[The End of Assistant 1's Answer]\n\n[The Start of Assistant 2's Answer]\n{answer2_body}\n[The End of Assistant 2's Answer]\n\n[Your Evaluation]\n{evaluation}"
+        elif data_type == "pandalm":
+            instruction = "[Question]\n{question_body}\n\n[Response 1]\n{answer1_body}\n\n[Response 2]\n{answer2_body}\n\n[Your Evaluation]\n{evaluation}"
+    else:
+        instruction = create_prompt(args.model_type, args.data_type)+"{evaluation}"
     return instruction
 
-def build_icl(data_type, data_path, model_type, test_samples):
+def build_icl(data_type, data_path, model_type, test_samples, pos_num=2, neg_num=2, tie_num=1):
     dataset = []
     trainset = build_trainset(data_type, data_path)
-    instruction = build_demo_instruction(model_type)
+    instruction = build_demo_instruction(model_type, data_type)
     for sample in test_samples:
-        demo_sample_win = np.random.choice(trainset['win'], 4, replace=False)
-        demo_sample_lose = np.random.choice(trainset['lose'], 4, replace=False)
-        demo_samples = list(demo_sample_win) + list(demo_sample_lose)
+        demo_sample_win = np.random.choice(trainset['win'], pos_num, replace=False)
+        demo_sample_lose = np.random.choice(trainset['lose'], neg_num, replace=False)
+        demo_sample_tie = np.random.choice(trainset['tie'], tie_num, replace=False)
+        demo_samples = list(demo_sample_win) + list(demo_sample_lose) + list(demo_sample_tie)
         random.shuffle(demo_samples)
         demonstrations = []
         for demo_sample in demo_samples:

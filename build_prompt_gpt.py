@@ -88,34 +88,15 @@ Please first provide your judgment with a comprehensive explanation, and conclud
 Avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment."""
 
         elif prompt_type == "icl":
-#             instruction = """We would like to request your feedback on the performance of two AI assistants in response to the user question displayed bellow.
-# {rubric} Each assistant receives an overall score on a scale of 1 to 10, where a higher score indicates better overall performance.
-# Please first output a single line containing only two values indicating the scores for Assistant 1 and 2, respectively. The two scores are separated by a space. In the subsequent line, please provide a comprehensive explanation of your evaluation, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.
-
-# The following are some illustrative samples for the evaluation task:
-# {demonstrations}
-
-# The following are the question and responses that need your evaluation:
-# [Question]
-# {question_body}
-
-# [The Start of Assistant 1's Answer]
-# {answer1_body}
-# [The End of Assistant 1's Answer]
-
-# [The Start of Assistant 2's Answer]
-# {answer2_body}
-# [The End of Assistant 2's Answer]
-
-# [Your Evaluation]
-# """
-
-            instruction = """We would like to request your feedback on the performance of two AI assistants in response to the user question displayed bellow.
+            if data_type == "judgelm":
+                instruction = """We would like to request your feedback on the performance of two AI assistants in response to the user question displayed bellow.
 {rubric} Each assistant receives an overall score on a scale of 1 to 10, where a higher score indicates better overall performance.
 Please first output a single line containing only two values indicating the scores for Assistant 1 and 2, respectively. The two scores are separated by a space. In the subsequent line, please provide a comprehensive explanation of your evaluation, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.
 
+The following are some illustrative samples for the evaluation task:
 {demonstrations}
 
+The following are the question and responses that need your evaluation:
 [Question]
 {question_body}
 
@@ -129,12 +110,30 @@ Please first output a single line containing only two values indicating the scor
 
 [Your Evaluation]
 """
+            elif data_type == "pandalm":
+                instruction = """We would like to request your evaluation for two responses to the user question displayed below. Please start your judgement with "Response 1 is better / Response 2 is better / There is a tie.". After that, provide a brief explanation for your judgement. Avoiding any potential bias and ensure that the order in which the responses were presented does not affect your judgment.
+
+The following are some illustrative samples for the evaluation task:
+{demonstrations}
+
+The following are the question and responses that need your evaluation:
+[Question]
+{question_body}
+
+[Response 1]
+{answer1_body}
+
+[Response 2]
+{answer2_body}
+
+[Your Evaluation]
+"""
 
     return instruction
 
-def parse_score_gpt(review, is_pair=True, is_cot=False):
-    if is_pair:
-        if is_cot:
+def parse_score_gpt(review, data_type, prompt_type):
+    if "prometheus" not in data_type:
+        if prompt_type == "cot":
             try:
                 score_pair = review.strip().split('\n')[-1].split(":")[-1].rstrip(".").strip()
                 score_pair = score_pair.replace(',', ' ')
@@ -167,6 +166,14 @@ def parse_score_gpt(review, is_pair=True, is_cot=False):
                 return [float(sp[0]), float(sp[1])]
             except:
                 return [1.0, 1.0] # default is Tie 
+        elif prompt_type == "icl" and data_type == "pandalm":
+            # For PandaLM in ICL mode, we set the output different
+            if re.search(r"Response 1 is better", review):
+                return [1.0, 0.0]
+            elif re.search(r"Response 2 is better", review):
+                return [0.0, 1.0]
+            else:
+                return [1.0, 1.0]
         else:
             try:
                 score_pair = review.strip().split('\n')[0]

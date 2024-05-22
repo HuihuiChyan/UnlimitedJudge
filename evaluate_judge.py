@@ -81,7 +81,7 @@ def batched_generation(
 ):
     print("start load model")
     import vllm
-    model = vllm.LLM(model=model_path, tensor_parallel_size=2)
+    model = vllm.LLM(model=model_path, tensor_parallel_size=1, dtype="float16")
     sampling_params = vllm.SamplingParams(
         temperature=temperature,
         max_tokens=max_new_token,

@@ -9,6 +9,7 @@ import numpy as np
 
 from build_dataset import build_dataset, calculate_metrics
 from build_prompt_judge import create_prompt, create_prompt_cot, parse_predictions
+from build_icl import build_icl
 
 
 def build_params():

@@ -123,8 +123,8 @@ if __name__ == "__main__":
                                             rubric=example["rubric"],
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
-                if args.prompt_type == "icl":
-                    prompt = example["demonstrations"] + "\n\n" + prompt
+                # if args.prompt_type == "icl":
+                #     prompt = example["demonstrations"] + "\n\n" + prompt
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":
@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
         answers.append(example["score"])
 
-    import pdb;pdb.set_trace()
+    # import pdb;pdb.set_trace()
     predictions = batched_generation(args.model_name_or_path, prompts,
                                      max_new_token=args.max_new_token,
                                      temperature=args.temperature,

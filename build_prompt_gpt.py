@@ -1,4 +1,5 @@
 import re
+import random
 
 def create_prompt_gpt(data_type, prompt_type = "vanilla"):
     if data_type == "halu-eval-qa":
@@ -165,7 +166,8 @@ def parse_score_gpt(review, data_type, prompt_type):
                 assert len(sp) == 2
                 return [float(sp[0]), float(sp[1])]
             except:
-                return [1.0, 1.0] # default is Tie 
+                # return [1.0, 1.0] # default is Tie
+                return random.choice([[1.0, 0.0], [0.0, 1.0]])
         elif prompt_type == "icl" and data_type == "pandalm":
             # For PandaLM in ICL mode, we set the output different
             if re.search(r"Response 1 is better", review):
@@ -181,7 +183,7 @@ def parse_score_gpt(review, data_type, prompt_type):
                 sp = score_pair.split(' ')
                 return [float(sp[0]), float(sp[1])]
             except:
-                return [1.0, 1.0] # default is Tie 
+                return [1.0, 1.0] # default is Tie
     else:
         try:
             if "Rating: [[" in review:

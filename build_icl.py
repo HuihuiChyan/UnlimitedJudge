@@ -68,14 +68,14 @@ def build_trainset(data_type, data_path):
 
             # Based on winner assign score
             if winner == "1":
-                example["evaluation"] = "1 0"
+                example["evaluation"] = "1"
             elif winner == "2":
-                example["evaluation"] = "0 1"
+                example["evaluation"] = "2"
             elif winner == "Tie":
-                example["evaluation"] = "1 1"
+                example["evaluation"] = "Tie"
             else:
                 # In case of invalid or missing winner
-                example["evaluation"] = "1 1"
+                example["evaluation"] = "Tie"
 
             for part in input_parts:
                 section = part.strip()

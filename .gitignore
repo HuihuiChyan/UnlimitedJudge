@@ -3,5 +3,5 @@ data/pandalm/train.json
 data/judgelm/judgelm_train_100k.jsonl
 __pycache__
 *.log
-*[0-9].sh
+# *[0-9].sh
 *.jsonl

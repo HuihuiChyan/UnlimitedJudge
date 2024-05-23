@@ -79,7 +79,7 @@ def build_trainset(data_type, data_path):
                 #     reference = part[len("Reference:"):].strip()
 
             # example["evaluation"] = example["evaluation"] + "\n" + reason
-            example["evaluation"] = reason + "\n" + xample["evaluation"]
+            example["evaluation"] = reason + "\n" + example["evaluation"]
             
             if winner == "1":
                 trainset["win"].append(example)

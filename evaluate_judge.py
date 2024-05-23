@@ -123,8 +123,8 @@ if __name__ == "__main__":
                                             rubric=example["rubric"],
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
-                # if args.prompt_type == "icl":
-                #     prompt = example["demonstrations"] + "\n\n" + prompt
+                if args.prompt_type == "icl":
+                    prompt = example["demonstrations"] + "\n\n" + prompt
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":
@@ -151,7 +151,7 @@ if __name__ == "__main__":
                                      temperature=args.temperature,
                                      top_p=args.top_p)
 
-    # import pdb;pdb.set_trace()
+    import pdb;pdb.set_trace()
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type, args.prompt_type)
 
     if args.logit_file is not None:

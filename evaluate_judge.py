@@ -120,6 +120,7 @@ if __name__ == "__main__":
             else:
                 example["rubric"] = "Please rate the helpfulness, relevance, accuracy, level of details of their responses."
                 prompt = instruction.format(question_body=example["question_body"],
+                                            rubric=example["rubric"],
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
                 if args.prompt_type == "icl":

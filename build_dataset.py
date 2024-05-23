@@ -25,7 +25,6 @@ def build_dataset(data_type, data_path = "./data"):
             if example["score"] != [-1, -1]:
                 new_dataset.append(example)
         
-        import pdb;pdb.set_trace()
         random.seed(42)
         random.shuffle(new_dataset)
         new_dataset = new_dataset[:500]

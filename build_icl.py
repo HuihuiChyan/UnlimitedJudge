@@ -21,13 +21,13 @@ def build_trainset(data_type, data_path):
                 }
                 if line['score'][0] > line['score'][1]:
                     trainset['win'].append(example)
-                    eval_line = "Response 1 is better."
+                    eval_line = "1"
                 elif line['score'][0] < line['score'][1]:
                     trainset['lose'].append(example)
-                    eval_line = "Response 2 is better."
+                    eval_line = "2"
                 else:
                     trainset['tie'].append(example)
-                    eval_line = "There is a tie."
+                    eval_line = "Tie."
                 
                 example["evaluation"] = eval_line + "\n" + example["evaluation"].split("\n")[-1]
 
@@ -68,14 +68,14 @@ def build_trainset(data_type, data_path):
 
             # Based on winner assign score
             if winner == "1":
-                example["evaluation"] = "1"
+                example["evaluation"] = "1 0"
             elif winner == "2":
-                example["evaluation"] = "2"
+                example["evaluation"] = "0 1"
             elif winner == "Tie":
-                example["evaluation"] = "Tie"
+                example["evaluation"] = "1 1"
             else:
                 # In case of invalid or missing winner
-                example["evaluation"] = "Tie"
+                example["evaluation"] = "1 1"
 
             for part in input_parts:
                 section = part.strip()

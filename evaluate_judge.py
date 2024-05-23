@@ -123,7 +123,7 @@ if __name__ == "__main__":
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
                 if args.prompt_type == "icl":
-                    prompt = example["demonstrations"] + prompt
+                    prompt = example["demonstrations"] + "\n" + prompt
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":

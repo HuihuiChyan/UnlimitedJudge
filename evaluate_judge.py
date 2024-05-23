@@ -151,7 +151,7 @@ if __name__ == "__main__":
                                      temperature=args.temperature,
                                      top_p=args.top_p)
 
-    import pdb;pdb.set_trace()
+    # import pdb;pdb.set_trace()
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type, args.prompt_type)
 
     if args.logit_file is not None:

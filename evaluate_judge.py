@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
     dataset = build_dataset(args.data_type, args.data_path)
 
-    if args.prompt_type in ["vanilla" or "icl"]:
+    if args.prompt_type in ["vanilla", "icl"]:
         instruction = create_prompt(args.model_type, args.data_type)
     else:
         instruction = create_prompt_cot(args.model_type, args.data_type)

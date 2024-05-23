@@ -4,5 +4,5 @@ python3 -u evaluate_judge.py \
     --model-name-or-path "./models/Auto-J" \
     --prompt-type "icl" \
     --model-type "auto-j" \
-    --data-type "judgelm" \
+    --data-type "pandalm" \
     --max-new-token 1024

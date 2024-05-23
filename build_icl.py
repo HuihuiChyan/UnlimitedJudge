@@ -111,7 +111,7 @@ def build_icl(data_type, data_path, model_type, test_samples, pos_num=2, neg_num
         demo_sample_tie = np.random.choice(trainset['tie'], tie_num, replace=False)
         demo_samples = list(demo_sample_win) + list(demo_sample_lose) + list(demo_sample_tie)
         random.shuffle(demo_samples)
-        demo_samples = [demo_samples[0]]
+        # demo_samples = [demo_samples[0]]
         demonstrations = []
         for demo_sample in demo_samples:
             demonstrations.append(instruction.format(question_body=demo_sample["question_body"],

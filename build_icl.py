@@ -50,16 +50,27 @@ def build_trainset(data_type, data_path):
             #     # In case of invalid or missing winner
             #     example["evaluation"] = "There is a tie."
 
+            # # Based on winner assign score
+            # if winner == "1":
+            #     example["evaluation"] = "So, the final decision is Response 1."
+            # elif winner == "2":
+            #     example["evaluation"] = "So, the final decision is Response 2."
+            # elif winner == "Tie":
+            #     example["evaluation"] = "So, the final decision is Tie."
+            # else:
+            #     # In case of invalid or missing winner
+            #     example["evaluation"] = "So, the final decision is Tie."
+
             # Based on winner assign score
             if winner == "1":
-                example["evaluation"] = "So, the final decision is Response 1."
+                example["evaluation"] = "1 0"
             elif winner == "2":
-                example["evaluation"] = "So, the final decision is Response 2."
+                example["evaluation"] = "0 1"
             elif winner == "Tie":
-                example["evaluation"] = "So, the final decision is Tie."
+                example["evaluation"] = "1 1"
             else:
                 # In case of invalid or missing winner
-                example["evaluation"] = "So, the final decision is Tie."
+                example["evaluation"] = "1 1"
 
             for part in input_parts:
                 section = part.strip()
@@ -78,8 +89,8 @@ def build_trainset(data_type, data_path):
                 # if part.startswith("Reference:"):
                 #     reference = part[len("Reference:"):].strip()
 
-            # example["evaluation"] = example["evaluation"] + "\n" + reason
-            example["evaluation"] = reason + "\n" + example["evaluation"]
+            example["evaluation"] = example["evaluation"] + "\n" + reason
+            # example["evaluation"] = reason + "\n" + example["evaluation"]
             
             if winner == "1":
                 trainset["win"].append(example)

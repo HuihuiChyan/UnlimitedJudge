@@ -27,7 +27,7 @@ def build_dataset(data_type, data_path = "./data"):
         
         random.seed(42)
         random.shuffle(new_dataset)
-        new_dataset = new_dataset[:500]
+        dataset = new_dataset[:500]
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/testset-v1.json"), "r") as fin:

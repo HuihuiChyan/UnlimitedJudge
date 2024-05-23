@@ -21,15 +21,15 @@ def build_trainset(data_type, data_path):
                 }
                 if line['score'][0] > line['score'][1]:
                     trainset['win'].append(example)
-                    eval_line = "1"
+                    eval_line = "So, the final decision is Response 1."
                 elif line['score'][0] < line['score'][1]:
                     trainset['lose'].append(example)
-                    eval_line = "2"
+                    eval_line = "So, the final decision is Response 2."
                 else:
                     trainset['tie'].append(example)
-                    eval_line = "Tie."
+                    eval_line = "So, the final decision is Tie."
                 
-                example["evaluation"] = eval_line + "\n" + example["evaluation"].split("\n")[-1]
+                example["evaluation"] = example["evaluation"].split("\n")[-1] + "\n" + eval_line
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/train.json"), "r") as fin:
@@ -44,27 +44,27 @@ def build_trainset(data_type, data_path):
             # Extract winner from the first line of output_sequence
             winner = output_parts[0].strip()
                 
-            # # Based on winner assign score
-            # if winner == "1":
-            #     example["evaluation"] = "Response 1 is better."
-            # elif winner == "2":
-            #     example["evaluation"] = "Response 2 is better."
-            # elif winner == "Tie":
-            #     example["evaluation"] = "There is a tie."
-            # else:
-            #     # In case of invalid or missing winner
-            #     example["evaluation"] = "There is a tie."
-
             # Based on winner assign score
             if winner == "1":
-                example["evaluation"] = "So, the final decision is Response 1."
+                example["evaluation"] = "Response 1 is better."
             elif winner == "2":
-                example["evaluation"] = "So, the final decision is Response 2."
+                example["evaluation"] = "Response 2 is better."
             elif winner == "Tie":
-                example["evaluation"] = "So, the final decision is Tie."
+                example["evaluation"] = "There is a tie."
             else:
                 # In case of invalid or missing winner
-                example["evaluation"] = "So, the final decision is Tie."
+                example["evaluation"] = "There is a tie."
+
+            # # Based on winner assign score
+            # if winner == "1":
+            #     example["evaluation"] = "So, the final decision is Response 1."
+            # elif winner == "2":
+            #     example["evaluation"] = "So, the final decision is Response 2."
+            # elif winner == "Tie":
+            #     example["evaluation"] = "So, the final decision is Tie."
+            # else:
+            #     # In case of invalid or missing winner
+            #     example["evaluation"] = "So, the final decision is Tie."
 
             # # Based on winner assign score
             # if winner == "1":

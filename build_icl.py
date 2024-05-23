@@ -21,10 +21,15 @@ def build_trainset(data_type, data_path):
                 }
                 if line['score'][0] > line['score'][1]:
                     trainset['win'].append(example)
+                    eval_line = "Response 1 is better."
                 elif line['score'][0] < line['score'][1]:
                     trainset['lose'].append(example)
+                    eval_line = "Response 2 is better."
                 else:
                     trainset['tie'].append(example)
+                    eval_line = "There is a tie."
+                
+                example["evaluation"] = eval_line + "\n" + example["evaluation"].split("\n")[-1]
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/train.json"), "r") as fin:

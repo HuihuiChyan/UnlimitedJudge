@@ -25,9 +25,7 @@ def build_dataset(data_type, data_path = "./data"):
             if example["score"] != [-1, -1]:
                 new_dataset.append(example)
         
-        random.seed(42)
-        random.shuffle(new_dataset)
-        dataset = new_dataset[:500]
+        dataset = new_dataset
 
     elif data_type == "pandalm":
         with open(os.path.join(data_path, "pandalm/testset-v1.json"), "r") as fin:

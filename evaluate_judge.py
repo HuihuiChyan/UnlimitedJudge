@@ -145,6 +145,7 @@ if __name__ == "__main__":
 
         answers.append(example["score"])
 
+    import pdb;pdb.set_trace()
     predictions = batched_generation(args.model_name_or_path, prompts,
                                      max_new_token=args.max_new_token,
                                      temperature=args.temperature,

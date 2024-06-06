@@ -5,4 +5,5 @@ __pycache__
 *.log
 # *[0-9].sh
 *.jsonl
+.DS_Store
 git_push.sh

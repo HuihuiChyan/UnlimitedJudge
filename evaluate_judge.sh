@@ -2,7 +2,7 @@
 export CUDA_VISIBLE_DEVICES=0
 python3 -u evaluate_judge.py \
     --model-name-or-path "./models/Auto-J-13B" \
-    --prompt-type "icl" \
+    --prompt-type "vanilla" \
     --model-type "auto-j" \
-    --data-type "judgelm" \
+    --data-type "halu-eval-dialogu" \
     --max-new-token 1024

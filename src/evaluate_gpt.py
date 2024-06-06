@@ -4,20 +4,19 @@ import random
 import time
 import json
 import os
+import re
 import requests
 import multiprocessing
 from functools import partial
 
-from build_dataset import build_dataset, calculate_metrics
-from build_prompt_gpt import create_prompt_gpt, parse_score_gpt
-
-from build_icl import build_icl
+from evaluate_judge import build_dataset, calculate_metrics
+from build_prompt_gpt import parse_score_gpt, create_prompt_gpt
 
 
 def build_params_gpt():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model-type",
+        "--model-name",
         type=str,
         choices=("gpt-4-1106-preview", "gpt-4-0125-preview", "gpt-4-turbo-2024-04-09", 
                  "gpt-3.5-turbo-0613", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-0125"),
@@ -26,7 +25,7 @@ def build_params_gpt():
     parser.add_argument(
         "--prompt-type",
         type=str,
-        choices=("vanilla", "cot", "icl"),
+        choices=("vanilla", "cot"),
         default=None,
     )
     parser.add_argument(
@@ -60,12 +59,6 @@ def build_params_gpt():
         default=None
     )
     parser.add_argument(
-        "--save-logit",
-        type=str,
-        choices=("True", "False"),
-        default="True"
-    )
-    parser.add_argument(
         "--pool-number",
         type=int,
         default=10,
@@ -75,18 +68,21 @@ def build_params_gpt():
         type=str,
         default="False",
     )
+    parser.add_argument(
+        "--rewrite-output",
+        type=str,
+        default="False",
+    )
     args = parser.parse_args()
     return args
 
 
 def request_gpt(prompt, model, temperature, max_new_tokens):
 
-    url = "https://api.chatgpt-3.vip/v1/chat/completions"
-    # url = "https://api.ai-gaochao.vip/v1/chat/completions"
+    url = "https://api.ai-gaochao.cn/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        # "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
-        "Authorization": "Bearer sk-YbA0PBLo6X76clo88aAb29Fc0852428c8850390375AbA32d",
+        "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
     }
     max_tries = 5
     res = ''
@@ -109,11 +105,9 @@ def request_gpt(prompt, model, temperature, max_new_tokens):
             continue
     return res
 
-
 def gpt_scoring(prompt, model, temperature, max_new_tokens):
 
-    prediction = request_gpt(
-        prompt, model, temperature=temperature, max_new_tokens=max_new_tokens)
+    prediction = request_gpt(prompt, model, temperature=temperature, max_new_tokens=max_new_tokens)
 
     counter.value += 1
     print(f"gpt_scoring {counter.value} finished.")
@@ -146,11 +140,8 @@ if __name__ == "__main__":
 
     prompts = []
     answers = []
-    if args.prompt_type == "icl":
-        dataset = build_icl(args.data_type, args.data_path, args.model_type, dataset)
-
     for example in dataset:
-        if "prometheus" in args.data_type:
+        if args.data_type in ["prometheus-ind", "prometheus-ood", "halu-eval-summary", "halu-eval-dialogue", "halu-eval-qa", "toxic-chat"]:
             prompt = instruction.format(question_body=example["question_body"],
                                         rubric=example["rubric"],
                                         answer_body=example["answer_body"])
@@ -167,44 +158,51 @@ if __name__ == "__main__":
                 prompt = instruction.format(question_body=example["question_body"],
                                             rubric=example["rubric"],
                                             answer1_body=example["answer1_body"],
-                                            answer2_body=example["answer2_body"])                
+                                            answer2_body=example["answer2_body"])      
             prompts.append(prompt)
 
         answers.append(example["score"])
 
+    print("Prompt built finished! Sampled prompt:")
+    print(prompts[random.randint(0, len(prompts)-1)]+"\n")
+
     if args.logit_file is None:
-        args.logit_file = f"{args.data_type}-{args.model_type}-{args.prompt_type}.jsonl"
+        args.logit_file = f"{args.data_type}-{args.model_name}-{args.prompt_type}.jsonl"
 
-    # 如果logit_file已经存在，就直接读取内容，仅仅对其进行重新后处理抽取分数
     if os.path.exists(args.logit_file):
-        with open(args.logit_file, "r", encoding="utf-8") as fin:
-            lines = [json.loads(line) for line in fin.readlines()]
+        if args.rewrite_output == "True":
+            os.remove(args.logit_file)        
+        else:
+            # 如果logit_file已经存在，就直接读取内容，仅仅对其进行重新后处理抽取分数
+            with open(args.logit_file, "r", encoding="utf-8") as fin:
+                lines = [json.loads(line) for line in fin.readlines()]
 
-        predictions = [line["prediction"] for line in lines]
+            predictions = [line["prediction"] for line in lines]
     
     else:
         manager = multiprocessing.Manager()
         counter = manager.Value("counter", 0)
-        pool = multiprocessing.Pool(
-            processes=args.pool_number, initializer=init, initargs=(counter,))
+        pool = multiprocessing.Pool(processes=args.pool_number, initializer=init, initargs=(counter,))
 
         if args.multi_process == "False":
-            predictions = [gpt_scoring(sample, model=args.model_type, temperature=args.temperature, max_new_tokens=args.max_new_token)
-                        for sample in prompts]
+            predictions = [gpt_scoring(sample, model=args.model_name, temperature=args.temperature, max_new_tokens=args.max_new_token)
+                           for sample in prompts]
         else:
-            pool_fn = partial(gpt_scoring, model=args.model_type, temperature=args.temperature, max_new_tokens=args.max_new_token)
+            pool_fn = partial(gpt_scoring, model=args.model_name, temperature=args.temperature, max_new_tokens=args.max_new_token)
             predictions = pool.map(pool_fn, prompts)
 
-    pred_scores = [parse_score_gpt(p, args.data_type, args.prompt_type) for p in predictions]
+    is_pair = "prometheus" not in args.data_type and args.data_type not in ['halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue', 'toxic-chat']
+    is_cot = args.prompt_type == "cot"
+    pred_scores = [parse_score_gpt(p, is_pair=is_pair, is_cot=is_cot) for p in predictions]
 
     # 存储prediction和score到文件中，便于后续确认是否后处理存在问题
-    if args.save_logit == "True":
-        with open(args.logit_file, "w", encoding="utf-8") as fout:
-            for prediction, score, prompt in zip(predictions, pred_scores, prompts):
-                json_line = {"score": score, "prediction": prediction, "instruction": prompt}
-                fout.write(json.dumps(json_line)+"\n")
+    with open(args.logit_file, "w", encoding="utf-8") as fout:
+        for prediction, score in zip(predictions, pred_scores):
+            json_line = {"score": score, "prediction": prediction}
+            fout.write(json.dumps(json_line)+"\n")
 
-    print(args)
     metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)
-    print(f"model: {args.model_type}, data: {args.data_type}")
+    print("**********************************************")
+    print(f"Model: {args.model_name}, Data: {args.data_type}")
     print(metrics_dicts)
+    print("**********************************************")

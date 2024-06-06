@@ -1,11 +1,8 @@
-import os
-import re
 import json
 import torch
 import argparse
 import random
-import copy
-import numpy as np
+import vllm
 
 from build_dataset import build_dataset, calculate_metrics
 from build_prompt_judge import create_prompt, create_prompt_cot, parse_predictions
@@ -79,15 +76,14 @@ def batched_generation(
     temperature=0.0,
     top_p=1.0,
 ):
-    print("start load model")
-    import vllm
+    print("Start load VLLM model!")
     model = vllm.LLM(model=model_path, tensor_parallel_size=1, dtype="bfloat16")
     sampling_params = vllm.SamplingParams(
         temperature=temperature,
         max_tokens=max_new_token,
         top_p=top_p,
     )
-    print("model loaded")
+    print("VLLM model loaded!")
 
     pred_list = model.generate(prompts, sampling_params)
     pred_list = [it.outputs[0].text for it in pred_list]
@@ -96,9 +92,9 @@ def batched_generation(
 
 if __name__ == "__main__":
 
-    args = build_params()
     random.seed(42)
-
+    args = build_params()
+    
     dataset = build_dataset(args.data_type, args.data_path)
 
     if args.prompt_type in ["vanilla", "icl"]:
@@ -123,8 +119,6 @@ if __name__ == "__main__":
                                             rubric=example["rubric"],
                                             answer1_body=example["answer1_body"],
                                             answer2_body=example["answer2_body"])
-                # if args.prompt_type == "icl":
-                #     prompt = example["demonstrations"] + "\n\n" + prompt
                 prompts.append(prompt)
 
         elif args.model_type == "prometheus":
@@ -146,7 +140,9 @@ if __name__ == "__main__":
 
         answers.append(example["score"])
 
-    import pdb;pdb.set_trace()
+    print("Prompt built finished! Sampled prompt:")
+    print(prompts[random.randint(0, len(prompts)-1)]+"\n")
+
     predictions = batched_generation(args.model_name_or_path, prompts,
                                      max_new_token=args.max_new_token,
                                      temperature=args.temperature,
@@ -161,6 +157,6 @@ if __name__ == "__main__":
 
     metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)
     print("**********************************************")
-    print(f"Model: {args.model_type}, Data: {args.data_type}")
+    print(f"Model: {args.model_type}, Data: {args.data_type}, Prompt: {args.prompt_type}")
     print(metrics_dicts)
     print("**********************************************")

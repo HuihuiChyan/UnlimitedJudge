@@ -1,7 +1,7 @@
 #!/bin/bash
 export WANDB_MODE=offline
 export CUDA_VISIBLE_DEVICES=0,1,2,3
-torchrun --nproc_per_node=4 --master_port=20001 train.py \
+torchrun --nproc_per_node=4 --master_port=20001 src/finetune.py \
     --model_name_or_path ./models/llama2-7b-chat \
     --model_type "llama" \
     --class_type "generation" \

@@ -35,26 +35,89 @@ Our study are based on the following data, and we have downloaded the respective
 
 * [LLMBar-test](https://github.com/princeton-nlp/LLMBar/tree/main/Dataset/LLMBar)
 
+* [Halu-Eval](https://github.com/RUCAIBox/HaluEval/tree/main/data)
+
+* [Toxic-Chat](https://huggingface.co/datasets/lmsys/toxic-chat)
+
+* [SALAD-Bench](https://huggingface.co/datasets/OpenSafetyLab/Salad-Data)
+
 ## Evaluate judges on different benchmarks
 
-Run the following script to evaluate one judge model on one testset.
+Run the following script to evaluate the open-sourced judge model on different testsets.
 
 ```shell
 MODEL_PATH=./models/JudgeLM-7B
 MODEL_TYPE=judgelm
+PROMPT_TYPE=vanilla
 DATA_TYPE=judgelm
-python3 -u evaluate_judge.py \
+python3 -u src/evaluate_judge.py \
     --model-name-or-path $MODEL_PATH \
+    --prompt-type $PROMPT_TYPE \
     --model-type $MODEL_TYPE \
     --data-type $DATA_TYPE \
-    --eval-batch-size 16 \
     --max-new-token 1024
 ```
 
-Run the following script to evaluate the finetuned judges on different testsets.
+Run the following script to evaluate GPT-3.5/4 on different testsets.
 
 ```shell
-MODEL_PATH=./models/llama2-7b-chat-finetuned
+MODEL_NAME=gpt-3.5-turbo-0613
+PROMPT_TYPE=vanilla
+DATA_TYPE=judgelm
+python3 -u src/evaluate_gpt.py \
+    --model-name $MODEL_NAME \
+    --prompt-type $PROMPT_TYPE \
+    --data-type $DATA_TYPE \
+    --multi-process True \
+    --max-new-token 1024 \
+    --rewrite-output True
+```
+
+## Fine-tune your own judge model
+You can train your own judge based on open-source judge data and foundation models.
+
+We support different architecutes: LLaMA, DeBERTa
+
+We also support different architectures: Generation, Regression, Classification
+
+```shell
+export WANDB_MODE=offline
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+MODEL_PATH=./models/llama2-7b-chat
+MODEL_TYPE=llama
+CLASS_TYPE=generation
+DATA_PATH=./data/prometheus/new_feedback_collection.jsonl
+OUTPUT_DIR=./output/llama2-generation-prometheus
+torchrun --nproc_per_node=4 --master_port=20001 src/finetune.py \
+    --model_name_or_path $MODEL_PATH \
+    --model_type $MODEL_TYPE \
+    --class_type $CLASS_TYPE \
+    --data_path $DATA_PATH \
+    --bf16 True \
+    --swap_aug_ratio 0.0 \
+    --ref_drop_ratio 1.0 \
+    --output_dir $OUTPUT_DIR \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 32 \
+    --gradient_accumulation_steps 1 \
+    --evaluation_strategy "no" \
+    --save_strategy "epoch" \
+    --learning_rate 5e-6 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --tf32 True \
+    --model_max_length 1024 \
+    --gradient_checkpointing True \
+    --fsdp "full_shard auto_wrap" \
+    --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer'
+```
+
+After that, run the following script to evaluate the finetuned judges on different testsets.
+
+```shell
+MODEL_PATH=./models/llama2-generation-prometheus
 MODEL_TYPE=llama
 DATA_TYPE=judgelm
 CLASS_TYPE=generation
@@ -64,24 +127,6 @@ python -u evaluate_finetuned.py \
     --data-type $DATA_TYPE \
     --class-type $CLASS_TYPE
 ```
-
-Run the following script to evaluate GPT-3.5/4 on different testsets.
-
-```shell
-DATA_TYPE=judgelm
-python -u evaluate_selfeval.py \
-    --model-type "gpt-4" \
-    --data-type $DATA_TYPE
-```
-
-## Fine-tune your own judge
-You can train your own judge based on open-source judge data and foundation models.
-
-We support different architecutes: LLaMA, BERT
-
-We also support different judge schemes: Generation, Regression, Classification
-
-Please refer to ``train.sh`` for more details
 
 # 💬 Citation
 If you find our work is helpful, please cite as:

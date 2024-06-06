@@ -3,15 +3,13 @@ import json
 import argparse
 import random
 import torch
-import datasets
-import re
-import ray
-import copy
-import vllm
 from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-from train import create_prompt, format_instruction
+from evaluate_judge import build_params, batched_generation
+from finetune import create_prompt, format_instruction
+from build_dataset import build_dataset
+from build_prompt_judge import parse_predictions, calculate_metrics
 
 @torch.inference_mode()
 def batched_classification(
@@ -64,7 +62,7 @@ if __name__ == "__main__":
     args = build_params()
     random.seed(42)
 
-    dataset = load_dataset(args.data_type, args.data_path, args.add_reference)
+    dataset = build_dataset(args.data_type, args.data_path, args.add_reference)
     
     is_prometheus = ("prometheus" in args.data_type)
     instruction = create_prompt(args.class_type, args.model_type, is_prometheus=is_prometheus)
@@ -88,7 +86,7 @@ if __name__ == "__main__":
     elif args.class_type == "regression":
         pred_scores = batched_classification(args.model_name_or_path, prompts, is_regression=True)
     
-    parsed_scores = parse_predictions(model_type, data_type)
+    parsed_scores = parse_predictions(args.model_type, args.data_type)
     
     if args.logit_file is not None:
         with open(args.logit_file, "w", encoding="utf-8") as fout:

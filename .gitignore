@@ -5,3 +5,4 @@ __pycache__
 *.log
 # *[0-9].sh
 *.jsonl
+git_push.sh

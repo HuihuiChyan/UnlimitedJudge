@@ -30,7 +30,7 @@ def get_multi_answer(
     print("VLLM model loaded!")
 
     tokenizer = model.get_tokenizer()
-    MAX_LEN = model.llm_engine.model_config.max_model_len
+    MAX_LEN = model.llm_engine.model_config.max_model_len - 512
     prompt_ids = [tokenizer.encode(prompt)[-MAX_LEN:] for prompt in prompts]
 
     pred_list = model.generate(prompt_token_ids=prompt_ids, sampling_params=sampling_params)

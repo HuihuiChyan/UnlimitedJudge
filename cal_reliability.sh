@@ -1,14 +1,14 @@
 export CUDA_VISIBLE_DEVICES=6
 
-DATA_TYPE="salad-bench"
-MODEL_TYPE="judgelm"
+DATA_TYPE="halu-eval-qa"
+MODEL_TYPE="prometheus"
 
 python3 -u src/cal_reliability.py \
-    --model-name-or-path "./models/JudgeLM-7B" \
+    --model-name-or-path "./models/Prometheus-7B" \
     --cali-model-name-or-path "./models/llama2-7b-chat-hf/" \
     --model-type ${MODEL_TYPE} \
     --data-type $DATA_TYPE \
-    --max-new-token 512 \
+    --max-new-token 1024 \
     --logit-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
     --output-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json"
 

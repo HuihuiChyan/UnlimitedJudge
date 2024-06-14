@@ -21,7 +21,7 @@ def get_multi_answer(
     top_p=1.0,
 ):
     print("Start load VLLM model!")
-    model = vllm.LLM(model=model_path, tensor_parallel_size=torch.cuda.device_count(), dtype="bfloat16")
+    model = vllm.LLM(model=model_path, tensor_parallel_size=torch.cuda.device_count(), dtype="bfloat16", gpu_memory_utilization=0.8)
     sampling_params = vllm.SamplingParams(
         temperature=temperature,
         max_tokens=max_new_token,

@@ -1,10 +1,10 @@
 export CUDA_VISIBLE_DEVICES=6
 
 DATA_TYPE="halu-eval-qa"
-MODEL_TYPE="prometheus"
+MODEL_TYPE="judgelm"
 
 python3 -u src/cal_reliability.py \
-    --model-name-or-path "./models/Prometheus-7B" \
+    --model-name-or-path "./models/JudgeLM-7B" \
     --cali-model-name-or-path "./models/llama2-7b-chat-hf/" \
     --model-type ${MODEL_TYPE} \
     --data-type $DATA_TYPE \

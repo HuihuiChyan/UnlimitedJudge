@@ -366,13 +366,14 @@ def parse_predictions(predictions, model_type, data_type, prompt_type):
             predictions_b = [pred for pred in pred_scores[1::2]]
             pred_scores = [[pred[0], pred[1]] for pred in zip(predictions_a, predictions_b)]
     
-    print("Prediction parsing finished! Sampled prediction 1:")
+    print("Prediction parsing finished!")
+    print("Sampled prediction:")
     random_idx = random.randint(0, len(predictions)-1)
     print(predictions[random_idx])
-    print(f"Sampled score 1: {pred_scores[random_idx]}")
-    print("Sampled prediction 2:")
+    print(f"Sampled score: {pred_scores[random_idx]}")
+    print("Sampled prediction:")
     random_idx = random.randint(0, len(predictions)-1)
     print(predictions[random_idx])
-    print(f"Sampled score 2: {pred_scores[random_idx]}")
+    print(f"Sampled score: {pred_scores[random_idx]}")
 
     return pred_scores

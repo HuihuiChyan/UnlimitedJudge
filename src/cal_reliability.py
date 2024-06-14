@@ -146,6 +146,9 @@ if __name__ == "__main__":
                 prompts.append(prompt_b)
 
         answers.append(example["score"])
+
+    print("Prompt built finished! Sampled prompt:")
+    print(prompts[random.randint(0, len(prompts)-1)]+"\n")
     
     predictions, prefix_lens, target_lens, output_ids = get_multi_answer(args.model_name_or_path, prompts, args.max_new_token)
 

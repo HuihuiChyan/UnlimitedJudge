@@ -251,7 +251,6 @@ def calculate_metrics(y_true_list, y_pred_list, data_type):
         y_pred = y_pred_list
 
     if data_type in ["judgelm", "pandalm", "salad-bench"] or "llmbar" in data_type:
-        import pdb;pdb.set_trace()
         accuracy = accuracy_score(y_true, y_pred)
         precision = precision_score(y_true, y_pred, average='macro')
         recall = recall_score(y_true, y_pred, average='macro')

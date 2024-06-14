@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=6
 
-DATA_TYPE="halu-eval-qa"
+DATA_TYPE="salad-bench"
 MODEL_TYPE="judgelm"
 
 python3 -u src/cal_reliability.py \

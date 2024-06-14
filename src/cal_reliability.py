@@ -106,7 +106,7 @@ if __name__ == "__main__":
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    dataset = build_dataset(args.data_type)[40:60]
+    dataset = build_dataset(args.data_type)
     print(f"Loaded dataset from {args.data_path}")
     print(f"The length is {len(dataset)}")
 
@@ -152,7 +152,8 @@ if __name__ == "__main__":
     
     predictions, prefix_lens, target_lens, output_ids = get_multi_answer(args.model_name_or_path, prompts, args.max_new_token)
 
-    import pdb;pdb.set_trace()
+    gc.collect()
+    torch.cuda.empty_cache()
 
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type, args.prompt_type)
 

@@ -4,8 +4,8 @@ MODEL_TYPE="pandalm"
 DATA_TYPE="salad-bench"
 
 python3 -u src/cal_reliability.py \
-    --model-name-or-path "/home/disk/huanghui/UnlimitedJudge/models/PandaLM-7B" \
-    --cali-model-name-or-path "/home/disk/huanghui/CrossEval-corr/models/llama-7b/" \
+    --model-name-or-path "./models/PandaLM-7B" \
+    --cali-model-name-or-path "./models/llama-7b/" \
     --model-type ${MODEL_TYPE} \
     --data-type $DATA_TYPE \
     --max-new-token 512 \
@@ -21,8 +21,8 @@ python3 -u src/evaluate_reliability.py \
 MODEL_TYPE="judgelm"
 
 python3 -u src/cal_reliability.py \
-    --model-name-or-path "/home/disk/huanghui/UnlimitedJudge/models/JudgeLM-7B" \
-    --cali-model-name-or-path "/home/disk/huanghui/CrossEval-corr/models/vicuna-7b/" \
+    --model-name-or-path "./models/JudgeLM-7B" \
+    --cali-model-name-or-path "./models/vicuna-7b/" \
     --model-type ${MODEL_TYPE} \
     --data-type $DATA_TYPE \
     --max-new-token 1024 \

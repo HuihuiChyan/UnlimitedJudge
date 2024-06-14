@@ -106,7 +106,7 @@ if __name__ == "__main__":
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    dataset = build_dataset(args.data_type)[40:60]
+    dataset = build_dataset(args.data_type)
     print(f"Loaded dataset from {args.data_path}")
     print(f"The length is {len(dataset)}")
 

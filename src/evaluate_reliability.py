@@ -58,26 +58,6 @@ def select_top_half_indices(average_scores, total_length):
         [top_half_indices, top_half_indices + total_length // 2])
     return indices_with_reverse
 
-
-def compute_accuracy_rate(metric_results, answers, judge_output, total_length, dataset_type):
-    """根据分数结果计算准确率"""
-    if dataset_type == "auto-j":
-        average_scores = get_average_scores(metric_results)
-        top_half_indices = select_top_half_indices(
-            average_scores, total_length)
-        accuracy_rate = calculate_metrics(
-            [answers[i] for i in top_half_indices], [judge_output[i] for i in top_half_indices], dataset_type)
-    else:
-        average_scores = metric_results
-        sorted_indices = np.argsort(-np.array(average_scores))
-        bucket_size = len(sorted_indices)//5
-        for i in range(5):
-            top_half_indices = sorted_indices[bucket_size*i:bucket_size*(i+1)]
-            accuracy_rate = calculate_metrics(
-                [answers[i] for i in top_half_indices], [judge_output[i] for i in top_half_indices], dataset_type)
-            print(accuracy_rate)
-    return accuracy_rate
-
 def compute_accuracy_rate(metric_results, answers, judge_output, total_length, dataset_type):
     """根据分数结果计算准确率"""
     if dataset_type == "auto-j":
@@ -121,8 +101,9 @@ def main():
     dataset = build_dataset(args.data_type, "./data")
     answers = [example["score"] for example in dataset]
 
-    entropy_results = load_results(args.output_file)["Entropy"]
-    entropy_cali_results = load_results(args.output_file)["entropy_cali"]
+    # entropy_results = load_results(args.output_file)["Entropy"]
+    # entropy_cali_results = load_results(args.output_file)["entropy_cali"]
+    entropy_cali_results = load_results(args.output_file)["logit"]
 
     with open(args.logit_file, 'r') as f:
         judge_output = [json.loads(line.strip()) for line in f.readlines()]
@@ -131,10 +112,10 @@ def main():
         relia_scores = compute_calibrated_score(entropy_results, entropy_cali_results, cali_factor=cali_factor)
 
         # 计算指标的准确率
-        accuracy_rate = compute_bucketing_rate(
+        accuracy_rate = compute_accuracy_rate(
             relia_scores, answers, judge_output, len(relia_scores), args.data_type)
 
-        # print(f"Accuracy Rate calibrated by {cali_factor}: {accuracy_rate}")
+        print(f"Accuracy Rate calibrated by {cali_factor}: {accuracy_rate}")
 
     # 随机选择基线准确率
     if args.data_type == "auto-j":

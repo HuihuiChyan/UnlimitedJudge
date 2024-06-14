@@ -101,9 +101,8 @@ def main():
     dataset = build_dataset(args.data_type, "./data")
     answers = [example["score"] for example in dataset]
 
-    # entropy_results = load_results(args.output_file)["Entropy"]
-    # entropy_cali_results = load_results(args.output_file)["entropy_cali"]
-    entropy_cali_results = load_results(args.output_file)["logit"]
+    entropy_results = load_results(args.output_file)["Entropy"]
+    entropy_cali_results = load_results(args.output_file)["entropy_cali"]
 
     with open(args.logit_file, 'r') as f:
         judge_output = [json.loads(line.strip()) for line in f.readlines()]

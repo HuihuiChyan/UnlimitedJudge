@@ -111,10 +111,10 @@ def main():
         relia_scores = compute_calibrated_score(entropy_results, entropy_cali_results, cali_factor=cali_factor)
 
         # 计算指标的准确率
-        accuracy_rate = compute_bucketing_rate(
+        accuracy_rate = compute_accuracy_rate(
             relia_scores, answers, judge_output, len(relia_scores), args.data_type)
 
-        # print(f"Accuracy Rate calibrated by {cali_factor}: {accuracy_rate}")
+        print(f"Accuracy Rate calibrated by {cali_factor}: {accuracy_rate}")
 
     # 随机选择基线准确率
     if args.data_type == "auto-j":

@@ -64,8 +64,7 @@ def build_params():
         type=str,
         default=None
     )
-    args = parser.parse_args()
-    return args
+    return parser
 
 
 @torch.inference_mode()
@@ -93,7 +92,8 @@ def batched_generation(
 if __name__ == "__main__":
 
     random.seed(42)
-    args = build_params()
+    parser = build_params()
+    args = parser.parse_args()
     
     dataset = build_dataset(args.data_type, args.data_path)
 

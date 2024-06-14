@@ -7,3 +7,4 @@ __pycache__
 *.jsonl
 .DS_Store
 git_push.sh
+relia_scores/*

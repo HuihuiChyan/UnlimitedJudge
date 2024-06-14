@@ -45,7 +45,7 @@ def compute_combined_score(entropy_scores, variance_scores):
 
 def compute_calibrated_score(scores, cali_scores):
     """计算校准后的组合分数"""
-    calibrated_score = [(scores[i]-cali_scores[i]) / 2 for i in range(len(scores))]
+    calibrated_score = [(scores[i]) / 2 for i in range(len(scores))]
     return calibrated_score
 
 

@@ -1,21 +1,22 @@
 export CUDA_VISIBLE_DEVICES=2
 
-DATA_TYPE="salad-bench"
+DATA_TYPE="halu-eval"
+MODEL_TYPE="prometheus"
 
-# python3 -u src/cal_reliability.py \
-#     --model-name-or-path "/home/disk/huanghui/UnlimitedJudge/models/JudgeLM-7B" \
-#     --cali-model-name-or-path "/home/disk/huanghui/CrossEval-corr/models/vicuna-7b/" \
-#     --model-type "judgelm" \
-#     --data-type $DATA_TYPE \
-#     --max-new-token 1024 \
-#     --logit-file "relia_scores/judgelm/${DATA_TYPE}-logit.jsonl" \
-#     --output-file "relia_scores/judgelm/${DATA_TYPE}-relia.json"
+python3 -u src/cal_reliability.py \
+    --model-name-or-path "./models/Prometheus-7B" \
+    --cali-model-name-or-path "./models/llama2-7b-chat-hf/" \
+    --model-type ${MODEL_TYPE} \
+    --data-type $DATA_TYPE \
+    --max-new-token 1024 \
+    --logit-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
+    --output-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json"
 
-# python3 -u src/evaluate_reliability.py \
-#     --model-type "judgelm" \
-#     --data-type $DATA_TYPE \
-#     --logit-file "relia_scores/judgelm/${DATA_TYPE}-logit.jsonl" \
-#     --output-file "relia_scores/judgelm/${DATA_TYPE}-relia.json"
+python3 -u src/evaluate_reliability.py \
+    --model-type ${MODEL_TYPE} \
+    --data-type $DATA_TYPE \
+    --logit-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
+    --output-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json"
 
 DATA_TYPE="salad-bench"
 

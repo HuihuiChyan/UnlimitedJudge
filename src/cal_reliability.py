@@ -152,8 +152,6 @@ if __name__ == "__main__":
     
     predictions, prefix_lens, target_lens, output_ids = get_multi_answer(args.model_name_or_path, prompts, args.max_new_token)
 
-    import pdb;pdb.set_trace()
-
     pred_scores = parse_predictions(predictions, args.model_type, args.data_type, args.prompt_type)
 
     metrics_dicts = calculate_metrics(answers, pred_scores, args.data_type)

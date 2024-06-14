@@ -1,11 +1,11 @@
 export CUDA_VISIBLE_DEVICES=6
 
-DATA_TYPE="auto-j"
-MODEL_TYPE="prometheus"
+MODEL_TYPE="auto-j"
+DATA_TYPE="salad-bench"
 
 python3 -u src/cal_reliability.py \
     --model-name-or-path "./models/Auto-J-13B" \
-    --cali-model-name-or-path "./models/llama2-7b-chat-hf/" \
+    --cali-model-name-or-path "./models/llama2-13b-chat-hf/" \
     --model-type ${MODEL_TYPE} \
     --data-type $DATA_TYPE \
     --max-new-token 1024 \

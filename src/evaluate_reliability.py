@@ -43,9 +43,9 @@ def compute_combined_score(entropy_scores, variance_scores):
     return combined_scores
 
 
-def compute_calibrated_score(scores, cali_scores):
+def compute_calibrated_score(scores, cali_scores, cali_factor=1.0):
     """计算校准后的组合分数"""
-    calibrated_score = [(scores[i]-cali_scores[i]) / 2 for i in range(len(scores))]
+    calibrated_score = [(scores[i]-cali_scores[i] * cali_factor) / 2 for i in range(len(scores))]
     return calibrated_score
 
 
@@ -123,16 +123,18 @@ def main():
 
     entropy_results = load_results(args.output_file)["Entropy"]
     entropy_cali_results = load_results(args.output_file)["entropy_cali"]
-    relia_scores = compute_calibrated_score(entropy_results, entropy_cali_results)
 
     with open(args.logit_file, 'r') as f:
         judge_output = [json.loads(line.strip()) for line in f.readlines()]
 
-    answers = answers[:len(relia_scores)]
-    judge_output = judge_output[:len(relia_scores)]
-    # 计算指标的准确率
-    accuracy_rate = compute_accuracy_rate(
-        relia_scores, answers, judge_output, len(relia_scores), args.data_type)
+    for cali_factor in [0.0, 0.5, 1.0]:
+        relia_scores = compute_calibrated_score(entropy_results, entropy_cali_results, cali_factor=cali_factor)
+
+        # 计算指标的准确率
+        accuracy_rate = compute_accuracy_rate(
+            relia_scores, answers, judge_output, len(relia_scores), args.data_type)
+
+        print(f"Accuracy Rate calibrated by {cali_factor}: {accuracy_rate}")
 
     # 随机选择基线准确率
     if args.data_type == "auto-j":
@@ -149,8 +151,6 @@ def main():
 
     random_accuracy_rate = calculate_metrics(
         [answers[i] for i in random_indices], [judge_output[i] for i in random_indices], args.data_type)
-
-    print(f"Accuracy Rate: {accuracy_rate}")
     print(f"Random Selection Accuracy Rate: {random_accuracy_rate}")
 
 

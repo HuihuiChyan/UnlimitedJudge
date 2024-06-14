@@ -270,7 +270,10 @@ def parse_predictions(predictions, model_type, data_type, prompt_type):
                 sp = score_pair.split(' ')
                 return [float(sp[0]), float(sp[1])]
             except Exception as e:
-                return [1.0, 1.0]  # default is Tie
+                if data_type == "salad-bench":
+                    return random.choice([[1.0, 0.0], [0.0, 1.0]])  # default is random
+                else:
+                    return [1.0, 1.0]  # default is Tie
         else:
             try:
                 score = review.split('\n')[0].strip()

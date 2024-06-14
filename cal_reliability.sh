@@ -1,6 +1,6 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=6
 
-DATA_TYPE="halu-eval"
+DATA_TYPE="halu-eval-qa"
 MODEL_TYPE="prometheus"
 
 python3 -u src/cal_reliability.py \

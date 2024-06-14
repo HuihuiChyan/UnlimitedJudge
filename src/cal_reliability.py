@@ -102,6 +102,8 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
+    import pdb;pdb.set_trace()
+
     output_dir = os.path.dirname(args.output_file)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)

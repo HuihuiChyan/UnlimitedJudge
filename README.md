@@ -1,8 +1,6 @@
-# SelfEval
+# Unlimited Judge
 
-This is the official repository for paper **An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Models are Task-specific Classifiers**.
-
-If you have any quesions, you can contact me with Wechat huanghui20200708.
+This is the official repository for paper **On the Limitations of Fine-tuned Judge Models for LLM Evaluation**.
 
 ## ⚡️ Usage
 ### Preparation
@@ -20,6 +18,16 @@ Please download pre-trained LLMs and put them under ``models``. Specifically, ou
 * [Prometheus-7b-v1.0](https://huggingface.co/kaist-ai/prometheus-7b-v1.0)
 
 * [Auto-J-13b](https://huggingface.co/GAIR/autoj-13b)
+
+To obtain the calibrated reliability scores, or to finetune your own judge model for comparison, you also need to download the following base models:
+
+* [Vicuna-7B](https://huggingface.co/lmsys/vicuna-7b-v1.3)
+
+* [Llama-7B](https://huggingface.co/huggyllama/llama-7b)
+
+* [Llama2-chat-7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
+
+* [Llama2-chat-13B](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)
 
 Our study are based on the following data, and we have downloaded the respective testsets and put them under ``data``. 
 
@@ -121,23 +129,42 @@ MODEL_PATH=./models/llama2-generation-prometheus
 MODEL_TYPE=llama
 DATA_TYPE=judgelm
 CLASS_TYPE=generation
-python -u evaluate_finetuned.py \
+python -u src/evaluate_finetuned.py \
     --model-name-or-path $MODEL_NAME \
     --model-type $MODEL_TYPE \
     --data-type $DATA_TYPE \
     --class-type $CLASS_TYPE
 ```
 
-# 💬 Citation
-If you find our work is helpful, please cite as:
+
+## Obtain the reliability score
+Run the following script to obtain the reliability scores.
+
+```shell
+MODEL_PATH=./models/JudgeLM-7B
+BASE_MODEL_PATH=./models/Vicuna-7B
+MODEL_TYPE=judgelm
+DATA_TYPE=salad-bench
+
+python3 -u src/cal_reliability.py \
+    --model-name-or-path $MODEL_PATH \
+    --cali-model-name-or-path $BASE_MODEL_PATH \
+    --model-type ${MODEL_TYPE} \
+    --data-type $DATA_TYPE \
+    --max-new-token 1024 \
+    --logit-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
+    --output-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json"
 
 ```
-@misc{huang2024empirical,
-      title={An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Models are Task-specific Classifiers}, 
-      author={Hui Huang and Yingqi Qu and Jing Liu and Muyun Yang and Tiejun Zhao},
-      year={2024},
-      eprint={2403.02839},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
+
+After that, you can run the following script to evaluate the effectiveness of the scores, by bucketing the testset according to the score:
+
+```shell
+MODEL_TYPE=judgelm
+DATA_TYPE=salad-bench
+python3 -u src/evaluate_reliability.py \
+    --model-type ${MODEL_TYPE} \
+    --data-type $DATA_TYPE \
+    --logit-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
+    --output-file "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json"
 ```

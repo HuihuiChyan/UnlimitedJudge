@@ -68,16 +68,10 @@ def get_single_evaluation(
         input_ids=torch.as_tensor(input_ids),
         labels=output_ids,
         output_hidden_states=True,
-        output_attentions=True,
     )
     # the predict ids should be shifted left
     shifted_input_ids = torch.roll(input_ids, shifts=-1)
     logprobs = torch.nn.functional.log_softmax(outputs["logits"], dim=-1)
-
-    logprobs_variance = torch.var(logprobs, dim=-1)
-    logprobs_variance[output_ids == -100] = 0  # instruction masking
-    # averaged on target length
-    evaluation_var = logprobs_variance.sum(-1)[0] / target_len
 
     logprobs[output_ids == -100] = 0  # instruction masking
     # The original entropy has a minus sign, but we remove it to keep the positive correlation
@@ -85,10 +79,7 @@ def get_single_evaluation(
     # averaged on target length
     evaluation_ent = logprobs_entropy.sum(-1)[0] / target_len
 
-    evaluation_logit = torch.gather(logprobs, dim=-1, index=shifted_input_ids.unsqueeze(-1)).squeeze(-1)
-    evaluation_logit = evaluation_logit.sum(-1)[0] / target_len
-
-    return {"logit": evaluation_logit, "entropy": evaluation_ent, "variance": evaluation_var}
+    return {"entropy": evaluation_ent}
 
 if __name__ == "__main__":
     parser = build_params()
@@ -115,7 +106,7 @@ if __name__ == "__main__":
     prompts = []
     answers = []
     for index, example in enumerate(dataset):
-        if args.model_type in ["judgelm", "pandalm", "auto-j"]:
+        if args.model_type in ["judgelm", "pandalm", "auto-j", "llama-3"]:
             if args.data_type in ["prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval-summary", "halu-eval-dialogue", "halu-eval-qa"]:
                 prompt = instruction.format(question_body=example["question_body"],
                                             answer_body=example["answer_body"])
@@ -168,7 +159,7 @@ if __name__ == "__main__":
             fout.write(json.dumps(pred)+"\n")
 
     # 初始化结果字典
-    results = {"Entropy": [], "Variance": []}
+    results = {"Entropy": []}
 
     model = AutoModelForCausalLM.from_pretrained(
         args.model_name_or_path).half().to(device)
@@ -182,12 +173,11 @@ if __name__ == "__main__":
             target_lens[i],
         )
         entropy = evaluation["entropy"]
-        variance = evaluation["variance"]
         # 将结果添加到字典中
         results["Entropy"].append(entropy.item() if isinstance(
             entropy, torch.Tensor) else entropy)
-        results["Variance"].append(variance.item() if isinstance(
-            variance, torch.Tensor) else variance)
+        gc.collect()
+        torch.cuda.empty_cache()
 
     if args.cali_model_name_or_path is not None:
         results["entropy_cali"] = []

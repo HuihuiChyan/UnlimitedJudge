@@ -3,6 +3,7 @@ import argparse
 import random
 import time
 import json
+import openai
 import os
 import re
 import requests
@@ -18,8 +19,8 @@ def build_params_gpt():
     parser.add_argument(
         "--model-name",
         type=str,
-        choices=("gpt-4-1106-preview", "gpt-4-0125-preview", "gpt-4-turbo-2024-04-09", 
-                 "gpt-3.5-turbo-0613", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-0125"),
+        # choices=("gpt-4-1106-preview", "gpt-4-0125-preview", "gpt-4-turbo-2024-04-09", 
+        #          "gpt-3.5-turbo-0613", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-0125"),
         default=None,
     )
     parser.add_argument(
@@ -77,30 +78,64 @@ def build_params_gpt():
     return args
 
 
-def request_gpt(prompt, model, temperature, max_new_tokens):
+# def request_gpt(prompt, model, temperature, max_new_tokens):
 
-    url = "https://api.ai-gaochao.cn/v1/chat/completions"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
+#     # url = "https://api.ai-gaochao.cn/v1/chat/completions"
+#     url = "https://idealab.alibaba-inc.com/api/openai/v1"
+#     # headers = {
+#     #     "Content-Type": "application/json",
+#     #     "Authorization": "Bearer sk-agEcX3Su78Bu09c2F49978C6Ba424977B936C8710fAb42E0",
+#     # }
+#     headers = {
+#         "Content-Type": "application/json",
+#         "Authorization": "Bearer sk-f84283ab79d26d15be359b6d6979308a",
+#     }
+#     model = "gpt-4o-0513"
+#     max_tries = 5
+#     res = ''
+#     response = None
+#     sys_info = {"role": "system", "content": "You are a helpful and precise assistant for checking the quality of the answer."}
+#     for i in range(max_tries):
+#         try:
+#             messages = [sys_info, {"role": "user", "content": prompt}]
+#             messages = [{"role": "user", "content": prompt}]
+#             data = {"model": model, "messages": messages,
+#                     "temperature": temperature, "max_tokens": max_new_tokens}
+#             response = requests.post(
+#                 url, headers=headers, data=json.dumps(data))
+#             response = response.json()
+#             res = response['choices'][0]['message']['content'].strip()
+#             break
+#         except Exception as e:
+#             print("Exception! The response is " + str(response))
+#             time.sleep(5)
+#             continue
+#     return res
+
+def request_gpt(prompt, model, temperature, max_new_tokens):
+    model = "gpt-4o-0513"
+    api_key = "f84283ab79d26d15be359b6d6979308a"
+    client = openai.OpenAI(api_key=api_key, base_url="https://idealab.alibaba-inc.com/api/openai/v1")
+    payload = {
+        "model": model,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ]
     }
-    max_tries = 5
+    max_tries = 20
     res = ''
-    response = None
-    sys_info = {"role": "system", "content": "You are a helpful and precise assistant for checking the quality of the answer."}
     for i in range(max_tries):
         try:
-            messages = [sys_info, {"role": "user", "content": prompt}]
-            messages = [{"role": "user", "content": prompt}]
-            data = {"model": model, "messages": messages,
-                    "temperature": temperature, "max_tokens": max_new_tokens}
-            response = requests.post(
-                url, headers=headers, data=json.dumps(data))
-            response = response.json()
-            res = response['choices'][0]['message']['content'].strip()
+            chat_completion = client.chat.completions.create(model=payload['model'], temperature=temperature, messages=payload['messages'])
+            res = chat_completion.choices[0].message.content
             break
         except Exception as e:
-            print("Exception! The response is " + str(response))
+            if i == max_tries-1:
+                raise Exception("MAX_RETRY exceeded! Please check your codes! ")
+            print("Exception! The exception is "+str(e))
             time.sleep(5)
             continue
     return res
@@ -167,7 +202,7 @@ if __name__ == "__main__":
     print(prompts[random.randint(0, len(prompts)-1)]+"\n")
 
     if args.logit_file is None:
-        args.logit_file = f"{args.data_type}-{args.model_name}-{args.prompt_type}.jsonl"
+        args.logit_file = f"./outputs/{args.data_type}-{args.model_name}-{args.prompt_type}.jsonl"
 
     if os.path.exists(args.logit_file):
         if args.rewrite_output == "True":
@@ -179,7 +214,7 @@ if __name__ == "__main__":
 
             predictions = [line["prediction"] for line in lines]
     
-    else:
+    if not os.path.exists(args.logit_file) or args.rewrite_output == "True":
         manager = multiprocessing.Manager()
         counter = manager.Value("counter", 0)
         pool = multiprocessing.Pool(processes=args.pool_number, initializer=init, initargs=(counter,))
@@ -191,9 +226,9 @@ if __name__ == "__main__":
             pool_fn = partial(gpt_scoring, model=args.model_name, temperature=args.temperature, max_new_tokens=args.max_new_token)
             predictions = pool.map(pool_fn, prompts)
 
-    is_pair = "prometheus" not in args.data_type and args.data_type not in ['halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue', 'toxic-chat']
-    is_cot = args.prompt_type == "cot"
-    pred_scores = [parse_score_gpt(p, is_pair=is_pair, is_cot=is_cot) for p in predictions]
+    # is_pair = "prometheus" not in args.data_type and args.data_type not in ['halu-eval-summary', 'halu-eval-qa', 'halu-eval-dialogue', 'toxic-chat']
+    # is_cot = args.prompt_type == "cot"
+    pred_scores = [parse_score_gpt(p, data_type=args.data_type, prompt_type=args.prompt_type) for p in predictions]
 
     # 存储prediction和score到文件中，便于后续确认是否后处理存在问题
     with open(args.logit_file, "w", encoding="utf-8") as fout:

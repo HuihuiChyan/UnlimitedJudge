@@ -25,7 +25,7 @@ def build_params():
     parser.add_argument(
         "--model-type",
         type=str,
-        choices=("judgelm", "pandalm", "auto-j", "prometheus", "llama", "deberta"),
+        choices=("judgelm", "pandalm", "auto-j", "prometheus", "llama", "deberta",),
         default=None,
     )
     parser.add_argument(
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     prompts = []
     answers = []
     for index, example in enumerate(dataset):
-        if args.model_type in ["judgelm", "pandalm", "auto-j"]:
+        if args.model_type in ["judgelm", "pandalm", "auto-j", "llama-3"]:
             if args.data_type in ["prometheus-ind", "prometheus-ood", "toxic-chat", "halu-eval-summary", "halu-eval-dialogue", "halu-eval-qa"]:
                 prompt = instruction.format(question_body=example["question_body"],
                                             answer_body=example["answer_body"])

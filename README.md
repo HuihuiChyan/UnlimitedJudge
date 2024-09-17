@@ -137,7 +137,7 @@ python -u src/evaluate_finetuned.py \
 ```
 
 
-## Obtain the reliability score
+## Integrated Evaluate with *CascadedEval*
 Run the following script to obtain the confidence scores.
 
 ```shell

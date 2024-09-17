@@ -138,7 +138,7 @@ python -u src/evaluate_finetuned.py \
 
 
 ## Obtain the reliability score
-Run the following script to obtain the reliability scores.
+Run the following script to obtain the confidence scores.
 
 ```shell
 MODEL_PATH=./models/JudgeLM-7B
@@ -157,7 +157,19 @@ python3 -u src/cal_reliability.py \
 
 ```
 
-After that, you can run the following script to evaluate the effectiveness of the scores, by bucketing the testset according to the score:
+After that, you can run the following script to perform *CascadedEval*, by allocating the less confident samples to GPT-4 for re-evaluation.
+
+```shell
+MODEL_TYPE="judgelm"
+DATA_TYPE="salad-bench"
+python3 -u src/cascaded_eval.py \
+    --data-type $DATA_TYPE \
+    --logit-file1 "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-logit.jsonl" \
+    --output-file1 "relia_scores/${MODEL_TYPE}/${DATA_TYPE}-relia.json" \
+    --logit-file-gpt "outputs/${DATA_TYPE}-gpt-4-turbo-128k-vanilla.jsonl"
+```
+
+You can also run the following script to evaluate the effectiveness of the scores, by bucketing the testset according to the score:
 
 ```shell
 MODEL_TYPE=judgelm

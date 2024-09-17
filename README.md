@@ -137,7 +137,7 @@ python -u src/evaluate_finetuned.py \
 ```
 
 
-## Integrated Evaluate with *CascadedEval*
+## Integrated evaluate with *CascadedEval*
 Run the following script to obtain the confidence scores.
 
 ```shell

@@ -1,6 +1,6 @@
 # Unlimited Judge
 
-This is the official repository for paper **On the Limitations of Fine-tuned Judge Models for LLM Evaluation**.
+This is the official repository for paper **An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Model is not a General Substitute for GPT-4**.
 
 ## ⚡️ Usage
 ### Preparation
